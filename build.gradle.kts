@@ -16,13 +16,13 @@ plugins {
  * Project information
  */
 group = "org.danilopianini"
-description = "A template repository for kickstarting Gradle Plugins"
+description = "This gradle plugin runs the test suit with multiple versions of the Java Virtual Machine"
 inner class ProjectInfo {
-    val longName = "Template for Gradle Plugins"
-    val website = "https://github.com/DanySK/Template-for-Gradle-Plugins"
-    val scm = "git@github.com:DanySK/Template-for-Gradle-Plugins.git"
-    val pluginImplementationClass = "$group.template.HelloGradle"
-    val tags = listOf("template", "kickstart", "example")
+    val longName = "Multi-JVM test plugin"
+    val website = "https://github.com/DanySK/multi-jvm-test-plugin"
+    val scm = "git@github.com:DanySK/multi-jvm-test-plugin.git"
+    val pluginImplementationClass = "$group.multijvmtesting.MultiJVMTesting"
+    val tags = listOf("testing", "jvm", "java", "kotlin", "scala")
 }
 val info = ProjectInfo()
 
@@ -207,7 +207,7 @@ pluginBundle {
 
 gradlePlugin {
     plugins {
-        create("GradleLatex") {
+        create("multi-jvm-testing") {
             id = "$group.${project.name}"
             displayName = info.longName
             description = project.description

@@ -1,2 +1,2 @@
-rootProject.name = "Template-for-Gradle-Plugins"
+rootProject.name = "multi-jvm-test-plugin"
 enableFeaturePreview("VERSION_CATALOGS")
