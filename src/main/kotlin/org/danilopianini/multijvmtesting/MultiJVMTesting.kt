@@ -15,8 +15,10 @@ import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.property
 import org.gradle.kotlin.dsl.setProperty
+import org.gradle.util.GradleVersion
 import java.io.Serializable
 import java.lang.Thread.currentThread
+import java.net.URL
 import javax.inject.Inject
 
 open class MultiJVMTesting : Plugin<Project> {
@@ -106,6 +108,8 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
 
     val latestJava: Int = Companion.latestJava
 
+    val latestJavaSupportedByGradle: Int = Companion.latestJavaSupportedByGradle
+
     val allLtsVersions: Set<Int> = (8..latestJava).filter { it.isLTS }.toSet()
 
     var jvmVersionsTestedByDefault: Provider<Set<Int>> = supportedLtsVersionsAndLatest
@@ -141,6 +145,24 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
             currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim()
         )?.groupValues?.get(1)?.toInt()
             ?: throw IllegalStateException("There must be a bug in the multi-jvm-test-plugin")
+
+        val latestJavaSupportedByGradle: Int =
+            Regex("""<tr.*>[\s|\n|\r]*<td.*>.*?(\d+).*?<\/td>[\s|\n|\r]*<td.*>.*?(\d+(?:\.\d+)).*?<\/td>""")
+                .findAll(URL("https://docs.gradle.org/current/userguide/compatibility.html").readText())
+                .map {
+                    val (javaVersion, gradleVersion) = it.destructured
+                    javaVersion to GradleVersion.version(gradleVersion)
+                }
+                .filter { (_, gradleVersion) -> GradleVersion.current() >= gradleVersion }
+                .maxByOrNull { (_, gradleVersion) -> gradleVersion }
+                ?.first
+                ?.toInt()
+                ?: latestJava.also {
+                    println(
+                        "WARNING! No access to: https://docs.gradle.org/current/userguide/compatibility.html," +
+                            "guessing Gradle compatibility level to $it"
+                    )
+                }
 
         val Int.isLTS: Boolean get() = this == 8 || (this - 11) % 6 == 0
     }
