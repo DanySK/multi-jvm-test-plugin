@@ -37,7 +37,6 @@ repositories {
 
 multiJvm {
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
-    testByDefaultWith(supportedLtsVersionsAndLatest)
 }
 
 /*
