@@ -65,7 +65,6 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testImplementation(gradleTestKit())
     testImplementation(libs.konf.yaml)
-    testImplementation(libs.classgraph)
     testImplementation(libs.bundles.kotlin.testing)
     testRuntimeOnly(files(createClasspathManifest))
 }
