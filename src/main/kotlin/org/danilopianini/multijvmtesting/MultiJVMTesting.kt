@@ -176,7 +176,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
             ?: throw IllegalStateException("There must be a bug in the multi-jvm-test-plugin")
 
         val latestJavaSupportedByGradle: Int =
-            Regex("""<tr.*>[\s|\n|\r]*<td.*>.*?(\d+).*?<\/td>[\s|\n|\r]*<td.*>.*?(\d+(?:\.\d+)).*?<\/td>""")
+            Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?<\/td>[\s\n\r]*<td.*>.*?(\d+(?:\.\d+)).*?<\/td>""")
                 .findAll(URL("https://docs.gradle.org/current/userguide/compatibility.html").readText())
                 .map {
                     val (javaVersion, gradleVersion) = it.destructured
