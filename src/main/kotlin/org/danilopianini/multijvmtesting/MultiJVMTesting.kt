@@ -119,6 +119,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     init {
         jvmVersionForCompilation.set(defaultComplianceLevel)
         maximumSupportedJvmVersion.set(latestJava)
+        testByDefaultWith(supportedLtsVersionsAndLatest)
     }
 
     fun testByDefaultWith(vararg jvms: Int) {

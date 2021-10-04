@@ -6,7 +6,6 @@ kotest = "4.6.3"
 mockito = "3.12.4"
 
 [libraries]
-classgraph = "io.github.classgraph:classgraph:4.8.120"
 jacoco = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
@@ -22,3 +21,5 @@ gitSemVer = { id = "org.danilopianini.git-sensitive-semantic-versioning", versio
 gradlePluginPublish = { id = "com.gradle.plugin-publish", version = "0.16.0" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 publishOnCentral = { id = "org.danilopianini.publish-on-central", version = "0.5.0" }
+multiJvmTesting = { id = "org.danilopianini.multi-jvm-test-plugin", version = "0.1.0-archeo-78cd488" }
+taskTree = { id = "com.dorongold.task-tree", version = "2.1.0" }
