@@ -1,0 +1,21 @@
+tests:
+  - description: "A configured Java build should run with multiple JDKs"
+    configuration:
+      tasks: check
+      options: --stacktrace
+    expectation:
+      success:
+        - check
+        - testWithJvm11
+        - testWithLtsJvms
+        - testWithLatestJvm
+        - testWithLtsAndLatestJvms
+  - description: "A custom test should run"
+    configuration:
+      tasks:
+        - clean
+        - testWithJvm9
+      options: --stacktrace
+    expectation:
+      success:
+        - testWithJvm9

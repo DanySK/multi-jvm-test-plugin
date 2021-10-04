@@ -1,0 +1,13 @@
+tests:
+  - description: "A simple Java build should run with multiple JDKs"
+    configuration:
+      tasks: check
+
+      options: --stacktrace
+    expectation:
+      success:
+        - check
+        - testWithJvm11
+        - testWithLtsJvms
+        - testWithLatestJvm
+        - testWithLtsAndLatestJvms
