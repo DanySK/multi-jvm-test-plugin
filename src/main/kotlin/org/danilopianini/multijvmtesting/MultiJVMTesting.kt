@@ -61,6 +61,8 @@ open class MultiJVMTesting : Plugin<Project> {
                 (extension.jvmVersionForCompilation.get()..extension.latestJava).associateWith { version ->
                     if (version == extension.jvmVersionForCompilation.get() && baseTestTask != null) {
                         project.tasks.create("testWithJvm$version").apply {
+                            group = TestOnSpecificJvmVersion.TASK_GROUP
+                            description = TestOnSpecificJvmVersion.makeTaskDescription(version)
                             dependsOn(baseTestTask)
                         }
                     } else {
@@ -106,12 +108,21 @@ open class MultiJVMTesting : Plugin<Project> {
 
 open class TestOnSpecificJvmVersion @Inject constructor(jvmVersion: Int) : Test() {
     init {
+        group = TASK_GROUP
+        description = makeTaskDescription(jvmVersion)
         val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
         javaLauncher.set(
             javaToolchains.launcherFor {
                 it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
             }
         )
+    }
+
+    companion object {
+
+        const val TASK_GROUP = "Verification"
+
+        fun makeTaskDescription(version: Int) = "Runs the unit tests using a Java Virtual Machine (JVM) version $version."
     }
 }
 
