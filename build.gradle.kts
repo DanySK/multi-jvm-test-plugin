@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
-@Suppress("DSL_SCOPE_VIOLATION")
+@Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
 plugins {
     jacoco
     `java-gradle-plugin`
