@@ -1,4 +1,3 @@
-import java.net.URL
 import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
 @Suppress("DSL_SCOPE_VIOLATION")
@@ -113,9 +112,11 @@ tasks.jacocoTestReport {
 }
 
 signing {
-    val signingKey: String? by project
-    val signingPassword: String? by project
-    useInMemoryPgpKeys(signingKey, signingPassword)
+    if (System.getenv()["CI"].equals("true", ignoreCase = true)) {
+        val signingKey: String? by project
+        val signingPassword: String? by project
+        useInMemoryPgpKeys(signingKey, signingPassword)
+    }
 }
 
 /*
