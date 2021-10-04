@@ -127,8 +127,6 @@ publishOnCentral {
     projectDescription = description ?: TODO("Missing description")
     projectUrl = info.website
     scmConnection = info.scm
-//    licenseName = "..." // Defaults to Apache 2.0
-//    licenseUrl = "..." // Defaults to Apache 2.0 url
 }
 
 publishing {
