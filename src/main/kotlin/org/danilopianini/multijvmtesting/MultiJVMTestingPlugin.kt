@@ -4,25 +4,18 @@ import org.danilopianini.multijvmtesting.MultiJVMTestingExtension.Companion.isLT
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.api.model.ObjectFactory
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginExtension
-import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.getByType
-import org.gradle.kotlin.dsl.property
-import org.gradle.kotlin.dsl.setProperty
-import org.gradle.util.GradleVersion
-import java.io.Serializable
-import java.lang.Thread.currentThread
-import java.net.URL
-import javax.inject.Inject
 
-open class MultiJVMTesting : Plugin<Project> {
+/**
+ * A [Plugin] that configures the build with the ability to test using multiple JVMs.
+ */
+open class MultiJVMTestingPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         val extension = project.extensions.create<MultiJVMTestingExtension>("multiJvm")
         project.plugins.apply(JavaPlugin::class.java)
@@ -103,106 +96,5 @@ open class MultiJVMTesting : Plugin<Project> {
                 check.dependsOn(allTestTasks[version])
             }
         }
-    }
-}
-
-open class TestOnSpecificJvmVersion @Inject constructor(jvmVersion: Int) : Test() {
-    init {
-        group = TASK_GROUP
-        description = makeTaskDescription(jvmVersion)
-        val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
-        javaLauncher.set(
-            javaToolchains.launcherFor {
-                it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
-            }
-        )
-    }
-
-    companion object {
-
-        const val TASK_GROUP = "Verification"
-
-        fun makeTaskDescription(version: Int) = "Runs the unit tests using a Java Virtual Machine (JVM) version $version."
-    }
-}
-
-@OptIn(ExperimentalUnsignedTypes::class)
-open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serializable {
-
-    private var excluded: Set<Int> = emptySet()
-
-    val jvmVersionForCompilation: Property<Int> = objects.property()
-
-    val maximumSupportedJvmVersion: Property<Int> = objects.property()
-
-    val supportedJvmVersions: Provider<Set<Int>> = objects.setProperty<Int>().map {
-        (jvmVersionForCompilation.get()..maximumSupportedJvmVersion.get()).toSet() - excluded
-    }
-    val supportedLtsVersions: Provider<Set<Int>> = supportedJvmVersions.map {
-        it.filter { it.isLTS }.toSet()
-    }
-    val supportedLtsVersionsAndLatest: Provider<Set<Int>> = supportedLtsVersions.map {
-        it + maximumSupportedJvmVersion.get()
-    }
-
-    val latestJava: Int = Companion.latestJava
-
-    val latestJavaSupportedByGradle: Int = Companion.latestJavaSupportedByGradle
-
-    val allLtsVersions: Set<Int> = (8..latestJava).filter { it.isLTS }.toSet()
-
-    var jvmVersionsTestedByDefault: Provider<Set<Int>> = supportedLtsVersionsAndLatest
-        get() = field.map { it - excluded }
-        private set
-
-    init {
-        jvmVersionForCompilation.set(defaultComplianceLevel)
-        maximumSupportedJvmVersion.set(latestJava)
-    }
-
-    fun testByDefaultWith(vararg jvms: Int) {
-        testByDefaultWith(objects.property<Set<Int>>().map { jvms.toSet() })
-    }
-
-    fun testByDefaultWith(jvms: Provider<Set<Int>>) {
-        jvmVersionsTestedByDefault = jvms
-    }
-
-    fun excludeSupportFor(vararg jvms: Int) {
-        excluded = excluded + jvms.toSet()
-    }
-
-    companion object {
-        private const val serialVersionUID = 1L
-        private const val DOCKERFILE_PATH = "org/danilopianini/multijvmtesting/Dockerfile"
-        const val defaultComplianceLevel: Int = 8
-
-        /**
-         * The latest known Java version.
-         */
-        val latestJava = Regex("^FROM\\s+openjdk:(\\d+)$").matchEntire(
-            currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim()
-        )?.groupValues?.get(1)?.toInt()
-            ?: throw IllegalStateException("There must be a bug in the multi-jvm-test-plugin")
-
-        val latestJavaSupportedByGradle: Int =
-            Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?<\/td>[\s\n\r]*<td.*>.*?(\d+(?:\.\d+)).*?<\/td>""")
-                .findAll(URL("https://docs.gradle.org/current/userguide/compatibility.html").readText())
-                .map {
-                    val (javaVersion, gradleVersion) = it.destructured
-                    javaVersion to GradleVersion.version(gradleVersion)
-                }
-                .filter { (_, gradleVersion) -> GradleVersion.current() >= gradleVersion }
-                .maxByOrNull { (_, gradleVersion) -> gradleVersion }
-                ?.first
-                ?.toInt()
-                ?: latestJava.also {
-                    println(
-                        "WARNING! No access to: https://docs.gradle.org/current/userguide/compatibility.html," +
-                            "guessing Gradle compatibility level to $it"
-                    )
-                }
-
-        val Int.isLTS: Boolean get() = this == 8 || (this - 11) % 6 == 0
     }
 }

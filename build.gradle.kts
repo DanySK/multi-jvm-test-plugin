@@ -7,7 +7,8 @@ plugins {
     alias(libs.plugins.dokka)
     alias(libs.plugins.gitSemVer)
     alias(libs.plugins.gradlePluginPublish)
-    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.qa)
     alias(libs.plugins.publishOnCentral)
     alias(libs.plugins.multiJvmTesting)
     alias(libs.plugins.taskTree)
@@ -22,7 +23,7 @@ inner class ProjectInfo {
     val longName = "Multi-JVM test plugin"
     val website = "https://github.com/DanySK/multi-jvm-test-plugin"
     val scm = "git@github.com:DanySK/multi-jvm-test-plugin.git"
-    val pluginImplementationClass = "$group.multijvmtesting.MultiJVMTesting"
+    val pluginImplementationClass = "$group.multijvmtesting.MultiJVMTestingPlugin"
     val tags = listOf("testing", "jvm", "java", "kotlin", "scala")
 }
 val info = ProjectInfo()
