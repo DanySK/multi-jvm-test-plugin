@@ -100,15 +100,8 @@ tasks.withType<Test> {
     }
 }
 
-jacoco {
-    toolVersion = libs.versions.jacoco.getOrElse(toolVersion)
-}
-
-tasks.jacocoTestReport {
-    reports {
-        // Used by Codecov.io
-        xml.required.set(true)
-    }
+tasks.withType<de.aaschmid.gradle.plugins.cpd.Cpd> {
+    exclude("**/*.kts")
 }
 
 signing {
