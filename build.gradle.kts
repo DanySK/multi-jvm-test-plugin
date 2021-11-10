@@ -120,6 +120,10 @@ publishOnCentral {
     projectDescription = description ?: TODO("Missing description")
     projectUrl = info.website
     scmConnection = info.scm
+    repository("https://maven.pkg.github.com/DanySK/${rootProject.name}".toLowerCase(), name = "github") {
+        user = "danysk"
+        password = System.getenv("GITHUB_TOKEN")
+    }
 }
 
 publishing {
