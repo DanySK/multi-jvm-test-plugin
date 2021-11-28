@@ -2,5 +2,14 @@
    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
    "extends": [
       "github>DanySK/renovate-config:gradle-plugin"
+   ],
+   "packageRules": [
+      {
+         "description": "Trigger a minor update on some dependencies",
+         "matchPackageNames": [
+            "openjdk"
+         ],
+         "semanticCommitType": "feat"
+      }
    ]
 }
