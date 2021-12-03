@@ -1,1 +1,1 @@
-FROM openjdk:17
+FROM openjdk:18
