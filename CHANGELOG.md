@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.2.1...0.2.2) (2021-12-04)
+
+
+### Bug Fixes
+
+* access the gradle compatibility table lazily ([a0a2dd9](https://github.com/DanySK/multi-jvm-test-plugin/commit/a0a2dd98c5560e7e9f71cdad0899f927bb6dc433))
+
 ## [0.2.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.2.0...0.2.1) (2021-12-01)
 
 
