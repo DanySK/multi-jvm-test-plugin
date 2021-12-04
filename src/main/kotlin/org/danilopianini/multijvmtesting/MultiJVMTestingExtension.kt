@@ -121,7 +121,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * Refers to https://docs.gradle.org/current/userguide/compatibility.html,
          * issues to accessing the website make the value potentially wrong.
          */
-        val latestJavaSupportedByGradle: Int =
+        val latestJavaSupportedByGradle: Int by lazy {
             Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?<\/td>[\s\n\r]*<td.*>.*?(\d+(?:\.\d+)).*?<\/td>""")
                 .findAll(URL("https://docs.gradle.org/current/userguide/compatibility.html").readText())
                 .map {
@@ -138,6 +138,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                             "guessing Gradle compatibility level to $it"
                     )
                 }
+        }
 
         /**
          * Returns true if a JVM version (represented as [Int]) is Long Term Support.
