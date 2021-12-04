@@ -111,7 +111,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * The latest known Java version.
          */
-        val latestJava = Regex("^FROM\\s+openjdk:(\\d+)$").matchEntire(
+        val latestJava = Regex("^FROM\\s+eclipse-temurin:(\\d+)$").matchEntire(
             Thread.currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim()
         )?.groupValues?.get(1)?.toInt()
             ?: throw IllegalStateException("There must be a bug in the multi-jvm-test-plugin")
