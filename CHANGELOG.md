@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.2.2...0.3.0) (2021-12-06)
+
+
+### Features
+
+* add Kotlin support, see https://bit.ly/3EwbGT6 ([0b59560](https://github.com/DanySK/multi-jvm-test-plugin/commit/0b5956073feac5032111458364845aaca19b2ee5))
+
 ## [0.2.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.2.1...0.2.2) (2021-12-04)
 
 
