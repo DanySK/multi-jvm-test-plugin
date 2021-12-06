@@ -11,6 +11,7 @@ kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 konf-yaml = { module = "com.uchuhimo:konf-yaml", version.ref = "konf" }
+kotlin-gradle-plugin-api = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
 kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm", "mockito-core" ]
