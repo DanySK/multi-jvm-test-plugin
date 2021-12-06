@@ -9,8 +9,11 @@ import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
+import org.gradle.jvm.toolchain.JavaToolchainSpec
 import org.gradle.kotlin.dsl.create
+import org.gradle.kotlin.dsl.findByType
 import org.gradle.kotlin.dsl.getByType
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
 /**
  * A [Plugin] that configures the build with the ability to test using multiple JVMs.
@@ -19,11 +22,17 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         val extension = project.extensions.create<MultiJVMTestingExtension>("multiJvm")
         project.plugins.apply(JavaPlugin::class.java)
+        val versionForCompilation = extension.jvmVersionForCompilation.map(JavaLanguageVersion::of)
         with(project.extensions.getByType(JavaPluginExtension::class)) {
             toolchain {
-                it.languageVersion.set(
-                    extension.jvmVersionForCompilation.map(JavaLanguageVersion::of)
-                )
+                it.languageVersion.set(versionForCompilation)
+            }
+        }
+        project.extensions.findByType(KotlinJvmProjectExtension::class)?.apply {
+            jvmToolchain {
+                if (it is JavaToolchainSpec) {
+                    it.languageVersion.set(versionForCompilation)
+                }
             }
         }
         project.afterEvaluate { _ ->
