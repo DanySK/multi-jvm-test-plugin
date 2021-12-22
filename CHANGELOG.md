@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.1...0.3.2) (2021-12-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency gradle to v7.3.3 ([6edbd64](https://github.com/DanySK/multi-jvm-test-plugin/commit/6edbd64b8dd3ba1ec0ca92c2c3cd534e14c62fbd))
+
 ## [0.3.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.0...0.3.1) (2021-12-15)
 
 
