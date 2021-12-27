@@ -1,3 +1,10 @@
+## [0.3.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.2...0.3.3) (2021-12-27)
+
+
+### Bug Fixes
+
+* **deps:** update plugin dokka to v1.6.10 ([7f76241](https://github.com/DanySK/multi-jvm-test-plugin/commit/7f76241852fcfbeea571c3729bb89c5dcbe5cfab))
+
 ## [0.3.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.1...0.3.2) (2021-12-22)
 
 
