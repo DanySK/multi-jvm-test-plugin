@@ -9,7 +9,7 @@
          "matchPackageNames": [
             "openjdk"
          ],
-         "semanticCommitType": "feat"
+         "semanticCommitScope": "api-deps"
       }
    ]
 }
