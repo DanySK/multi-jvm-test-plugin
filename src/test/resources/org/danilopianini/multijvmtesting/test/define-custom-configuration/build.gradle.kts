@@ -22,5 +22,5 @@ multiJvm {
     println(latestJava)
     println(allLtsVersions)
     println(supportedJvmVersions.get())
-    testByDefaultWith(supportedLtsVersionsAndLatest)
+    testByDefaultWith(8, *allLtsVersions.toIntArray(), latestJava)
 }

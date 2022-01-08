@@ -81,7 +81,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
      * Forcibly tests with the provided [jvms] (unless they are [excluded]).
      */
     fun testByDefaultWith(vararg jvms: Int) {
-        testByDefaultWith(objects.property<Set<Int>>().map { jvms.toSet() })
+        testByDefaultWith(objects.setProperty<Int>().map { jvms.toSet() })
     }
 
     /**
