@@ -1,3 +1,34 @@
+### [0.3.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.3...0.3.4) (2022-01-08)
+
+
+### Bug Fixes
+
+* fix build failure on testByDefaultWith when called with multiple parameters ([e2ad16f](https://github.com/DanySK/multi-jvm-test-plugin/commit/e2ad16f72487e545f1da2b9bce32dd1f43205372))
+
+
+### Build and continuous integration
+
+* **release:** enable commit-analyzer ([7bbae8e](https://github.com/DanySK/multi-jvm-test-plugin/commit/7bbae8e5fd73934e39061b36ee999cb54c296065))
+* **release:** inherit the configuration from the shared preset ([#62](https://github.com/DanySK/multi-jvm-test-plugin/issues/62)) ([ae6b518](https://github.com/DanySK/multi-jvm-test-plugin/commit/ae6b518fe151de5545477019aad6d99b30abafc3))
+* **renovate:** fix JSON syntax error ([099451f](https://github.com/DanySK/multi-jvm-test-plugin/commit/099451f02b0235e077ab8fa109d66fff5cd91b39))
+* **renovate:** inherit the configuration also from docker-image ([957be71](https://github.com/DanySK/multi-jvm-test-plugin/commit/957be712605afa97a34abc0a9a00fd0f709db710))
+
+
+### General maintenance
+
+* **release:** correctly enable semantic commit conventions ([30c3b09](https://github.com/DanySK/multi-jvm-test-plugin/commit/30c3b0987b1066bbcb3ae61b7c347933d5610b1d))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.3 ([640803e](https://github.com/DanySK/multi-jvm-test-plugin/commit/640803e44189539005a2d9555ef157131d02f2b8))
+* **deps:** update plugin gradlepluginpublish to v0.19.0 ([215490d](https://github.com/DanySK/multi-jvm-test-plugin/commit/215490d1558d16ce8a7dae6bed70a3971124b0a0))
+* **deps:** update plugin kotlin-qa to v0.8.3 ([121519b](https://github.com/DanySK/multi-jvm-test-plugin/commit/121519bf8cbef082020c016b4fe9d330e8e3d527))
+* **deps:** update plugin kotlin-qa to v0.9.0 ([8bbec49](https://github.com/DanySK/multi-jvm-test-plugin/commit/8bbec49e47a20c6adf6fe0453f8703fa5c9c0ee7))
+* **deps:** update plugin multijvmtesting to v0.3.3 ([9c33a69](https://github.com/DanySK/multi-jvm-test-plugin/commit/9c33a691a0ed58c4b87acf0c569068e012ed5de7))
+* **deps:** update plugin publishoncentral to v0.7.10 ([b993ebe](https://github.com/DanySK/multi-jvm-test-plugin/commit/b993ebe22e8cb2d020cc9fad3fd86178340ac212))
+* **deps:** update plugin publishoncentral to v0.7.9 ([57b3bea](https://github.com/DanySK/multi-jvm-test-plugin/commit/57b3bea109f220ae24699213684ecf74f9563469))
+
 ## [0.3.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.2...0.3.3) (2021-12-27)
 
 
