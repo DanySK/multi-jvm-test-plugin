@@ -1,3 +1,50 @@
+### [0.3.5](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.4...0.3.5) (2022-04-04)
+
+
+### Dependency updates
+
+* **core-deps:** update plugin kotlin-jvm to v1.6.20 ([dd69eb9](https://github.com/DanySK/multi-jvm-test-plugin/commit/dd69eb96758f7826cef1d3222125f57da10afea0))
+* **deps:** update dependency org.mockito:mockito-core to v4.3.0 ([ad45367](https://github.com/DanySK/multi-jvm-test-plugin/commit/ad453671226fb5cd461410f49ef2a84bd8b4b736))
+* **deps:** update dependency org.mockito:mockito-core to v4.3.1 ([f2a25aa](https://github.com/DanySK/multi-jvm-test-plugin/commit/f2a25aaee1d9c0ba111373bfc3aacdb528e9304c))
+* **deps:** update dependency org.mockito:mockito-core to v4.4.0 ([abb0313](https://github.com/DanySK/multi-jvm-test-plugin/commit/abb0313ff38f92b560d99e1b15e3aa567dae7e8f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.4 ([b16a2b1](https://github.com/DanySK/multi-jvm-test-plugin/commit/b16a2b15f398e723c6befc68a21cad8ab3140834))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.5 ([13e5797](https://github.com/DanySK/multi-jvm-test-plugin/commit/13e5797ec1a3120eb1c64706c60160f770872050))
+* **deps:** update io.kotest ([5c87307](https://github.com/DanySK/multi-jvm-test-plugin/commit/5c87307fe69d2c044d97cfa1fb0ebb892f1b8deb))
+* **deps:** update io.kotest to v5.2.1 ([2e28987](https://github.com/DanySK/multi-jvm-test-plugin/commit/2e2898768c0bcb45f947cc7462259eb90a02db01))
+* **deps:** update io.kotest to v5.2.2 ([10b0da4](https://github.com/DanySK/multi-jvm-test-plugin/commit/10b0da4992e097e59048320e1a5b7efdabea4b9f))
+* **deps:** update node.js to 16.14 ([eabce19](https://github.com/DanySK/multi-jvm-test-plugin/commit/eabce1966e67f2b003cbfe0ca0f2e13ecab10ad7))
+* **deps:** update plugin com.gradle.enterprise to v3.8.1 ([5a22ba6](https://github.com/DanySK/multi-jvm-test-plugin/commit/5a22ba68cb8a469af0b6e6f53fe722878ad9d14f))
+* **deps:** update plugin com.gradle.enterprise to v3.9 ([0288ec7](https://github.com/DanySK/multi-jvm-test-plugin/commit/0288ec7b9cabebd0bc540a1c1db65ccf3cd8cef2))
+* **deps:** update plugin gradlepluginpublish to v0.20.0 ([c57917a](https://github.com/DanySK/multi-jvm-test-plugin/commit/c57917a9f19dee1565c843c371c249c73f65a25a))
+* **deps:** update plugin gradlepluginpublish to v0.21.0 ([fb898f9](https://github.com/DanySK/multi-jvm-test-plugin/commit/fb898f92682ba1b6d492900ba00183299151423f))
+* **deps:** update plugin kotlin-qa to v0.10.0 ([82b38f8](https://github.com/DanySK/multi-jvm-test-plugin/commit/82b38f8cf99f501b30da201db5759e0625562d69))
+* **deps:** update plugin kotlin-qa to v0.10.1 ([95c1370](https://github.com/DanySK/multi-jvm-test-plugin/commit/95c1370406c7db1b57ef27482fc07d8308d4ff22))
+* **deps:** update plugin kotlin-qa to v0.12.0 ([1bb94c7](https://github.com/DanySK/multi-jvm-test-plugin/commit/1bb94c72818f1084f260e0f28958559553f164b1))
+* **deps:** update plugin kotlin-qa to v0.12.1 ([af6f7dc](https://github.com/DanySK/multi-jvm-test-plugin/commit/af6f7dc6e62c699d804ed4dba98d24621e6b7a09))
+* **deps:** update plugin kotlin-qa to v0.13.0 ([ac41af4](https://github.com/DanySK/multi-jvm-test-plugin/commit/ac41af44ff086cf66a0621c63218f8f6d918f6aa))
+* **deps:** update plugin kotlin-qa to v0.14.0 ([5cd4c58](https://github.com/DanySK/multi-jvm-test-plugin/commit/5cd4c58f46159de63873c5766d9de9ae264d7f3f))
+* **deps:** update plugin kotlin-qa to v0.14.1 ([1e040a5](https://github.com/DanySK/multi-jvm-test-plugin/commit/1e040a5a45e26f09ccb8f057653ee70e0edea9e9))
+* **deps:** update plugin multijvmtesting to v0.3.4 ([630731e](https://github.com/DanySK/multi-jvm-test-plugin/commit/630731ee03563839ee7e82ba245ef5a210a225a8))
+* **deps:** update plugin publishoncentral to v0.7.11 ([85bc564](https://github.com/DanySK/multi-jvm-test-plugin/commit/85bc5640a12ebb29b3d50bc5796be0e1308b3484))
+* **deps:** update plugin publishoncentral to v0.7.12 ([270513b](https://github.com/DanySK/multi-jvm-test-plugin/commit/270513ba702c4fd06e097340b0f0850d44ca9477))
+* **deps:** update plugin publishoncentral to v0.7.13 ([ca46adc](https://github.com/DanySK/multi-jvm-test-plugin/commit/ca46adc730d43e28dc345c2673199c25438c00fe))
+* **deps:** update plugin publishoncentral to v0.7.14 ([5fae731](https://github.com/DanySK/multi-jvm-test-plugin/commit/5fae73100207a83cfca2ea363de658230c82bde4))
+* **deps:** update plugin publishoncentral to v0.7.15 ([0a175ff](https://github.com/DanySK/multi-jvm-test-plugin/commit/0a175ff7315f0d583dde9304af3bb4d6cfbb0d94))
+
+
+### Build and continuous integration
+
+* '-Xopt-in' is deprecated and will be removed in a future release, please use -opt-in instead ([318357c](https://github.com/DanySK/multi-jvm-test-plugin/commit/318357ce06a6fba906302ae99315769eb2b1397b))
+* **deps:** update actions/checkout action to v3 ([0d5386b](https://github.com/DanySK/multi-jvm-test-plugin/commit/0d5386bc547696cd03c2bc983a4fe1316b277c5b))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.1.3 ([aa37e8c](https://github.com/DanySK/multi-jvm-test-plugin/commit/aa37e8c03052bb4910addca1c7273c16795108f0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.0 ([88b9f5e](https://github.com/DanySK/multi-jvm-test-plugin/commit/88b9f5e19cfc17f280551fa4e1dcc0a957e8ccc4))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.1 ([e32e0fa](https://github.com/DanySK/multi-jvm-test-plugin/commit/e32e0faad77b1c6bb34669127373c4c96483b60e))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.6 ([e111c0f](https://github.com/DanySK/multi-jvm-test-plugin/commit/e111c0f63b69270b2942c1857105405c7cd12f76))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.7 ([16c6c1b](https://github.com/DanySK/multi-jvm-test-plugin/commit/16c6c1b594f800396f20ac46b65f55948be134d0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.8 ([d285c22](https://github.com/DanySK/multi-jvm-test-plugin/commit/d285c22775e94c94d403fdf37a39bdefc92b50c3))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.9 ([1ba47d6](https://github.com/DanySK/multi-jvm-test-plugin/commit/1ba47d641d195b4b389f7eb7329258a0beab8c9f))
+* separate the versions of Kotlin and Dokka ([1180f16](https://github.com/DanySK/multi-jvm-test-plugin/commit/1180f1623d1c336cf18fb66ebaf40e8d0888a0ce))
+
 ### [0.3.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.3...0.3.4) (2022-01-08)
 
 
