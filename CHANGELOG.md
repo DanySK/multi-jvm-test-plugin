@@ -1,3 +1,23 @@
+### [0.3.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.5...0.3.6) (2022-04-14)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.10 ([c0c49f2](https://github.com/DanySK/multi-jvm-test-plugin/commit/c0c49f2f4d2953ede44c91e0c1fe0b9be8c42a18))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.11 ([db3d0c3](https://github.com/DanySK/multi-jvm-test-plugin/commit/db3d0c3c6ec1db16af36ffa1ce877519e58f1a43))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.12 ([fc17fd0](https://github.com/DanySK/multi-jvm-test-plugin/commit/fc17fd02e83911a775bdf54e6271addaf2cf64c4))
+
+
+### Dependency updates
+
+* **core-deps:** update plugin dokka to v1.6.20 ([d645a31](https://github.com/DanySK/multi-jvm-test-plugin/commit/d645a311e58f431b0ba8ac1c8ac32eb43f795b94))
+* **deps:** update dependency org.jacoco:org.jacoco.core to v0.8.8 ([b12c801](https://github.com/DanySK/multi-jvm-test-plugin/commit/b12c80142428be492f23b6df3a293744574ff67b))
+* **deps:** update io.kotest to v5.2.3 ([43479d8](https://github.com/DanySK/multi-jvm-test-plugin/commit/43479d8d454f72294bc4f13ad4a64e4bb56cde7d))
+* **deps:** update plugin kotlin-qa to v0.14.2 ([521bcd7](https://github.com/DanySK/multi-jvm-test-plugin/commit/521bcd70e0e825a4bf2ed523331c04c256be83d5))
+* **deps:** update plugin kotlin-qa to v0.15.0 ([d2ea0df](https://github.com/DanySK/multi-jvm-test-plugin/commit/d2ea0df10f18e0f842d0f571fc45b1e96f3bacee))
+* **deps:** update plugin multijvmtesting to v0.3.5 ([5222872](https://github.com/DanySK/multi-jvm-test-plugin/commit/5222872912f6c4592937d0cad5f3448da1d86842))
+* **deps:** update plugin publishoncentral to v0.7.16 ([ed9aa42](https://github.com/DanySK/multi-jvm-test-plugin/commit/ed9aa4206536321caab08e9a988cd5faa4256703))
+
 ### [0.3.5](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.4...0.3.5) (2022-04-04)
 
 
