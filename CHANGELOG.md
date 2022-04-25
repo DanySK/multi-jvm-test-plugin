@@ -1,3 +1,34 @@
+### [0.3.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.6...0.3.7) (2022-04-25)
+
+
+### Style improvements
+
+* add trailing commas ([27448a2](https://github.com/DanySK/multi-jvm-test-plugin/commit/27448a2b3f6226dbd4522d0bdf33b7ad0b322293))
+* suppress ConstructorParameterNaming over data class meant to interoperate with YAML ([0457663](https://github.com/DanySK/multi-jvm-test-plugin/commit/04576631d955cf12d7021b53d1c97640f7f49748))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.0.1 ([e224660](https://github.com/DanySK/multi-jvm-test-plugin/commit/e22466035a811befe513acbd8ab4135120d9c993))
+* **deps:** update actions/checkout action to v3.0.2 ([8279ce1](https://github.com/DanySK/multi-jvm-test-plugin/commit/8279ce11a27b0cef4a33dccac1c5d25e467b1720))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.13 ([6e79d76](https://github.com/DanySK/multi-jvm-test-plugin/commit/6e79d7620653f747783c21c23f127caf7cda2897))
+* use a dedicated deployment token ([d70e355](https://github.com/DanySK/multi-jvm-test-plugin/commit/d70e3550c0a574cb70605ebd3adc0dd167bdd63c))
+
+
+### Dependency updates
+
+* **core-deps:** update plugin dokka to v1.6.21 ([e6948ac](https://github.com/DanySK/multi-jvm-test-plugin/commit/e6948acdfebf6cbfd8b4d4520bc9b1435d3cde87))
+* **deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v1.6.21 ([2ce8050](https://github.com/DanySK/multi-jvm-test-plugin/commit/2ce8050c88776ef4c2ad024efe3021ab7f2d23bf))
+* **deps:** update dependency org.mockito:mockito-core to v4.5.0 ([05e785f](https://github.com/DanySK/multi-jvm-test-plugin/commit/05e785f15fbce9ea89167b443876e688e130bcd4))
+* **deps:** update dependency org.mockito:mockito-core to v4.5.1 ([8f18ff4](https://github.com/DanySK/multi-jvm-test-plugin/commit/8f18ff46f26595d0ea3a558365e09ceefd982709))
+* **deps:** update plugin com.gradle.enterprise to v3.10 ([5362e74](https://github.com/DanySK/multi-jvm-test-plugin/commit/5362e74319806de90a082aef93b0f1dcc4fee45f))
+* **deps:** update plugin kotlin-qa to v0.15.1 ([94f3033](https://github.com/DanySK/multi-jvm-test-plugin/commit/94f3033c04ee19ea29d6d07529a802b7df82fa89))
+* **deps:** update plugin kotlin-qa to v0.16.0 ([e175225](https://github.com/DanySK/multi-jvm-test-plugin/commit/e175225874cbb831ab48a85b4def2c50ddf05455))
+* **deps:** update plugin kotlin-qa to v0.16.1 ([3f231d8](https://github.com/DanySK/multi-jvm-test-plugin/commit/3f231d87a167239d64b98d90db24208cf054c2a2))
+* **deps:** update plugin multijvmtesting to v0.3.6 ([a211928](https://github.com/DanySK/multi-jvm-test-plugin/commit/a21192892af71b33ec6dd9ae9ee9fad6b363e7b9))
+* **deps:** update plugin publishoncentral to v0.7.17 ([ce46a7d](https://github.com/DanySK/multi-jvm-test-plugin/commit/ce46a7d610b43d48e82893c3a31e20d5c22b94d6))
+* **deps:** update plugin publishoncentral to v0.7.18 ([2ca0065](https://github.com/DanySK/multi-jvm-test-plugin/commit/2ca00654b872caeafda9769946afe15159671c55))
+
 ### [0.3.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.5...0.3.6) (2022-04-14)
 
 
