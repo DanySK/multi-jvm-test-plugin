@@ -1,3 +1,24 @@
+## [0.4.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.7...0.4.0) (2022-05-17)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.14 ([12070e4](https://github.com/DanySK/multi-jvm-test-plugin/commit/12070e42cf0438b29d4bd7d1609c714538fe3763))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.15 ([2f15644](https://github.com/DanySK/multi-jvm-test-plugin/commit/2f1564459fd05dbf89b123d923c3081ec40ab0fc))
+
+
+### Dependency updates
+
+* **api-deps:** update to Gradle 7.5-rc-1, should fix gradle/gradle[#20369](https://github.com/DanySK/multi-jvm-test-plugin/issues/20369) ([5e9ce88](https://github.com/DanySK/multi-jvm-test-plugin/commit/5e9ce88895d60be2c1fc01f685333a76e7a9056c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.6 ([e5dcdf0](https://github.com/DanySK/multi-jvm-test-plugin/commit/e5dcdf09407422ecdfe495e2cc1c114cdb308ab2))
+* **deps:** update io.kotest to v5.3.0 ([2bcf11d](https://github.com/DanySK/multi-jvm-test-plugin/commit/2bcf11dd0be48350e49a26ad24bf549c0963c8ca))
+* **deps:** update node.js to 16.15 ([3b3ca15](https://github.com/DanySK/multi-jvm-test-plugin/commit/3b3ca15440b81910a156098642d98abc889bd429))
+* **deps:** update plugin kotlin-qa to v0.16.2 ([2679240](https://github.com/DanySK/multi-jvm-test-plugin/commit/2679240d33b6afcb8b4a4b4c025b2b2b6918940f))
+* **deps:** update plugin kotlin-qa to v0.17.0 ([f9a4598](https://github.com/DanySK/multi-jvm-test-plugin/commit/f9a45984cc375ea689d968afffbe0a0168d24a9c))
+* **deps:** update plugin kotlin-qa to v0.18.0 ([f1ebefe](https://github.com/DanySK/multi-jvm-test-plugin/commit/f1ebefeb7e721742f9ed8aeb8880277f5995e5d2))
+* **deps:** update plugin multijvmtesting to v0.3.7 ([97ede82](https://github.com/DanySK/multi-jvm-test-plugin/commit/97ede8283c85231029c974d759de2e5eba1fdeb2))
+* **deps:** update plugin publishoncentral to v0.7.19 ([e11cd34](https://github.com/DanySK/multi-jvm-test-plugin/commit/e11cd3420bc132a2be220bd5549b6266244816dd))
+
 ### [0.3.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.6...0.3.7) (2022-04-25)
 
 
