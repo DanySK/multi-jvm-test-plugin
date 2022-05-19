@@ -2,7 +2,7 @@ rootProject.name = "multi-jvm-test-plugin"
 enableFeaturePreview("VERSION_CATALOGS")
 
 plugins {
-    id("com.gradle.enterprise") version "3.10"
+    id("com.gradle.enterprise") version "3.10.1"
 }
 
 gradleEnterprise {
