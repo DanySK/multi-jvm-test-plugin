@@ -1,3 +1,25 @@
+## [0.4.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.0...0.4.1) (2022-06-08)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v1.2.16 ([2c33a73](https://github.com/DanySK/multi-jvm-test-plugin/commit/2c33a73f8e79599b879051db3bf22f27f60a0e0c))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2 ([e76ffd1](https://github.com/DanySK/multi-jvm-test-plugin/commit/e76ffd1f119f9899c4a6b8bb8f700a9559b802b9))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.0.1 ([64b56be](https://github.com/DanySK/multi-jvm-test-plugin/commit/64b56be7311370b92d71724ea16e9f91fec755e6))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.0.2 ([689abc4](https://github.com/DanySK/multi-jvm-test-plugin/commit/689abc455b4a04e8efd1993c69846f910d3017af))
+
+
+### Dependency updates
+
+* **core-deps:** update kotlin to v1.7.0 ([81b6fe3](https://github.com/DanySK/multi-jvm-test-plugin/commit/81b6fe36c053678d65f7389b2a86e8950eb5a882))
+* **deps:** update dependency org.mockito:mockito-core to v4.6.0 ([6dab226](https://github.com/DanySK/multi-jvm-test-plugin/commit/6dab226f5326b09ee284561747d37abd96306695))
+* **deps:** update dependency org.mockito:mockito-core to v4.6.1 ([2aa3809](https://github.com/DanySK/multi-jvm-test-plugin/commit/2aa3809d2d6a3b96ff8ad0b243007ad4430942fa))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.7 ([d415d17](https://github.com/DanySK/multi-jvm-test-plugin/commit/d415d17b3607ba414a45f1138abfc54b05126520))
+* **deps:** update plugin com.gradle.enterprise to v3.10.1 ([2234261](https://github.com/DanySK/multi-jvm-test-plugin/commit/223426114b82e47f43877b065522eb12aaad46c4))
+* **deps:** update plugin kotlin-qa to v0.19.0 ([f4c917b](https://github.com/DanySK/multi-jvm-test-plugin/commit/f4c917b04850c5266d320c94b1b96f6fc0ad32f4))
+* **deps:** update plugin multijvmtesting to v0.4.0 ([c864131](https://github.com/DanySK/multi-jvm-test-plugin/commit/c8641315a276246e1fa258c76f57187be2adc9d2))
+* **deps:** update plugin publishoncentral to v0.8.0 ([a11a18c](https://github.com/DanySK/multi-jvm-test-plugin/commit/a11a18ca2e987929ec8362f87dbc45ad7b4b1faa))
+
 ## [0.4.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.3.7...0.4.0) (2022-05-17)
 
 
