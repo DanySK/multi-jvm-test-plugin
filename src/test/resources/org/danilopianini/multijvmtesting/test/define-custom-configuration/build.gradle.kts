@@ -21,7 +21,7 @@ multiJvm {
     jvmVersionForCompilation.set(8)
     maximumSupportedJvmVersion.set(latestJava)
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-        excludeSupportFor(9, 10, 12, 13)
+        excludeSupportFor(9, 10, 12, 13, 14, 15, 16)
     }
     println(latestJava)
     println(allLtsVersions)
