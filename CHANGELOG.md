@@ -1,3 +1,37 @@
+## [0.4.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.1...0.4.2) (2022-06-09)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency eclipse-temurin to v18 ([62c141e](https://github.com/DanySK/multi-jvm-test-plugin/commit/62c141eeed4e12755a221093e08c49cae168b700))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.8 ([c8f0075](https://github.com/DanySK/multi-jvm-test-plugin/commit/c8f007584d1e0077598b0b67b692571323ebdc1a))
+* **deps:** update plugin com.gradle.enterprise to v3.10.2 ([e2e41ad](https://github.com/DanySK/multi-jvm-test-plugin/commit/e2e41ad0c3bdce793ef9211d24d86ec837c33ff2))
+* **deps:** update plugin kotlin-qa to v0.19.1 ([cc9ca1d](https://github.com/DanySK/multi-jvm-test-plugin/commit/cc9ca1d489ff9a9b00de6d1f5123b0e85372db72))
+* **deps:** update plugin multijvmtesting to v0.4.1 ([553842e](https://github.com/DanySK/multi-jvm-test-plugin/commit/553842eb0ae10f5ddaec878734de2713085bcf6d))
+* **deps:** update plugin publishoncentral to v0.8.1 ([d2d7eac](https://github.com/DanySK/multi-jvm-test-plugin/commit/d2d7eac2d491996df5253af775f275a147270f9c))
+* **deps:** update plugin publishoncentral to v0.8.2 ([a0ab084](https://github.com/DanySK/multi-jvm-test-plugin/commit/a0ab084039048176b76cb19975da164a69608329))
+
+
+### Build and continuous integration
+
+* do not bother uninstalling stuff on Windows, as there still is not enough space ([0907947](https://github.com/DanySK/multi-jvm-test-plugin/commit/090794777b24e231509fbc20f4267237f86656e2))
+* do not uninstall DotNet3.5 and kubernetes-cli from windows runners ([9946668](https://github.com/DanySK/multi-jvm-test-plugin/commit/9946668d1770c081192caa8105e750170e266eb6))
+* generate commit hooks for conventional commits and pre-commit hooks runnint ktlint ([f3aaeac](https://github.com/DanySK/multi-jvm-test-plugin/commit/f3aaeac05dcd0d77627b707f281c2b32c98ccd92))
+* only test the latest JVM on GitHub Actions Windows runners ([2bddb7a](https://github.com/DanySK/multi-jvm-test-plugin/commit/2bddb7a9cc3963efcc586ce795573be2804a0502))
+* print packages installed on Windows ([c7e6482](https://github.com/DanySK/multi-jvm-test-plugin/commit/c7e64823137a40da08b54dccf5f15ccfaf1432f3))
+* remove unused compiler argument -XXLanguage:+InlineClasses ([1c482e4](https://github.com/DanySK/multi-jvm-test-plugin/commit/1c482e46701b375284215dd539d295f4075bd7dc))
+* uninstall Minikube and wixtoolset on windows runners ([2ec0d4e](https://github.com/DanySK/multi-jvm-test-plugin/commit/2ec0d4e76721dbf7345d399b46d2b76696aec905))
+* uninstall unused packages on windows ([2ffedc4](https://github.com/DanySK/multi-jvm-test-plugin/commit/2ffedc474b3db63e0af62f5deab4dc57ad9ff1c8))
+
+
+### Tests
+
+* disable testing on Jvms 14, 15, and 16 on Windows (out of space in CI) ([d4f98c1](https://github.com/DanySK/multi-jvm-test-plugin/commit/d4f98c15c328dce2bb4c734ae8ed2b6a022e3379))
+* disable the JDK 13 for Windows (runs out of space in CI) ([a5da8fc](https://github.com/DanySK/multi-jvm-test-plugin/commit/a5da8fc95b27f7cc4bf6f8da02982121a2a5fef6))
+* exclude Java 9 and 10 from testing, as it is currently eating too much space in CI ([67fd156](https://github.com/DanySK/multi-jvm-test-plugin/commit/67fd156d85e0b12c77a46a03f3ac8da10d63f336))
+* exclude support for Java 12 on Windows, as it runs out of space in CI/CD ([a84fb37](https://github.com/DanySK/multi-jvm-test-plugin/commit/a84fb37ef897b2233cc1fa428d99f2466a82820b))
+* restore full testing under windows ([e2db9a7](https://github.com/DanySK/multi-jvm-test-plugin/commit/e2db9a7f508a2c03004541f15f28c30d5815f0ff))
+
 ## [0.4.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.0...0.4.1) (2022-06-08)
 
 
