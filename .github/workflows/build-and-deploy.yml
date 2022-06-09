@@ -48,8 +48,11 @@ jobs:
                 llvm \
                 maven \
                 mongodb \
+                mongodb.install \
+                Minikube \
                 nginx \
                 nodejs \
+                nodejs.install \
                 php \
                 postgresql \
                 postgresql14 \
@@ -58,7 +61,8 @@ jobs:
                 sbt \
                 strawberryperl \
                 swig \
-                tortoisesvn
+                tortoisesvn \
+                wixtoolset
             fi
           deploy-command: ./gradlew closeKotlin
           should-run-codecov: ${{ runner.os == 'Linux' }}
