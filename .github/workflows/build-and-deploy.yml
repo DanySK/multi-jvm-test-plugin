@@ -29,6 +29,10 @@ jobs:
         uses: DanySK/action-checkout@0.2.1
       - uses: DanySK/build-check-deploy-gradle-action@2.0.2
         with:
+          pre-build-command: |
+            if ${{ 'windows' == matrix.os }} ; then 
+              choco list --local-only
+            fi
           deploy-command: ./gradlew closeKotlin
           should-run-codecov: ${{ runner.os == 'Linux' }}
           should-deploy: >-
