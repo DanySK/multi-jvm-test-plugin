@@ -39,11 +39,9 @@ jobs:
                 bazel \
                 composer \
                 docker-compose \
-                DotNet3.5 \
                 hg \
                 InnoSetup \
                 julia \
-                kubernetes-cli \
                 kubernetes-helm \
                 llvm \
                 maven \
