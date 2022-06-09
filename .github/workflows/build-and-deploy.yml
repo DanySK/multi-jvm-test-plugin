@@ -32,6 +32,33 @@ jobs:
           pre-build-command: |
             if ${{ 'windows' == matrix.os }} ; then 
               choco list --local-only
+              choco uninstall \
+                ant \
+                aria2 \
+                awscli \
+                bazel \
+                composer \
+                docker-compose \
+                DotNet3.5 \
+                hg \
+                InnoSetup \
+                julia \
+                kubernetes-cli \
+                kubernetes-helm \
+                llvm \
+                maven \
+                mongodb \
+                nginx \
+                nodejs \
+                php \
+                postgresql \
+                postgresql14 \
+                R.Project \
+                rtools \
+                sbt \
+                strawberryperl \
+                swig \
+                tortoisesvn
             fi
           deploy-command: ./gradlew closeKotlin
           should-run-codecov: ${{ runner.os == 'Linux' }}
