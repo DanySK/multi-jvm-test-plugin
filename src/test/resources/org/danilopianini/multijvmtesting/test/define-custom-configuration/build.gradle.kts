@@ -1,3 +1,5 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
 plugins {
     id("org.danilopianini.multi-jvm-test-plugin")
 }
@@ -18,8 +20,9 @@ tasks.withType<Test> {
 multiJvm {
     jvmVersionForCompilation.set(8)
     maximumSupportedJvmVersion.set(latestJava)
-    excludeSupportFor(9)
-    excludeSupportFor(10)
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        excludeSupportFor(9, 10, 12)
+    }
     println(latestJava)
     println(allLtsVersions)
     println(supportedJvmVersions.get())
