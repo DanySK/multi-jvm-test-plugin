@@ -18,6 +18,7 @@ tasks.withType<Test> {
 multiJvm {
     jvmVersionForCompilation.set(8)
     maximumSupportedJvmVersion.set(latestJava)
+    excludeSupportFor(9)
     excludeSupportFor(10)
     println(latestJava)
     println(allLtsVersions)

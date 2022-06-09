@@ -1,5 +1,5 @@
 tests:
-  - description: "A configured Java build should run with multiple JDKs"
+  - description: "A simple Java build should run with multiple JDKs"
     configuration:
       tasks: check
       options: --stacktrace
