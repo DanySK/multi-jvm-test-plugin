@@ -29,39 +29,6 @@ jobs:
         uses: DanySK/action-checkout@0.2.1
       - uses: DanySK/build-check-deploy-gradle-action@2.0.2
         with:
-          pre-build-command: |
-            if ${{ 'windows' == matrix.os }} ; then 
-              choco list --local-only
-              choco uninstall \
-                ant \
-                aria2 \
-                awscli \
-                bazel \
-                composer \
-                docker-compose \
-                hg \
-                InnoSetup \
-                julia \
-                kubernetes-helm \
-                llvm \
-                maven \
-                mongodb \
-                mongodb.install \
-                Minikube \
-                nginx \
-                nodejs \
-                nodejs.install \
-                php \
-                postgresql \
-                postgresql14 \
-                R.Project \
-                rtools \
-                sbt \
-                strawberryperl \
-                swig \
-                tortoisesvn \
-                wixtoolset
-            fi
           deploy-command: ./gradlew closeKotlin
           should-run-codecov: ${{ runner.os == 'Linux' }}
           should-deploy: >-
