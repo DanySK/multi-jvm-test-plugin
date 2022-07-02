@@ -162,7 +162,7 @@ pluginBundle {
 
 gradlePlugin {
     plugins {
-        create("multi-jvm-testing") {
+        create(project.name) {
             id = "$group.${project.name}"
             displayName = info.longName
             description = project.description
