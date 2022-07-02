@@ -1,3 +1,25 @@
+## [0.4.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.3...0.4.4) (2022-07-02)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v7.5-rc-3 ([4105dbf](https://github.com/DanySK/multi-jvm-test-plugin/commit/4105dbfe5bcc4c8c2a1180db7f0d318a957cf91f))
+* **core-deps:** update dependency org.jetbrains.dokka to v1.7.0 ([60903f1](https://github.com/DanySK/multi-jvm-test-plugin/commit/60903f18e98824854fc45effed0426161a013fbd))
+* **deps:** update kotest to v5.3.1 ([ad58cc2](https://github.com/DanySK/multi-jvm-test-plugin/commit/ad58cc23c75aff6d4ef40df33642f7c3e416a25d))
+* **deps:** update kotest to v5.3.2 ([a5e9b2e](https://github.com/DanySK/multi-jvm-test-plugin/commit/a5e9b2eadd02b445869a08cd38f2101fd88db623))
+* **deps:** update plugin gradlepluginpublish to v1 ([1c665d2](https://github.com/DanySK/multi-jvm-test-plugin/commit/1c665d2cf4ef8f71ad088c1bb7c8e9a378d40581))
+* **deps:** update plugin multijvmtesting to v0.4.3 ([2500b06](https://github.com/DanySK/multi-jvm-test-plugin/commit/2500b06d164682409526f72ea88cf74ce06cf702))
+* **deps:** update plugin publishoncentral to v0.8.3 ([3c0f0c8](https://github.com/DanySK/multi-jvm-test-plugin/commit/3c0f0c83514927dbd677a3a26701ede415d8f257))
+* **deps:** update plugin publishoncentral to v1 ([5962a0e](https://github.com/DanySK/multi-jvm-test-plugin/commit/5962a0ed4c93985179ffd4d019ade0c001922b73))
+* **deps:** update plugin publishoncentral to v2 ([76a9d78](https://github.com/DanySK/multi-jvm-test-plugin/commit/76a9d789d4fa3e13d5d942f95c86599783be5b4e))
+
+
+### Build and continuous integration
+
+* add dry-deployment test and fix the release process for publish-on-central 2.x.x ([b9d9b0a](https://github.com/DanySK/multi-jvm-test-plugin/commit/b9d9b0ab8077e62ecac4820da2855083c2c9c023))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.0.3 ([1b5df2c](https://github.com/DanySK/multi-jvm-test-plugin/commit/1b5df2cdda51dbc9a44cef96917ed69126e1c9ea))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.0 ([404f273](https://github.com/DanySK/multi-jvm-test-plugin/commit/404f27315b53b7b897d25f479a1596e1720b8caa))
+
 ## [0.4.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.2...0.4.3) (2022-06-10)
 
 
