@@ -1,3 +1,11 @@
+## [0.4.5](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.4...0.4.5) (2022-07-06)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v7.5-rc-4 ([730dec8](https://github.com/DanySK/multi-jvm-test-plugin/commit/730dec8a1af352dee509a1665a7a7679bade8ff4))
+* **deps:** update plugin multijvmtesting to v0.4.4 ([c046151](https://github.com/DanySK/multi-jvm-test-plugin/commit/c0461512fb6fcdb9b17fdd9feecf2b1f09a465c8))
+
 ## [0.4.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.3...0.4.4) (2022-07-02)
 
 
