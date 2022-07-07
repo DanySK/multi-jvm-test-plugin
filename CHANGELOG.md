@@ -1,3 +1,12 @@
+## [0.4.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.5...0.4.6) (2022-07-07)
+
+
+### Dependency updates
+
+* **core-deps:** update kotlin to v1.7.10 ([8d2778d](https://github.com/DanySK/multi-jvm-test-plugin/commit/8d2778d5a5ac4d374bdc2dbe0e073121df161736))
+* **deps:** update plugin multijvmtesting to v0.4.5 ([98de673](https://github.com/DanySK/multi-jvm-test-plugin/commit/98de6730f25e62ac4764df63c7be92b528e182c2))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.0.14 ([0825093](https://github.com/DanySK/multi-jvm-test-plugin/commit/0825093ab42552e26c014670f43a8a7f235ea8af))
+
 ## [0.4.5](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.4...0.4.5) (2022-07-06)
 
 
