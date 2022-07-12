@@ -1,3 +1,11 @@
+## [0.4.8](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.7...0.4.8) (2022-07-12)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.7.10 ([406c2e2](https://github.com/DanySK/multi-jvm-test-plugin/commit/406c2e222c9e4347d87042b588837e20330ead0b))
+* **deps:** update plugin multijvmtesting to v0.4.7 ([f434609](https://github.com/DanySK/multi-jvm-test-plugin/commit/f434609a53298c57a4e9cc9cd1197b8cde2cbe4c))
+
 ## [0.4.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.6...0.4.7) (2022-07-12)
 
 
