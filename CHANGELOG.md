@@ -1,3 +1,21 @@
+## [0.4.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.6...0.4.7) (2022-07-12)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.0 ([50ca9a0](https://github.com/DanySK/multi-jvm-test-plugin/commit/50ca9a02f0babc0fc012ee984bc472a03a314bdc))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.1 ([5a3724a](https://github.com/DanySK/multi-jvm-test-plugin/commit/5a3724a1a4e7bf73fc16f9f050af38a732b28cc8))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v7.5-rc-5 ([7d8152a](https://github.com/DanySK/multi-jvm-test-plugin/commit/7d8152a381b49f4ed1472b4bfb6ba87c9c3b8a23))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.9 ([791cebd](https://github.com/DanySK/multi-jvm-test-plugin/commit/791cebd6a34c7c5287a1b54c9ad0dd1671314e40))
+* **deps:** update node.js to 16.16 ([0c44204](https://github.com/DanySK/multi-jvm-test-plugin/commit/0c4420410bf03e53956fbcbb1991ec9a82dab74b))
+* **deps:** update plugin com.gradle.enterprise to v3.10.3 ([7f9b703](https://github.com/DanySK/multi-jvm-test-plugin/commit/7f9b7033ee790909e237004cc3d4b129df5531bf))
+* **deps:** update plugin multijvmtesting to v0.4.6 ([7fe083c](https://github.com/DanySK/multi-jvm-test-plugin/commit/7fe083c26612f2eb11ae72056bc1b48d54326011))
+* **deps:** update plugin publishoncentral to v2.0.3 ([b1b5739](https://github.com/DanySK/multi-jvm-test-plugin/commit/b1b57398b92302c760bb1c0aaa126e2f1baf4797))
+
 ## [0.4.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.5...0.4.6) (2022-07-07)
 
 
