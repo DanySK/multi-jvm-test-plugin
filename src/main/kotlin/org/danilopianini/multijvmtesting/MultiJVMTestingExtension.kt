@@ -111,10 +111,16 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * The latest known Java version.
          */
-        val latestJava = Regex("^FROM\\s+eclipse-temurin:(\\d+)$").matchEntire(
-            Thread.currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim()
-        )?.groupValues?.get(1)?.toInt()
-            ?: throw IllegalStateException("There must be a bug in the multi-jvm-test-plugin")
+        val latestJava = checkNotNull(
+            Regex("^FROM\\s+eclipse-temurin:(\\d+)$")
+                .matchEntire(Thread.currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim())
+                ?.groupValues
+                ?.get(1)
+                ?.toInt()
+        ) {
+            "There must be a bug in the multi-jvm-test-plugin. Please open an issue at " +
+                "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose"
+        }
 
         /**
          * Tries to fetch the newest version of the JVM supported by the current version of gradle.
@@ -122,7 +128,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * issues to accessing the website make the value potentially wrong.
          */
         val latestJavaSupportedByGradle: Int by lazy {
-            Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?<\/td>[\s\n\r]*<td.*>.*?(\d+(?:\.\d+)).*?<\/td>""")
+            Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?</td>[\s\n\r]*<td.*>.*?(\d+\.\d+).*?</td>""")
                 .findAll(URL("https://docs.gradle.org/current/userguide/compatibility.html").readText())
                 .map {
                     val (javaVersion, gradleVersion) = it.destructured
