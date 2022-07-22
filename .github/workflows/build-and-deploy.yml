@@ -18,7 +18,7 @@ jobs:
             ./gradlew
             uploadKotlin
             uploadPluginMavenToMavenCentralNexus
-            uploadMulti
+            uploadPluginMarkerMavenToMavenCentralNexus
             close
             --parallel
           should-run-codecov: ${{ runner.os == 'Linux' }}
