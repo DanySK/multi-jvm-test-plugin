@@ -1,3 +1,16 @@
+## [0.4.11](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.10...0.4.11) (2022-10-01)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.9 ([42cffa3](https://github.com/DanySK/multi-jvm-test-plugin/commit/42cffa35db0fa93cb00133d57bae96f794f605e1))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v1.7.20 ([d86949e](https://github.com/DanySK/multi-jvm-test-plugin/commit/d86949e0413b497af274d33cd3e88ab23271b4fa))
+* **deps:** update plugin multijvmtesting to v0.4.10 ([8e179f5](https://github.com/DanySK/multi-jvm-test-plugin/commit/8e179f590f9c4f701a02664d0672c755059a39c7))
+
 ## [0.4.10](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.9...0.4.10) (2022-09-27)
 
 
