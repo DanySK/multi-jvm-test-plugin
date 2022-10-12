@@ -3,7 +3,7 @@ dokka = "1.7.10"
 jacoco = "0.8.8"
 konf = "1.1.2"
 kotlin = "1.7.20"
-kotest = "5.5.0"
+kotest = "5.5.1"
 mockito = "4.8.0"
 
 [libraries]
