@@ -1,3 +1,23 @@
+## [0.4.12](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.11...0.4.12) (2022-10-14)
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.1.0 ([97532bc](https://github.com/DanySK/multi-jvm-test-plugin/commit/97532bcd26cf1453e6bca71074267d8c93755a0e))
+* **deps:** update danysk/action-checkout action to v0.2.3 ([44ff381](https://github.com/DanySK/multi-jvm-test-plugin/commit/44ff38110328fb52da48f06c25e63b09fc5b715a))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.10 ([d6ee6d1](https://github.com/DanySK/multi-jvm-test-plugin/commit/d6ee6d1af1a8581063a03a5a838a04be23f7e33b))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.7.20 ([318fb96](https://github.com/DanySK/multi-jvm-test-plugin/commit/318fb96bd28de34a733a59e35065b83066e4dcb9))
+* **deps:** update kotest to v5.5.0 ([a933d01](https://github.com/DanySK/multi-jvm-test-plugin/commit/a933d012bb076682ef8f0ec9a7a5e4c4840d3a27))
+* **deps:** update kotest to v5.5.1 ([5988979](https://github.com/DanySK/multi-jvm-test-plugin/commit/5988979ba8665a13bf64a2f9f0cc087ec8c6a21c))
+* **deps:** update plugin kotlin-qa to v0.25.1 ([7132f6b](https://github.com/DanySK/multi-jvm-test-plugin/commit/7132f6b8514a6af54add93414ab6a82bd7acfa10))
+* **deps:** update plugin kotlin-qa to v0.26.0 ([aa10c65](https://github.com/DanySK/multi-jvm-test-plugin/commit/aa10c653f351cdf04d3256ed62f95d625530a21b))
+* **deps:** update plugin multijvmtesting to v0.4.11 ([a669993](https://github.com/DanySK/multi-jvm-test-plugin/commit/a669993f7e17119d1fc29690f72907f3ef386f9e))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.0.21 ([3adad4b](https://github.com/DanySK/multi-jvm-test-plugin/commit/3adad4bb9ba0855e82f90c113aa5956ea5e75acd))
+
 ## [0.4.11](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.10...0.4.11) (2022-10-01)
 
 
