@@ -4,7 +4,7 @@ jacoco = "0.8.8"
 konf = "1.1.2"
 kotlin = "1.7.21"
 kotest = "5.5.4"
-mockito = "4.8.1"
+mockito = "4.9.0"
 
 [libraries]
 jacoco = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
