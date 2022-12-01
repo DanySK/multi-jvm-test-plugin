@@ -1,3 +1,16 @@
+## [0.4.14](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.13...0.4.14) (2022-12-01)
+
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v1.7.22 ([c9a884b](https://github.com/DanySK/multi-jvm-test-plugin/commit/c9a884bbb546f3b23310842cf5ced71f210ad0fd))
+* **deps:** update dependency org.mockito:mockito-core to v4.9.0 ([8bd14f6](https://github.com/DanySK/multi-jvm-test-plugin/commit/8bd14f649a246b6fcd68b17f8da08ffc4f4cb31d))
+* **deps:** update plugin kotlin-qa to v0.27.1 ([03426a9](https://github.com/DanySK/multi-jvm-test-plugin/commit/03426a9a8385b07a8b8300a32fd6821d198abb78))
+* **deps:** update plugin kotlin-qa to v0.28.0 ([587881a](https://github.com/DanySK/multi-jvm-test-plugin/commit/587881a14aa8a5d8da639622c80715cd01105f55))
+* **deps:** update plugin multijvmtesting to v0.4.13 ([941d501](https://github.com/DanySK/multi-jvm-test-plugin/commit/941d5019dbe9fa216216ca7aca293d151c6aa640))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.0.23 ([63e8d24](https://github.com/DanySK/multi-jvm-test-plugin/commit/63e8d24ae5819e28a6fa1ffcadd9f181f6010fe3))
+* **deps:** update plugin publishoncentral to v2.0.9 ([abfe5a0](https://github.com/DanySK/multi-jvm-test-plugin/commit/abfe5a001ad261bb67abe3bb4e656728ef81dcf9))
+
 ## [0.4.13](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.12...0.4.13) (2022-11-11)
 
 
