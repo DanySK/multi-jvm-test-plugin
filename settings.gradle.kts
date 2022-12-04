@@ -3,7 +3,7 @@ enableFeaturePreview("VERSION_CATALOGS")
 
 plugins {
     id("com.gradle.enterprise") version "3.11.1"
-    id("org.danilopianini.gradle-pre-commit-git-hooks") version "1.0.24"
+    id("org.danilopianini.gradle-pre-commit-git-hooks") version "1.0.25"
 }
 
 gradleEnterprise {
