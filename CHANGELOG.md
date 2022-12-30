@@ -1,3 +1,29 @@
+## [0.4.15](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.14...0.4.15) (2022-12-30)
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.2.0 ([5bf8cc5](https://github.com/DanySK/multi-jvm-test-plugin/commit/5bf8cc5d86ac647f213bae9a0fb9e369a4239008))
+* **deps:** update danysk/action-checkout action to v0.2.4 ([f7453e1](https://github.com/DanySK/multi-jvm-test-plugin/commit/f7453e1842301dcf3e34858b95bd24ecf29a0d5f))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.15 ([86877b4](https://github.com/DanySK/multi-jvm-test-plugin/commit/86877b471a195624d9924c5fea224e676d4441cd))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.16 ([bc566ed](https://github.com/DanySK/multi-jvm-test-plugin/commit/bc566edec2231217a04bd201e61c3569f088e816))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.17 ([65f5f32](https://github.com/DanySK/multi-jvm-test-plugin/commit/65f5f326f66def40436281e7a1f9f649d3e9be1d))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.19 ([59d0c02](https://github.com/DanySK/multi-jvm-test-plugin/commit/59d0c0269c58f3754744c6605786ad984cb73256))
+
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v1.8.0 ([d8af85f](https://github.com/DanySK/multi-jvm-test-plugin/commit/d8af85fddc9ad186002f8ac3fa9b03ac15f35a44))
+* **deps:** update dependency org.mockito:mockito-core to v4.10.0 ([67347eb](https://github.com/DanySK/multi-jvm-test-plugin/commit/67347ebebff5a3f317c7fea012740bdd90e19dc3))
+* **deps:** update plugin kotlin-qa to v0.29.0 ([9d8c267](https://github.com/DanySK/multi-jvm-test-plugin/commit/9d8c2672d46fc1ce01b557127a13945cc1f501d6))
+* **deps:** update plugin kotlin-qa to v0.29.1 ([22017af](https://github.com/DanySK/multi-jvm-test-plugin/commit/22017af9af242ca1804f5438fd59116eefe9c50c))
+* **deps:** update plugin multijvmtesting to v0.4.14 ([073aac9](https://github.com/DanySK/multi-jvm-test-plugin/commit/073aac961de777e6e19d45f708615e12b09faf5e))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.0.24 ([6dc8127](https://github.com/DanySK/multi-jvm-test-plugin/commit/6dc81279034adac9a9540bb06944458d4161b618))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.0.25 ([dbf4f13](https://github.com/DanySK/multi-jvm-test-plugin/commit/dbf4f1370532081934c106a5f1b732a4f1438bb4))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.0 ([55046b2](https://github.com/DanySK/multi-jvm-test-plugin/commit/55046b21b98ee1830a90eb61a78a03f6c0fa869a))
+* **deps:** update plugin publishoncentral to v2.0.10 ([c9110e5](https://github.com/DanySK/multi-jvm-test-plugin/commit/c9110e5daee68aa95510bc14537d9944496b61ea))
+* **deps:** update plugin publishoncentral to v2.0.11 ([0b9a14c](https://github.com/DanySK/multi-jvm-test-plugin/commit/0b9a14cac7422a15acc86ee9cea4f3ee480bdb03))
+
 ## [0.4.14](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.13...0.4.14) (2022-12-01)
 
 
