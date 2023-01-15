@@ -28,6 +28,11 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 it.languageVersion.set(versionForCompilation)
             }
         }
+        with(project.extensions.getByType(KotlinJvmProjectExtension::class)) {
+            jvmToolchain {
+                (this as JavaToolchainSpec).languageVersion.set(versionForCompilation)
+            }
+        }
         project.extensions.findByType(KotlinJvmProjectExtension::class)?.apply {
             jvmToolchain {
                 if (it is JavaToolchainSpec) {

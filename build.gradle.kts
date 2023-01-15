@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 import org.apache.tools.ant.taskdefs.condition.Os
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 @Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
 plugins {
@@ -48,6 +49,28 @@ multiJvm {
             latestJavaSupportedByGradle,
         )
         jvmVersionForCompilation.set(latestJavaSupportedByGradle)
+    }
+    val nameRegex = Regex("""^compileJava(\d+)Kotlin""")
+    (9..latestJavaSupportedByGradle).forEach { version ->
+        java {
+            val name = "java$version"
+            sourceSets.create(name) {
+                java {
+                    srcDir("src/main/$name")
+                }
+            }
+            registerFeature("java$name") {
+                usingSourceSet(sourceSets[name])
+            }
+        }
+        val javaToolchains  = project.extensions.getByType<JavaToolchainService>()
+        tasks.withType<JavaCompile>().configureEach {
+            nameRegex.matchEntire(name)?.groupValues?.get(1)?.let { version ->
+                javaCompiler.set(javaToolchains.compilerFor {
+                    languageVersion.set(JavaLanguageVersion.of(version.toInt()))
+                })
+            }
+        }
     }
 }
 
