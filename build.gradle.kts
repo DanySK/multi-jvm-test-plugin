@@ -1,6 +1,6 @@
-import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 import org.apache.tools.ant.taskdefs.condition.Os
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.gradle.configurationcache.extensions.capitalized
+import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
 @Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
 plugins {
@@ -50,25 +50,38 @@ multiJvm {
         )
         jvmVersionForCompilation.set(latestJavaSupportedByGradle)
     }
-    val nameRegex = Regex("""^compileJava(\d+)Kotlin""")
     (9..latestJavaSupportedByGradle).forEach { version ->
         java {
-            val name = "java$version"
-            sourceSets.create(name) {
-                java {
-                    srcDir("src/main/$name")
+            fun makeSourceSets(version: Int, scope: String) =
+                sourceSets.create("java$version${scope.capitalized()}") {
+                    java {
+                        srcDir("src/$scope/java$version")
+                    }
+                    kotlin {
+                        srcDir("src/$scope/kotlinJvm$version")
+                    }
                 }
+            val mainSourceSet = makeSourceSets(version, "main")
+            val testSourceSet = makeSourceSets(version, "test")
+            registerFeature("java$version") {
+                usingSourceSet(mainSourceSet)
             }
-            registerFeature("java$name") {
-                usingSourceSet(sourceSets[name])
+            configurations.named(mainSourceSet.implementationConfigurationName).configure {
+                extendsFrom(configurations.named(sourceSets["main"].implementationConfigurationName).get())
+            }
+            configurations.named(testSourceSet.implementationConfigurationName).configure {
+                extendsFrom(configurations.named(sourceSets["test"].implementationConfigurationName).get())
             }
         }
-        val javaToolchains  = project.extensions.getByType<JavaToolchainService>()
+        val javaToolchains = project.extensions.getByType<JavaToolchainService>()
+        val compileNameRegex = Regex("""^compileJava(\d+)Kotlin""")
         tasks.withType<JavaCompile>().configureEach {
-            nameRegex.matchEntire(name)?.groupValues?.get(1)?.let { version ->
-                javaCompiler.set(javaToolchains.compilerFor {
-                    languageVersion.set(JavaLanguageVersion.of(version.toInt()))
-                })
+            compileNameRegex.matchEntire(name)?.groupValues?.get(1)?.let { version ->
+                javaCompiler.set(
+                    javaToolchains.compilerFor {
+                        languageVersion.set(JavaLanguageVersion.of(version.toInt()))
+                    }
+                )
             }
         }
     }
