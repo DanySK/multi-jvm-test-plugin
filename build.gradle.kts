@@ -22,8 +22,9 @@ group = "org.danilopianini"
 description = "This gradle plugin runs the test suit with multiple versions of the Java Virtual Machine"
 inner class ProjectInfo {
     val longName = "Multi-JVM test plugin"
-    val website = "https://github.com/DanySK/multi-jvm-test-plugin"
-    val scm = "git@github.com:DanySK/multi-jvm-test-plugin.git"
+    val website = "https://github.com/DanySK/$name"
+    val vcsUrl = "$website.git"
+    val scm = "scm:git:$website.git"
     val pluginImplementationClass = "$group.multijvmtesting.MultiJVMTestingPlugin"
     val tags = listOf("testing", "jvm", "java", "kotlin", "scala")
 }
@@ -135,19 +136,16 @@ publishing {
     }
 }
 
-pluginBundle {
-    website = info.website
-    vcsUrl = info.website
-    tags = info.tags
-}
-
 gradlePlugin {
+    website.set(info.website)
+    vcsUrl.set(info.vcsUrl)
     plugins {
         create("") {
             id = "$group.${project.name}"
             displayName = info.longName
             description = project.description
             implementationClass = info.pluginImplementationClass
+            tags.set(info.tags)
         }
     }
 }
