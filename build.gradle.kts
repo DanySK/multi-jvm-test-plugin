@@ -48,7 +48,7 @@ multiJvm {
                 "and thus all tests will run solely with Java {}.",
             latestJavaSupportedByGradle,
         )
-        jvmVersionForCompilation.set(latestJavaSupportedByGradle)
+        testByDefaultWith(latestJavaSupportedByGradle)
     }
 }
 
