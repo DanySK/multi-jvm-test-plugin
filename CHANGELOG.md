@@ -1,3 +1,30 @@
+## [0.4.17](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.16...0.4.17) (2023-02-19)
+
+
+### Bug Fixes
+
+* improve the support for mixed Java/Kotlin builds ([0c7388f](https://github.com/DanySK/multi-jvm-test-plugin/commit/0c7388f952e5761f97a180ef83472d8efb04ae36))
+
+
+### Dependency updates
+
+* **deps:** update plugin gitsemver to v1.0.2 ([f23a50b](https://github.com/DanySK/multi-jvm-test-plugin/commit/f23a50b9c2a6806bc6f0499999f6ee3e97c4a3a4))
+* **deps:** update plugin multijvmtesting to v0.4.16 ([f49ca17](https://github.com/DanySK/multi-jvm-test-plugin/commit/f49ca17713a31a162c7cb2422f8fb14533b1a9f6))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.3 ([35017f5](https://github.com/DanySK/multi-jvm-test-plugin/commit/35017f5ec40b14b2f6731555910fa89300e85314))
+* **deps:** update plugin publishoncentral to v3.2.3 ([14c3c27](https://github.com/DanySK/multi-jvm-test-plugin/commit/14c3c27bb32c4197fb97f49e443cd29f814e0ded))
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.25 ([37b621f](https://github.com/DanySK/multi-jvm-test-plugin/commit/37b621f085b806419d6082a3c83124ad907b35ee))
+* enable JaCoCo ([3dca907](https://github.com/DanySK/multi-jvm-test-plugin/commit/3dca9079136b793d2f66e96920084c4fab7d4c77))
+* use the lazy configuration API ([399677f](https://github.com/DanySK/multi-jvm-test-plugin/commit/399677f48d2d4cd7eab4c77620b35a7a3ce9f831))
+
+
+### Documentation
+
+* document the need for `org.gradle.toolchains.foojay-resolver-convention` ([d4b6302](https://github.com/DanySK/multi-jvm-test-plugin/commit/d4b63028d75e5d408648e76695f0388a639983b6))
+
 ## [0.4.16](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.15...0.4.16) (2023-02-19)
 
 
