@@ -1,0 +1,10 @@
+tests:
+  - description: "A mixed Java/Kotlin build should run with multiple JDKs"
+    configuration:
+      tasks: check
+      options: --stacktrace
+    expectation:
+      success:
+        - check
+        - testWithJvm11
+        - testWithJvm17
