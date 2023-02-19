@@ -83,7 +83,7 @@ kotlin {
     }
 }
 
-tasks.withType<Test> {
+tasks.withType<Test>().configureEach {
     useJUnitPlatform()
     testLogging {
         showStandardStreams = true
@@ -94,7 +94,7 @@ tasks.withType<Test> {
     }
 }
 
-tasks.withType<de.aaschmid.gradle.plugins.cpd.Cpd> {
+tasks.withType<de.aaschmid.gradle.plugins.cpd.Cpd>().configureEach {
     exclude("**/*.kts")
 }
 
