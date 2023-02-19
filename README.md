@@ -15,15 +15,24 @@ If there is only one task of type `test`, it will be preconfigured to use the sa
 
 ## Configuration
 
+To provision the missing JVMs automatically, you should enable `org.gradle.toolchains.foojay-resolver-convention`
+in your `settings.gradle.kts`:
+
+```kotlin
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
+}
+```
+
 By default, the plugin compiles with Java 8,
 and tests with all the LTS versions from Java 8 onwards,
 plus with the most recent Java version.
 
-This behaviour can be changed as follows:
+This behaviour can be changed as follows in your `build.gradle.kts`:
 
 ```kotlin
 plugins {
-    id("org.danilopianini.multi-jvm-test-plugin") version <VERSION_YOU_WANT> 
+    id("org.danilopianini.multi-jvm-test-plugin") version "<VERSION_YOU_WANT>" 
 }
 
 multiJvm {
