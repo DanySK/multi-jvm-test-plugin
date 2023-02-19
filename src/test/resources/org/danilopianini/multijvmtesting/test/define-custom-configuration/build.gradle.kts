@@ -36,5 +36,3 @@ multiJvm {
         testByDefaultWith(8, *allLtsVersions.toIntArray(), latestJava)
     }
 }
-
-
