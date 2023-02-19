@@ -1,3 +1,53 @@
+## [0.4.16](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.15...0.4.16) (2023-02-19)
+
+
+### General maintenance
+
+* **build:** remove feature preview for catalogs (it is mainline Gradle now) ([64b26d8](https://github.com/DanySK/multi-jvm-test-plugin/commit/64b26d83c2be576e8ca91ea65cfa38cd5206d032))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.3.0 ([eea8ad3](https://github.com/DanySK/multi-jvm-test-plugin/commit/eea8ad38a7dd548e78d6fe98ea8f7525f5a72c0f))
+* **deps:** update danysk/action-checkout action to v0.2.5 ([c3fab60](https://github.com/DanySK/multi-jvm-test-plugin/commit/c3fab60fc24eb95707f5c03d061ba9e7d552e196))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.20 ([4d6574d](https://github.com/DanySK/multi-jvm-test-plugin/commit/4d6574d12ab2643188d102ca580207c6453f5bfc))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.21 ([52708e3](https://github.com/DanySK/multi-jvm-test-plugin/commit/52708e3ddbe59a6aa764cf55883b31d8994df9f8))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.22 ([bb9fa72](https://github.com/DanySK/multi-jvm-test-plugin/commit/bb9fa72cfdb75c94a9407c4f9acdbd68b2c75cd3))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.23 ([7a6c42c](https://github.com/DanySK/multi-jvm-test-plugin/commit/7a6c42c507cc9c614a672966cd4049cfafbb2f7b))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.24 ([c853a5a](https://github.com/DanySK/multi-jvm-test-plugin/commit/c853a5afcc97269a9654362c3150276bb2db4908))
+* disable windows testing as runners have too little disk space ([987dd0a](https://github.com/DanySK/multi-jvm-test-plugin/commit/987dd0ab9af4872255f6e49e9c8d68ad5cd32e16))
+* enable concurrency canceling of old jobs ([60e8204](https://github.com/DanySK/multi-jvm-test-plugin/commit/60e8204ab15ba9adb8f18e5bd9b7f7d104b06e68))
+* fix the github actions runner's OS version ([87c1d4c](https://github.com/DanySK/multi-jvm-test-plugin/commit/87c1d4ca6923d471b59781e97a82021ff3f93819))
+* just limit testing under Windows, do not compile with newer Java ([dbcdc1c](https://github.com/DanySK/multi-jvm-test-plugin/commit/dbcdc1ca56aa084fb5e6a91a93faac8c8c277abc))
+* limit testing under Windows GHA runners ([eb850b4](https://github.com/DanySK/multi-jvm-test-plugin/commit/eb850b47d89f3910f96b8801c460871a56ddd26d))
+* **mergify:** update the rules from Alchemist ([11dc7b5](https://github.com/DanySK/multi-jvm-test-plugin/commit/11dc7b5dcac436a4721cb9cd4e48ecf068b95d6b))
+* update the URL refs ([f5c214a](https://github.com/DanySK/multi-jvm-test-plugin/commit/f5c214a58cfbc4a7b1a376d0909df0dfa5bdd828))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8 ([#310](https://github.com/DanySK/multi-jvm-test-plugin/issues/310)) ([39d7ec1](https://github.com/DanySK/multi-jvm-test-plugin/commit/39d7ec154ffa2e0fb583092c755a154dbd32b2ec))
+* **core-deps:** update dependency gradle to v8.0.1 ([6697432](https://github.com/DanySK/multi-jvm-test-plugin/commit/66974321c1d69fa954671d0e80312c564b7db9c9))
+* **deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v1.8.10 ([c22ec5d](https://github.com/DanySK/multi-jvm-test-plugin/commit/c22ec5db83805712296e9692a5ab673e13ee0086))
+* **deps:** update dependency org.mockito:mockito-core to v4.11.0 ([2334ed6](https://github.com/DanySK/multi-jvm-test-plugin/commit/2334ed6dbd9c139b03e26b0afee8f122bdcddbc8))
+* **deps:** update dependency org.mockito:mockito-core to v5 ([255765a](https://github.com/DanySK/multi-jvm-test-plugin/commit/255765a88ddbe8e394f2c2b92812312d49fa62eb))
+* **deps:** update dependency org.mockito:mockito-core to v5.1.0 ([8db2ca5](https://github.com/DanySK/multi-jvm-test-plugin/commit/8db2ca56e1d321a1114fc7c57155247990206f89))
+* **deps:** update dependency org.mockito:mockito-core to v5.1.1 ([868640f](https://github.com/DanySK/multi-jvm-test-plugin/commit/868640feb317e8149dec27ad1407c7fc7a475e33))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.16 ([55a60cb](https://github.com/DanySK/multi-jvm-test-plugin/commit/55a60cb3da207333ef8c8c031b8c129bd3f9898b))
+* **deps:** update kotest to v5.5.5 ([ecdd922](https://github.com/DanySK/multi-jvm-test-plugin/commit/ecdd92265a8de3673efffc34b408de99e9ec1a17))
+* **deps:** update node.js to 18.13 ([416992c](https://github.com/DanySK/multi-jvm-test-plugin/commit/416992c94a7652248e37c4853bb087a829cb5843))
+* **deps:** update node.js to 18.14 ([f466bf7](https://github.com/DanySK/multi-jvm-test-plugin/commit/f466bf76d0bc326588a371307f5d21ba681ded5f))
+* **deps:** update plugin com.gradle.enterprise to v3.12.3 ([12e3527](https://github.com/DanySK/multi-jvm-test-plugin/commit/12e3527b70d34a08d8ca5af246cbe39ce30a8089))
+* **deps:** update plugin gitsemver to v1 ([852a985](https://github.com/DanySK/multi-jvm-test-plugin/commit/852a985e2b33fd6a3bab8702bd8a455801197b5b))
+* **deps:** update plugin gradlepluginpublish to v1.1.0 ([9bed36d](https://github.com/DanySK/multi-jvm-test-plugin/commit/9bed36d3bf78057e0a77099e37cfddd5622f8fa4))
+* **deps:** update plugin kotlin-qa to v0.29.2 ([a28b26b](https://github.com/DanySK/multi-jvm-test-plugin/commit/a28b26ba6439ee44b15b7678c79991d9924afb07))
+* **deps:** update plugin multijvmtesting to v0.4.15 ([076b6e4](https://github.com/DanySK/multi-jvm-test-plugin/commit/076b6e4fa288b2a2604a270278401c3b15752449))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.1 ([7840176](https://github.com/DanySK/multi-jvm-test-plugin/commit/784017622a8e2e35e2ad46edf15a14324625a4f9))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.2 ([50d71e5](https://github.com/DanySK/multi-jvm-test-plugin/commit/50d71e5588a3a312119b8645e551f851f4827fb3))
+* **deps:** update plugin publishoncentral to v2.0.12 ([0bcfce4](https://github.com/DanySK/multi-jvm-test-plugin/commit/0bcfce46a66a61ce7c93453f864f3c5d385c4091))
+* **deps:** update plugin publishoncentral to v3 ([b6e5962](https://github.com/DanySK/multi-jvm-test-plugin/commit/b6e596277ea7c0180615de1fe9b3985850c144fb))
+* **deps:** update plugin tasktree to v2.1.1 ([4281ab7](https://github.com/DanySK/multi-jvm-test-plugin/commit/4281ab7fd1160a1266aa9b2da574e834eeaf3776))
+
 ## [0.4.15](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.14...0.4.15) (2022-12-30)
 
 
