@@ -1,3 +1,10 @@
+## [0.4.19](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.18...0.4.19) (2023-03-04)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.0.2 ([284b0ac](https://github.com/DanySK/multi-jvm-test-plugin/commit/284b0acf8a47b98ab9d96774bb60c35d0f907402))
+
 ## [0.4.18](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.17...0.4.18) (2023-03-04)
 
 
