@@ -1,3 +1,22 @@
+## [0.4.18](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.17...0.4.18) (2023-03-04)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.1.26 ([d1f78bb](https://github.com/DanySK/multi-jvm-test-plugin/commit/d1f78bb1fd34748284722779084cac9fae7268c5))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.0 ([3a10d6c](https://github.com/DanySK/multi-jvm-test-plugin/commit/3a10d6cda5b0772f05e22eb9f226ba8d45001263))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.8.10 ([cf2fe09](https://github.com/DanySK/multi-jvm-test-plugin/commit/cf2fe098261b6700cdd54b26c56c08e02768f246))
+* **deps:** update plugin com.gradle.enterprise to v3.12.4 ([7ef5a81](https://github.com/DanySK/multi-jvm-test-plugin/commit/7ef5a8187a9eb8a7306cd2f538cd099454965eec))
+* **deps:** update plugin gitsemver to v1.1.1 ([5f57faa](https://github.com/DanySK/multi-jvm-test-plugin/commit/5f57faacdfaed26207f8e8d3ee99031ede89df96))
+* **deps:** update plugin gitsemver to v1.1.2 ([1631362](https://github.com/DanySK/multi-jvm-test-plugin/commit/1631362c397ac6026067c38931e372f0c65644c4))
+* **deps:** update plugin multijvmtesting to v0.4.17 ([0b229de](https://github.com/DanySK/multi-jvm-test-plugin/commit/0b229de8ab133153e6fdc19c4eb6b454fd2e804c))
+* **deps:** update plugin publishoncentral to v3.2.4 ([f4af22e](https://github.com/DanySK/multi-jvm-test-plugin/commit/f4af22ef179edef5b7aa898bdecdf999504478eb))
+* **deps:** update plugin publishoncentral to v3.3.0 ([b517c49](https://github.com/DanySK/multi-jvm-test-plugin/commit/b517c49f1ffa8ed041c0b1d9d42778e864d0798b))
+
 ## [0.4.17](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.16...0.4.17) (2023-02-19)
 
 
