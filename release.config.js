@@ -13,7 +13,12 @@ config.plugins.push(
             "publishCmd": publishCmd,
         }
     ],
-    "@semantic-release/github",
+    [
+        "@semantic-release/github",
+        {
+            "successComment": false,
+        }
+    ],
     "@semantic-release/git",
 )
 module.exports = config
