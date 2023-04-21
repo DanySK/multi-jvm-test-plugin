@@ -25,5 +25,5 @@ jacoco-testkit = "pl.droidsonroids.jacoco.testkit:1.0.11"
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-qa = { id = "org.danilopianini.gradle-kotlin-qa", version = "0.29.2" }
 publishOnCentral = { id = "org.danilopianini.publish-on-central", version = "5.0.2" }
-multiJvmTesting = { id = "org.danilopianini.multi-jvm-test-plugin", version = "0.4.21" }
+multiJvmTesting = { id = "org.danilopianini.multi-jvm-test-plugin", version = "0.4.21-dev07-a6c8176" }
 taskTree = { id = "com.dorongold.task-tree", version = "2.1.1" }
