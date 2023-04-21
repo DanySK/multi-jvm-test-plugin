@@ -138,6 +138,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                 .maxByOrNull { (_, gradleVersion) -> gradleVersion }
                 ?.first
                 ?.toInt()
+                ?.coerceAtMost(latestJava)
                 ?: latestJava.also {
                     println(
                         "WARNING! No access to: https://docs.gradle.org/current/userguide/compatibility.html," +
