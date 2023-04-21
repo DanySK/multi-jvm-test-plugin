@@ -1,3 +1,12 @@
+## [0.4.23](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.22...0.4.23) (2023-04-21)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.1.1 ([fb25015](https://github.com/DanySK/multi-jvm-test-plugin/commit/fb25015673251b26d9abee29e23b9640409f3ca9))
+* **deps:** update dependency org.mockito:mockito-core to v5.3.1 ([e11fd6f](https://github.com/DanySK/multi-jvm-test-plugin/commit/e11fd6fd4eb985288f924f4d9e2ae669d7b36c43))
+* **deps:** update plugin multijvmtesting to v0.4.22 ([2a9e466](https://github.com/DanySK/multi-jvm-test-plugin/commit/2a9e46641f944417aa97f278f84f7c4d7085bd49))
+
 ## [0.4.22](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.21...0.4.22) (2023-04-21)
 
 
