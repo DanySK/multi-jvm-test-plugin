@@ -1,3 +1,34 @@
+## [0.4.22](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.21...0.4.22) (2023-04-21)
+
+
+### Bug Fixes
+
+* the latest version of Java supported by Gradle can never be newer than the latest existing ([a6c8176](https://github.com/DanySK/multi-jvm-test-plugin/commit/a6c817635478488fe8c96082f0634ece70122d6f))
+* update org.danilopianini.multi-jvm-test-plugin to 0.4.21-dev07-a6c8176 ([aec7b5f](https://github.com/DanySK/multi-jvm-test-plugin/commit/aec7b5ff33a48d2181c615a7b670dd8c61bfa600))
+
+
+### Build and continuous integration
+
+* **release:** disable comments on PRs upon release ([d730060](https://github.com/DanySK/multi-jvm-test-plugin/commit/d7300600b476a4ba28710a97aa5525633df7ab4d))
+
+
+### Dependency updates
+
+* **deps:** update plugin gitsemver to v1.1.8 ([4d02474](https://github.com/DanySK/multi-jvm-test-plugin/commit/4d0247419720d61f0bbc15ae8e8beaa90b680bbb))
+* **deps:** update plugin multijvmtesting to v0.4.21 ([c4fe445](https://github.com/DanySK/multi-jvm-test-plugin/commit/c4fe4458a2b3d06de7e13bde25368e598fe88ffe))
+* **deps:** update plugin publishoncentral to v5.0.1 ([8961794](https://github.com/DanySK/multi-jvm-test-plugin/commit/896179448cd72802915571abc87dfaa159b844f1))
+* **deps:** update plugin publishoncentral to v5.0.2 ([7050aa5](https://github.com/DanySK/multi-jvm-test-plugin/commit/7050aa5dd427c038220196378414b4e50a81eaed))
+
+
+### Tests
+
+* add a test to try that the latest gradle version can be intercepted correctly ([ee10098](https://github.com/DanySK/multi-jvm-test-plugin/commit/ee100986dafb8ba4209a4aef8727a908e1147c8e))
+
+
+### Style improvements
+
+* fix several style issues ([3a16ad1](https://github.com/DanySK/multi-jvm-test-plugin/commit/3a16ad1e7c286f4f6da39226c6a2699a4ad4493a))
+
 ## [0.4.21](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.20...0.4.21) (2023-04-19)
 
 
