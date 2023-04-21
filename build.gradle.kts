@@ -1,5 +1,5 @@
-import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 import org.apache.tools.ant.taskdefs.condition.Os
+import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
 @Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
 plugins {

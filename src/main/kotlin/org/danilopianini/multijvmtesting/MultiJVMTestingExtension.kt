@@ -37,8 +37,8 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     /**
      * The set of all Long-Term Support JVM versions supported by this project.
      */
-    val supportedLtsVersions: Provider<Set<Int>> = supportedJvmVersions.map {
-        it.filter { it.isLTS }.toSet()
+    val supportedLtsVersions: Provider<Set<Int>> = supportedJvmVersions.map { versions ->
+        versions.filter { it.isLTS }.toSet()
     }
 
     /**
@@ -116,7 +116,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                 .matchEntire(Thread.currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim())
                 ?.groupValues
                 ?.get(1)
-                ?.toInt()
+                ?.toInt(),
         ) {
             "There must be a bug in the multi-jvm-test-plugin. Please open an issue at " +
                 "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose"
@@ -142,7 +142,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                 ?: latestJava.also {
                     println(
                         "WARNING! No access to: https://docs.gradle.org/current/userguide/compatibility.html," +
-                            "guessing Gradle compatibility level to $it"
+                            "guessing Gradle compatibility level to $it",
                     )
                 }
         }

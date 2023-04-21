@@ -17,7 +17,7 @@ open class TestOnSpecificJvmVersion @Inject constructor(jvmVersion: Int) : Test(
         javaLauncher.set(
             javaToolchains.launcherFor {
                 it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
-            }
+            },
         )
     }
 

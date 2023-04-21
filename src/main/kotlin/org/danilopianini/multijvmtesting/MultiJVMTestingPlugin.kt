@@ -56,7 +56,7 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 javaLauncher.set(
                     javaToolchains.launcherFor {
                         it.languageVersion.set(JavaLanguageVersion.of(extension.jvmVersionForCompilation.get()))
-                    }
+                    },
                 )
             }
             val allTestTasks: Map<Int, Task> =
