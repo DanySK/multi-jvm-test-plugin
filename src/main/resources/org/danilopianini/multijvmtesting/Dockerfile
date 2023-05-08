@@ -1,1 +1,1 @@
-FROM eclipse-temurin:19
+FROM eclipse-temurin:20
