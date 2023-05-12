@@ -100,6 +100,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
 
     companion object {
         private const val serialVersionUID = 1L
+        private const val gradleTableURL = "https://docs.gradle.org/current/userguide/compatibility.html"
         private const val DOCKERFILE_PATH = "org/danilopianini/multijvmtesting/Dockerfile"
         private const val oldestLTS = 8
 
@@ -128,23 +129,33 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * issues to accessing the website make the value potentially wrong.
          */
         val latestJavaSupportedByGradle: Int by lazy {
-            Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?</td>[\s\n\r]*<td.*>.*?(\d+\.\d+).*?</td>""")
-                .findAll(URL("https://docs.gradle.org/current/userguide/compatibility.html").readText())
-                .map {
-                    val (javaVersion, gradleVersion) = it.destructured
-                    javaVersion to GradleVersion.version(gradleVersion)
-                }
-                .filter { (_, gradleVersion) -> GradleVersion.current() >= gradleVersion }
-                .maxByOrNull { (_, gradleVersion) -> gradleVersion }
-                ?.first
-                ?.toInt()
-                ?.coerceAtMost(latestJava)
-                ?: latestJava.also {
+            runCatching {
+                Regex("""<tr.*>[\s\n\r]*<td.*>.*?(\d+).*?</td>[\s\n\r]*<td.*>.*?(\d+\.\d+).*?</td>""")
+                    .findAll(URL(gradleTableURL).readText())
+                    .map {
+                        val (javaVersion, gradleVersion) = it.destructured
+                        javaVersion to GradleVersion.version(gradleVersion)
+                    }
+                    .filter { (_, gradleVersion) -> GradleVersion.current() >= gradleVersion }
+                    .maxByOrNull { (_, gradleVersion) -> gradleVersion }
+                    ?.first
+                    ?.toInt()
+                    ?.coerceAtMost(latestJava)
+                    ?: latestJava.also {
+                        println(
+                            "WARNING! $gradleTableURL has unexpected " +
+                                "format, the scraping failed. Defaulting to $it, please report this issue at: " +
+                                "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose",
+                        )
+                    }
+            }.getOrElse {
+                latestJava.also { _ ->
                     println(
-                        "WARNING! No access to: https://docs.gradle.org/current/userguide/compatibility.html," +
-                            "guessing Gradle compatibility level to $it",
+                        "WARNING! No access to: $gradleTableURL " +
+                            "guessing Gradle compatibility level to $latestJava",
                     )
                 }
+            }
         }
 
         /**
