@@ -1,3 +1,17 @@
+## [0.5.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.0...0.5.1) (2023-05-12)
+
+
+### Bug Fixes
+
+* do not fail if docs.gradle.org is not reachable ([f740f89](https://github.com/DanySK/multi-jvm-test-plugin/commit/f740f89a12cf8c9e18223a84980bd6da18aa1d4d))
+
+
+### Dependency updates
+
+* **deps:** update kotest to v5.6.2 ([3b11f17](https://github.com/DanySK/multi-jvm-test-plugin/commit/3b11f178feef7a892f96aa52526441f8762bdfa5))
+* **deps:** update plugin com.gradle.enterprise to v3.13.2 ([a89876f](https://github.com/DanySK/multi-jvm-test-plugin/commit/a89876fc7e9b4eb6fe313d796eb2b94ab3966dba))
+* **deps:** update plugin multijvmtesting to v0.5.0 ([994e0d9](https://github.com/DanySK/multi-jvm-test-plugin/commit/994e0d9983c60c2f66d92c12ea7e7a78cf9eeaf2))
+
 ## [0.5.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.4.23...0.5.0) (2023-05-08)
 
 
