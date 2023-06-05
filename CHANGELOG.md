@@ -1,3 +1,23 @@
+## [0.5.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.1...0.5.2) (2023-06-05)
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.5 ([500b6a9](https://github.com/DanySK/multi-jvm-test-plugin/commit/500b6a99f002ee412d77e7e8bfe851bd3c4079f5))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.6 ([a97f02a](https://github.com/DanySK/multi-jvm-test-plugin/commit/a97f02aa7ffb732f5cbddb55a020025d05d46db2))
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.8.20 ([b579d51](https://github.com/DanySK/multi-jvm-test-plugin/commit/b579d5189eaae186c4f18e3e136d75a7c7cac8a0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.27 ([8b4e0de](https://github.com/DanySK/multi-jvm-test-plugin/commit/8b4e0de3f07fd8dd5e9508de39fed42c6b93dd82))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.28 ([57f3009](https://github.com/DanySK/multi-jvm-test-plugin/commit/57f30095f170bdc26bd1070e1780d7fb4b5b761f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.29 ([964f910](https://github.com/DanySK/multi-jvm-test-plugin/commit/964f910e2d56c573acc1931b53c1d6872ef8539d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.30 ([08bbd1a](https://github.com/DanySK/multi-jvm-test-plugin/commit/08bbd1ab4157e7f60786a459cbd49b280853fdf9))
+* **deps:** update plugin com.gradle.enterprise to v3.13.3 ([8dc82fd](https://github.com/DanySK/multi-jvm-test-plugin/commit/8dc82fd663f28a201aae0542a05de6c9dc1c785d))
+* **deps:** update plugin gitsemver to v1.1.10 ([e9b5d68](https://github.com/DanySK/multi-jvm-test-plugin/commit/e9b5d68777dfe6a063ddbddc53d78f4533cdbf39))
+* **deps:** update plugin multijvmtesting to v0.5.1 ([7cfb1ee](https://github.com/DanySK/multi-jvm-test-plugin/commit/7cfb1ee22fce7a40f5b565fea09b1ed8c1dbbd4f))
+
 ## [0.5.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.0...0.5.1) (2023-05-12)
 
 
