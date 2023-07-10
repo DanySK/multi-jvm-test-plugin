@@ -1,3 +1,13 @@
+## [0.5.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.3...0.5.4) (2023-07-10)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.2.1 ([1a133a5](https://github.com/DanySK/multi-jvm-test-plugin/commit/1a133a5c1ddee31ba4cacc591ba62e054ced4758))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.39 ([be333b3](https://github.com/DanySK/multi-jvm-test-plugin/commit/be333b30580361f9bc590d7993b498be96f90037))
+* **deps:** update plugin multijvmtesting to v0.5.3 ([f262437](https://github.com/DanySK/multi-jvm-test-plugin/commit/f26243791c4a309e576111318915bc0c456e7882))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v0.6.0 ([9f6e4ad](https://github.com/DanySK/multi-jvm-test-plugin/commit/9f6e4addd76d74d9f7cb107bf78772080ebe44f6))
+
 ## [0.5.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.2...0.5.3) (2023-06-30)
 
 
