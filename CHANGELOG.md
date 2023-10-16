@@ -1,3 +1,44 @@
+## [0.5.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.5...0.5.6) (2023-10-16)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.9.10 ([e356a53](https://github.com/DanySK/multi-jvm-test-plugin/commit/e356a537271577f7c04586eff250797c14bff121))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.49 ([7e09d26](https://github.com/DanySK/multi-jvm-test-plugin/commit/7e09d26b6327b43d6fb910809115bcdb7e3f1f97))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.50 ([1eab9ca](https://github.com/DanySK/multi-jvm-test-plugin/commit/1eab9ca944801eee11d8aa440ffc992d6e6da3fb))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.51 ([353cbdb](https://github.com/DanySK/multi-jvm-test-plugin/commit/353cbdbbffd3eb8ae19c4dfa0efde7acd58b2a23))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.52 ([5d404b3](https://github.com/DanySK/multi-jvm-test-plugin/commit/5d404b3e8929289a1f80d848b28c75b0ec4f2d24))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.53 ([1e6440d](https://github.com/DanySK/multi-jvm-test-plugin/commit/1e6440d93e7b39db511557dcfa9eebfe4429f7d9))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.54 ([fc606de](https://github.com/DanySK/multi-jvm-test-plugin/commit/fc606dee35b0919400270005af2069a5380b5237))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.55 ([8903c61](https://github.com/DanySK/multi-jvm-test-plugin/commit/8903c61e54aa989d66cce482f7dec1b453f24dac))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.56 ([ff1b9be](https://github.com/DanySK/multi-jvm-test-plugin/commit/ff1b9be08e273ccc941e16bb7e1c8493175c83dc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.58 ([b03238f](https://github.com/DanySK/multi-jvm-test-plugin/commit/b03238f6f86c177a6136577ffdf05b4a24776007))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.59 ([ab8a8fb](https://github.com/DanySK/multi-jvm-test-plugin/commit/ab8a8fb0918ee395346f40eefbffe66716f19308))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.60 ([1849b30](https://github.com/DanySK/multi-jvm-test-plugin/commit/1849b30bed229efde3e9727725b11bdbc5916fc2))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.61 ([49c6d63](https://github.com/DanySK/multi-jvm-test-plugin/commit/49c6d6383f51a699b95c7adc2b47611ff4f75f99))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.62 ([38dad18](https://github.com/DanySK/multi-jvm-test-plugin/commit/38dad18da63a412a6ac94d95cd1a90cbe9bc6360))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.63 ([2186c68](https://github.com/DanySK/multi-jvm-test-plugin/commit/2186c688d5fdce98f946f5228e1504333abd5f66))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.64 ([c353f6f](https://github.com/DanySK/multi-jvm-test-plugin/commit/c353f6f4daab28d4a0dc0cad5830511ad3b624bc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.65 ([8875c1a](https://github.com/DanySK/multi-jvm-test-plugin/commit/8875c1a0b39a849757b8ba7d2a887e7ae3b3addc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.67 ([694ecb4](https://github.com/DanySK/multi-jvm-test-plugin/commit/694ecb4e3120c734aa3691692485ed071dc543b7))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.68 ([02654fc](https://github.com/DanySK/multi-jvm-test-plugin/commit/02654fc5d76d1419d2482840058bb0691ef1efdc))
+* **deps:** update eclipse-temurin docker tag to v21 ([753498f](https://github.com/DanySK/multi-jvm-test-plugin/commit/753498f9eb2b331afb53658756386e79af111933))
+* **deps:** update kotest to v5.7.2 ([1e2dea1](https://github.com/DanySK/multi-jvm-test-plugin/commit/1e2dea1e09cfeaebd352972f928bd0ac5ea22f4b))
+* **deps:** update node.js to 18.18 ([096ba8d](https://github.com/DanySK/multi-jvm-test-plugin/commit/096ba8d4b2375b9b0f777fb86997da1df240f76c))
+* **deps:** update plugin com.gradle.enterprise to v3.15 ([9388c4f](https://github.com/DanySK/multi-jvm-test-plugin/commit/9388c4f14708ed9165ee56cf823273c13e9b32e3))
+* **deps:** update plugin com.gradle.enterprise to v3.15.1 ([2644cc4](https://github.com/DanySK/multi-jvm-test-plugin/commit/2644cc4481b3e91fa7b6050767f05015f84d999e))
+* **deps:** update plugin multijvmtesting to v0.5.5 ([e49718c](https://github.com/DanySK/multi-jvm-test-plugin/commit/e49718cd8915ebf3fa88de1a1708d01f4132e04a))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4 ([a158d2e](https://github.com/DanySK/multi-jvm-test-plugin/commit/a158d2e6230d26ee7f98b65a882eec20c7b657bb))
+* **deps:** update actions/checkout action to v4.1.0 ([82f3d74](https://github.com/DanySK/multi-jvm-test-plugin/commit/82f3d7432db570777382fe756664023731d1cd6d))
+* **deps:** update danysk/action-checkout action to v0.2.12 ([e5f024c](https://github.com/DanySK/multi-jvm-test-plugin/commit/e5f024c0b1dce78fc43fbe8b73b65e0dcc2a7135))
+* **deps:** update danysk/action-checkout action to v0.2.13 ([97cb788](https://github.com/DanySK/multi-jvm-test-plugin/commit/97cb788e0b5106e0ef26d5a94bee91cf1934d670))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.10 ([74b5177](https://github.com/DanySK/multi-jvm-test-plugin/commit/74b5177027c8346076bea47934013244a185a22e))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.9 ([379add1](https://github.com/DanySK/multi-jvm-test-plugin/commit/379add15d9370284e529df30ed291525f984c8cb))
+
 ## [0.5.5](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.4...0.5.5) (2023-09-01)
 
 
