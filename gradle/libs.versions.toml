@@ -1,6 +1,6 @@
 [versions]
 dokka = "1.9.10"
-jacoco = "0.8.10"
+jacoco = "0.8.11"
 konf = "1.1.2"
 kotlin = "1.8.20"
 kotest = "5.7.2"
