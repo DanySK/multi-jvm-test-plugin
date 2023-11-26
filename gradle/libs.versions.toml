@@ -2,7 +2,7 @@
 dokka = "1.9.10"
 jacoco = "0.8.11"
 konf = "1.1.2"
-kotlin = "1.8.22"
+kotlin = "1.9.21"
 kotest = "5.8.0"
 mockito = "5.7.0"
 
