@@ -1,3 +1,46 @@
+## [0.5.8](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.7...0.5.8) (2024-01-31)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v1.9.22 ([71a1bca](https://github.com/DanySK/multi-jvm-test-plugin/commit/71a1bcae53a2d0ea3ab7ece36f3676876f2653b1))
+* **deps:** update dependency org.mockito:mockito-core to v5.8.0 ([9ca3bc3](https://github.com/DanySK/multi-jvm-test-plugin/commit/9ca3bc3e25b3f939c7a81f8bd579b72ecd2e575a))
+* **deps:** update dependency org.mockito:mockito-core to v5.9.0 ([1108f24](https://github.com/DanySK/multi-jvm-test-plugin/commit/1108f242a1b4f7043ebb1014470d5827a8c5df94))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.79 ([9349816](https://github.com/DanySK/multi-jvm-test-plugin/commit/9349816a1e9194c8c7aacc80664289d4f4480073))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.80 ([a39ab29](https://github.com/DanySK/multi-jvm-test-plugin/commit/a39ab2973648a8ce3acd855ecbda4d6206f935e0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.81 ([ee3ba68](https://github.com/DanySK/multi-jvm-test-plugin/commit/ee3ba682c1c8197aefd8c76ef78d4d8ce9039f89))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.82 ([d01da70](https://github.com/DanySK/multi-jvm-test-plugin/commit/d01da70350e207a0bfa22cfe9cd7ec06f5f86a4e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.83 ([741f261](https://github.com/DanySK/multi-jvm-test-plugin/commit/741f26151a935661a4ae7c678ed9d7abf97b31fa))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.84 ([8815ecf](https://github.com/DanySK/multi-jvm-test-plugin/commit/8815ecffbee58c919e036310092d6b50484c3a05))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.85 ([00fcf33](https://github.com/DanySK/multi-jvm-test-plugin/commit/00fcf330cb6cba89874fd518901ce84ac2df6b52))
+* **deps:** update node.js to 20.11 ([8f220d8](https://github.com/DanySK/multi-jvm-test-plugin/commit/8f220d8ae55349c22f1f34d8c570922309fa786d))
+* **deps:** update plugin com.gradle.enterprise to v3.16 ([6979ccc](https://github.com/DanySK/multi-jvm-test-plugin/commit/6979ccca3cf8a6dc78a71ca96c424befc2ddb888))
+* **deps:** update plugin com.gradle.enterprise to v3.16.1 ([89d8eb6](https://github.com/DanySK/multi-jvm-test-plugin/commit/89d8eb6fb882bd0e6cee8cf624d9283c103b7909))
+* **deps:** update plugin com.gradle.enterprise to v3.16.2 ([30fd999](https://github.com/DanySK/multi-jvm-test-plugin/commit/30fd999742d49f30af7e14ca7e59cf34abf0a83c))
+* **deps:** update plugin gitsemver to v2.0.4 ([d80ddb2](https://github.com/DanySK/multi-jvm-test-plugin/commit/d80ddb2cc6f463f5410d52aea16e741771226844))
+* **deps:** update plugin gitsemver to v2.0.5 ([51353a8](https://github.com/DanySK/multi-jvm-test-plugin/commit/51353a8fd3a88adfef954ce904df858f29deeba6))
+* **deps:** update plugin gitsemver to v3 ([f631977](https://github.com/DanySK/multi-jvm-test-plugin/commit/f631977bfcd8129d4a171bb381fbd437e87db584))
+* **deps:** update plugin gitsemver to v3.1.0 ([ad2a4c2](https://github.com/DanySK/multi-jvm-test-plugin/commit/ad2a4c28de972a39a5c0237cd7f673c1e0bb3413))
+* **deps:** update plugin kotlin-qa to v0.55.2 ([86ed7f6](https://github.com/DanySK/multi-jvm-test-plugin/commit/86ed7f6a2070ae62141963c295dba372acabe99d))
+* **deps:** update plugin kotlin-qa to v0.56.0 ([1b0a912](https://github.com/DanySK/multi-jvm-test-plugin/commit/1b0a912f8b8506c7bbf3a1a86f6186f21f1edaa9))
+* **deps:** update plugin kotlin-qa to v0.57.0 ([0e8ed45](https://github.com/DanySK/multi-jvm-test-plugin/commit/0e8ed45a9c78d4a81b219dc5afb2ecd6855052bc))
+* **deps:** update plugin kotlin-qa to v0.59.0 ([20832fb](https://github.com/DanySK/multi-jvm-test-plugin/commit/20832fb631bb5dedf9b52646b1899200f96e974d))
+* **deps:** update plugin multijvmtesting to v0.5.7 ([78f1ae0](https://github.com/DanySK/multi-jvm-test-plugin/commit/78f1ae00124b2a09ee51a3ad3be4f423f79629bb))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.16 ([a8c3f7c](https://github.com/DanySK/multi-jvm-test-plugin/commit/a8c3f7c53d472b1a9e10750092020ef6c1c3b52a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.17 ([3f08135](https://github.com/DanySK/multi-jvm-test-plugin/commit/3f08135c9c0b9637ac244337aecf3f41ca666e5a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v1.1.18 ([306b54a](https://github.com/DanySK/multi-jvm-test-plugin/commit/306b54aaee8121e825244784cd1be6946ec9390e))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2 ([13a3f41](https://github.com/DanySK/multi-jvm-test-plugin/commit/13a3f41bf46ee00a84f1103c550c1d8caa2e503c))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0 ([f745446](https://github.com/DanySK/multi-jvm-test-plugin/commit/f745446ef58df74c1432137b5ff00dac0bdd175b))
+* **deps:** update plugin publishoncentral to v5.0.22 ([4da4541](https://github.com/DanySK/multi-jvm-test-plugin/commit/4da4541453500f2a4ee4ba48f1131d21659c9669))
+
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.12 ([4836bdc](https://github.com/DanySK/multi-jvm-test-plugin/commit/4836bdc6e8f1f7b5cd25f15b5a8c51963618aa1a))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.13 ([3377134](https://github.com/DanySK/multi-jvm-test-plugin/commit/337713457c0146c53fe7973af998f9040e22a58a))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.14 ([a4c184b](https://github.com/DanySK/multi-jvm-test-plugin/commit/a4c184b5e25e7870f0e3a5c3437f7519586f97a9))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.2.15 ([169abe2](https://github.com/DanySK/multi-jvm-test-plugin/commit/169abe253655e07be9b9dd4b4bd285f1a57c4f03))
+
 ## [0.5.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.6...0.5.7) (2023-11-26)
 
 
