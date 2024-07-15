@@ -40,6 +40,7 @@ repositories {
 }
 
 multiJvm {
+    jvmVersionForCompilation.set(11)
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
     if (System.getenv("GITHUB_ACTIONS") == "true" && Os.isFamily(Os.FAMILY_WINDOWS)) {
         // There is limited space available on GitHub Actions Windows instances:
@@ -58,6 +59,7 @@ dependencies {
     api(gradleKotlinDsl())
     implementation(kotlin("stdlib-jdk8"))
     implementation(libs.kotlin.gradle.plugin.api)
+    implementation(libs.ksoup)
     testImplementation(gradleTestKit())
     testImplementation(libs.konf.yaml)
     testImplementation(libs.bundles.kotlin.testing)
