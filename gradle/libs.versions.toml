@@ -12,7 +12,7 @@ konf-yaml = { module = "com.uchuhimo:konf-yaml", version.ref = "konf" }
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
 kotlin-gradle-plugin-api = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-ksoup = "com.mohamedrejeb.ksoup:ksoup-html:0.3.0"
+ksoup = "com.mohamedrejeb.ksoup:ksoup-html:0.3.2"
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 
 [bundles]
