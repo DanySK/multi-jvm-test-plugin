@@ -1,5 +1,5 @@
 tests:
-  - description: "A configured Java build should run with multiple JDKs"
+  - description: "The latest Java supported by Gradle should be available"
     configuration:
       tasks: check
       options: --stacktrace
