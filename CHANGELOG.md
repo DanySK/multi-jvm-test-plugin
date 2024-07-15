@@ -1,3 +1,21 @@
+## [1.0.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.1...1.0.2) (2024-07-15)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v1.9.24 ([806221f](https://github.com/DanySK/multi-jvm-test-plugin/commit/806221fe0fae6512d4355f899ba1baafcb6dbd68))
+* **deps:** update dependency com.mohamedrejeb.ksoup:ksoup-html to v0.3.2 ([cdf1729](https://github.com/DanySK/multi-jvm-test-plugin/commit/cdf172973c3de218bd223b1742e8376875b896bb))
+* **deps:** update kotest to v5.8.1 ([7337e2a](https://github.com/DanySK/multi-jvm-test-plugin/commit/7337e2a901003b67b4452deae716e8a608d3d9e7))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.7 ([a1a6f11](https://github.com/DanySK/multi-jvm-test-plugin/commit/a1a6f11a774e2b7532a2f60ac0c69bd06aff2e2f))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.1.7 ([7b1719b](https://github.com/DanySK/multi-jvm-test-plugin/commit/7b1719b711d7d67d3ef167a3d7253189c71d828b))
+* **deps:** update danysk/action-checkout action to v0.2.19 ([b423489](https://github.com/DanySK/multi-jvm-test-plugin/commit/b423489cc89f07218d6b40a4d4e7bafeb44d65d0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v2.4.24 ([ba23cc1](https://github.com/DanySK/multi-jvm-test-plugin/commit/ba23cc1f0f3017a379adca6ab46fe70a33b7f8a0))
+* **deps:** update dependency macos github actions runner to v13 ([d93e8e4](https://github.com/DanySK/multi-jvm-test-plugin/commit/d93e8e44468546f83646e6bd5209284feda7d7f6))
+
 ## [1.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.0...1.0.1) (2024-07-15)
 
 
