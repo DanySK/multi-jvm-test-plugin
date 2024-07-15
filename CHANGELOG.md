@@ -1,3 +1,32 @@
+## [1.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.9...1.0.0) (2024-07-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* scrape the gradle Java compatibility table page more robustly
+
+### Bug Fixes
+
+* scrape the gradle Java compatibility table page more robustly ([bdef273](https://github.com/DanySK/multi-jvm-test-plugin/commit/bdef2735f4ba3a24b8d0ae012680d3e706807fd6))
+* work around `Class 'TestOnSpecificJvmVersion' is not abstract and does not implement abstract base class member 'getDryRun'.`. See also: https://discuss.gradle.org/t/custom-task-and-dryrun-in-gradle-8x/47882/2 ([f797c08](https://github.com/DanySK/multi-jvm-test-plugin/commit/f797c08de751c1a9d598b518b734527074a11fd1))
+
+
+### Tests
+
+* enable develocity inside a test ([b319e26](https://github.com/DanySK/multi-jvm-test-plugin/commit/b319e2609e317713a9aa4fe913f30dd3a55c5aef))
+* fix test name clash ([785575f](https://github.com/DanySK/multi-jvm-test-plugin/commit/785575f6472772b55185a455b79e1cd36f4fb252))
+
+
+### Build and continuous integration
+
+* `toLowerCase(): String` is deprecated. Use `lowercase()` instead. ([d0b3d59](https://github.com/DanySK/multi-jvm-test-plugin/commit/d0b3d59d9636adbc1f9a1925b5dfbea8323d1daa))
+* disable fail-fast for matrix job ([1a5a246](https://github.com/DanySK/multi-jvm-test-plugin/commit/1a5a246d55e9ca359b134cb3784e03c54e73b610))
+* exclude detekt from the Kotlin version enforcement ([0753b60](https://github.com/DanySK/multi-jvm-test-plugin/commit/0753b60135685d1af806ec37133f4106bdf737e5))
+* migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8l ([6e6054d](https://github.com/DanySK/multi-jvm-test-plugin/commit/6e6054dffdbc692fe2f588bea39436138f63a5fd))
+* switch Gradle Enterprise to Develocity ([78229ae](https://github.com/DanySK/multi-jvm-test-plugin/commit/78229aed2168b912bc975043c51789663305360c))
+* update kotlin-qa to 0.62.3 ([6c180f7](https://github.com/DanySK/multi-jvm-test-plugin/commit/6c180f7051d9d0296ebaff01c90a8ce0c777d665))
+* update multi-jvm-test to 0.5.10-dev02-d0b3d59 ([6be629d](https://github.com/DanySK/multi-jvm-test-plugin/commit/6be629db8fe7febc30b16754a378958c0c22fdf4))
+
 ## [0.5.9](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.8...0.5.9) (2024-02-09)
 
 
