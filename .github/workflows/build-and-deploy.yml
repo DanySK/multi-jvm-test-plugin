@@ -6,8 +6,9 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
-        os: 
+        os:
 #         - windows-2022
           - macos-12
           - ubuntu-22.04
