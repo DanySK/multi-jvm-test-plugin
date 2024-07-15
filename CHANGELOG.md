@@ -1,3 +1,15 @@
+## [1.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.0...1.0.1) (2024-07-15)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.dokka to v1.9.20 ([c92f25e](https://github.com/DanySK/multi-jvm-test-plugin/commit/c92f25e7511cb34658a342b920ee8e4df48d26a6))
+
+
+### Build and continuous integration
+
+* **mergify:** extend from the base config ([08b8c02](https://github.com/DanySK/multi-jvm-test-plugin/commit/08b8c0268b44ffdfca7a545d2ef9a90209ffaaac))
+
 ## [1.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/0.5.9...1.0.0) (2024-07-15)
 
 
