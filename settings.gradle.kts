@@ -20,5 +20,5 @@ gitHooks {
         tasks("ktlintCheck")
     }
     commitMsg { conventionalCommits() }
-    createHooks()
+    createHooks(overwriteExisting = true)
 }
