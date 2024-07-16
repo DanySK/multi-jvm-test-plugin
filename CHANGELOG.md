@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.3...1.0.4) (2024-07-16)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.9 ([da8257a](https://github.com/DanySK/multi-jvm-test-plugin/commit/da8257afec060e29f943001989c2bf1b377c8a6c))
+* **deps:** update plugin tasktree to v4 ([3b95ec7](https://github.com/DanySK/multi-jvm-test-plugin/commit/3b95ec7ec252fbfce33a698d6913cd218079a312))
+
 ## [1.0.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.2...1.0.3) (2024-07-16)
 
 
