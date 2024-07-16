@@ -1,3 +1,15 @@
+## [1.0.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.2...1.0.3) (2024-07-16)
+
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v2 ([09ae5ac](https://github.com/DanySK/multi-jvm-test-plugin/commit/09ae5ac300742bd1ad6d8fd04af2559fa2db5d80))
+* **deps:** update dependency com.mohamedrejeb.ksoup:ksoup-html to v0.4.0 ([910f266](https://github.com/DanySK/multi-jvm-test-plugin/commit/910f26604d9fc26ef89d76568c2899b7aabe260a))
+* **deps:** update dependency org.jacoco:org.jacoco.core to v0.8.12 ([8fc04fc](https://github.com/DanySK/multi-jvm-test-plugin/commit/8fc04fc24d3ed859c51fbcf2c9f45bda728f5d5f))
+* **deps:** update kotest to v5.9.1 ([4d01a5b](https://github.com/DanySK/multi-jvm-test-plugin/commit/4d01a5b34d66300087e8ceb97c7a03a6a648e7f9))
+* **deps:** update plugin gitsemver to v3.1.7 ([fdd2343](https://github.com/DanySK/multi-jvm-test-plugin/commit/fdd23434c12f8d61d23824a41757c819b9d95702))
+* **deps:** update plugin publishoncentral to v5.0.26 ([9f6b3e0](https://github.com/DanySK/multi-jvm-test-plugin/commit/9f6b3e0a28bfe8eb9d700c4b7633a4e3385900c3))
+
 ## [1.0.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.1...1.0.2) (2024-07-15)
 
 
