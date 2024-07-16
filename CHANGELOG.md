@@ -1,3 +1,31 @@
+## [1.1.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.4...1.1.0) (2024-07-16)
+
+### Features
+
+* disable test tasks if no JVM is available for the selected platform ([d7f3245](https://github.com/DanySK/multi-jvm-test-plugin/commit/d7f324597ebe3cba18c7fd36329801a4c88a5b30))
+
+### Dependency updates
+
+* **deps:** update dependency org.mockito:mockito-core to v5.12.0 ([90ee1ec](https://github.com/DanySK/multi-jvm-test-plugin/commit/90ee1ec2ac7197ff38161127481a30ff81fc18b6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.91 ([3da73d4](https://github.com/DanySK/multi-jvm-test-plugin/commit/3da73d41abaeabbc01b3cea30741a155b5fff7e4))
+* **deps:** update node.js to 20.15 ([2f2e2aa](https://github.com/DanySK/multi-jvm-test-plugin/commit/2f2e2aac36d152c1b02130bb3d143e1d587af927))
+* **deps:** update plugin multijvmtesting to v1 ([9a9ead3](https://github.com/DanySK/multi-jvm-test-plugin/commit/9a9ead3b844a60d19f0c56df3700ccfbb88f142f))
+* **deps:** update plugin multijvmtesting to v1.0.4 ([4826824](https://github.com/DanySK/multi-jvm-test-plugin/commit/48268244a3ef0108e60458f4f7fc78b418fd48ae))
+* **deps:** update plugin publishoncentral to v5.1.3 ([1757efa](https://github.com/DanySK/multi-jvm-test-plugin/commit/1757efae1c682895c5923081d59b6b1cc2c9f46b))
+
+### Build and continuous integration
+
+* auto-overwrite the hooks configuration ([8b7b68f](https://github.com/DanySK/multi-jvm-test-plugin/commit/8b7b68f87db38dfcf7c4ffba8243b33396add9b4))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3 ([e6512fe](https://github.com/DanySK/multi-jvm-test-plugin/commit/e6512feed5e236e751e0da812d6d9bf2a907cc85))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.2.0 ([45c402b](https://github.com/DanySK/multi-jvm-test-plugin/commit/45c402b247750fdead682f9c4594f6710ebe5aa0))
+* **deps:** update dependency macos github actions runner to v14 ([317382b](https://github.com/DanySK/multi-jvm-test-plugin/commit/317382b9b6a0761994e88f9d8d76dd68a303ebd2))
+* install the version of node from the package.json ([e4ae467](https://github.com/DanySK/multi-jvm-test-plugin/commit/e4ae467477a4468520dec19777f9fa9af738450e))
+* read the Central username from the secrets ([95000a3](https://github.com/DanySK/multi-jvm-test-plugin/commit/95000a3f6c2b18e7cbc90bff0ba04f0aee51019b))
+
+### General maintenance
+
+* ignore `.kotlin` and `node_modules` ([e402366](https://github.com/DanySK/multi-jvm-test-plugin/commit/e4023669b282222fc46db8b1f2b10fd208432fbc))
+
 ## [1.0.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.3...1.0.4) (2024-07-16)
 
 
