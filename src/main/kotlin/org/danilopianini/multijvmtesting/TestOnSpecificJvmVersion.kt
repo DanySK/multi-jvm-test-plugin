@@ -19,11 +19,17 @@ open class TestOnSpecificJvmVersion @Inject constructor(jvmVersion: Int) : Test(
         group = TASK_GROUP
         description = makeTaskDescription(jvmVersion)
         val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
-        javaLauncher.set(
-            javaToolchains.launcherFor {
-                it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
-            },
-        )
+        val launcher = javaToolchains.launcherFor {
+            it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
+        }
+        javaLauncher.set(launcher)
+        val tryResolve = runCatching { launcher.isPresent }
+            .onFailure {
+                project.logger.warn(
+                    "Task $name has been disabled as no $jvmVersion is available for the current system.",
+                )
+            }
+        enabled = tryResolve.getOrDefault(false)
     }
 
     companion object {
