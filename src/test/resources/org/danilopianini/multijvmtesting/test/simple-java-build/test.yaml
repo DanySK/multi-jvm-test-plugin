@@ -14,8 +14,8 @@ tests:
     configuration:
       tasks:
         - clean
-        - testWithJvm9
+        - testWithJvm16
       options: --stacktrace
     expectation:
       success:
-        - testWithJvm9
+        - testWithJvm16
