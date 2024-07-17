@@ -1,4 +1,3 @@
-import org.apache.tools.ant.taskdefs.condition.Os
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
@@ -43,16 +42,7 @@ repositories {
 multiJvm {
     jvmVersionForCompilation.set(11)
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
-    if (System.getenv("GITHUB_ACTIONS") == "true" && Os.isFamily(Os.FAMILY_WINDOWS)) {
-        // There is limited space available on GitHub Actions Windows instances:
-        // only test the most recent version of Java there.
-        logger.warn(
-            "Detected a GitHub Actions Windows runner. Window runners have very limited disk space," +
-                "and thus all tests will run solely with Java {}.",
-            latestJavaSupportedByGradle,
-        )
-        testByDefaultWith(latestJavaSupportedByGradle)
-    }
+    testByDefaultWith(11, latestJavaSupportedByGradle)
 }
 
 dependencies {
