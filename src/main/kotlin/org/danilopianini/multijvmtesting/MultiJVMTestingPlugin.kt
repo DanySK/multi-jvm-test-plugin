@@ -1,16 +1,19 @@
 package org.danilopianini.multijvmtesting
 
 import org.danilopianini.multijvmtesting.MultiJVMTestingExtension.Companion.isLTS
+import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginExtension
+import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
@@ -59,24 +62,28 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                     },
                 )
             }
-            val allTestTasks: Map<Int, Task> =
+            val allTestTasks: Map<Int, TaskProvider<out DefaultTask>> =
                 (extension.jvmVersionForCompilation.get()..extension.latestJava).associateWith { version ->
                     if (version == extension.jvmVersionForCompilation.get() && baseTestTask != null) {
-                        project.tasks.create("testWithJvm$version").apply {
-                            group = TestOnSpecificJvmVersion.TASK_GROUP
-                            description = TestOnSpecificJvmVersion.makeTaskDescription(version)
-                            dependsOn(baseTestTask)
+                        project.tasks.register<DefaultTask>("testWithJvm$version").apply {
+                            configure {
+                                it.group = TestOnSpecificJvmVersion.TASK_GROUP
+                                it.description = TestOnSpecificJvmVersion.makeTaskDescription(version)
+                                it.dependsOn(baseTestTask)
+                            }
                         }
                     } else {
-                        project.tasks.create<TestOnSpecificJvmVersion>("testWithJvm$version", version)
+                        project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
                     }
                 }
             val supportedJvmVersions = extension.supportedJvmVersions.get()
             /*
              * Latest JVM
              */
-            val testWithLatestJvm = project.tasks.create("testWithLatestJvm")
-            testWithLatestJvm.dependsOn(allTestTasks[extension.latestJava])
+            val testWithLatestJvm = project.tasks.register<DefaultTask>("testWithLatestJvm")
+            testWithLatestJvm.configure {
+                it.dependsOn(allTestTasks[extension.latestJava])
+            }
             val check = project.tasks.named("check").get()
             if (extension.latestJava in supportedJvmVersions) {
                 check.dependsOn(testWithLatestJvm)
@@ -84,7 +91,7 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             /*
              * LTS JVMs
              */
-            val testWithLtsJvms = project.tasks.create("testWithLtsJvms")
+            val testWithLtsJvms = project.tasks.register<DefaultTask>("testWithLtsJvms")
             val lts = allTestTasks.filterKeys { it.isLTS }
             lts.forEach { (_, task) -> testWithLtsJvms.dependsOn(task) }
             if (supportedJvmVersions.containsAll(lts.keys)) {
@@ -93,7 +100,7 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             /*
              * Latest + LTS
              */
-            val testWithLtsAndLatestJvms = project.tasks.create("testWithLtsAndLatestJvms")
+            val testWithLtsAndLatestJvms = project.tasks.register<DefaultTask>("testWithLtsAndLatestJvms")
             testWithLtsAndLatestJvms.dependsOn(testWithLatestJvm, testWithLtsJvms)
             if (supportedJvmVersions.containsAll(lts.keys + extension.latestJava)) {
                 check.dependsOn(testWithLtsAndLatestJvms)
@@ -104,6 +111,12 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             extension.jvmVersionsTestedByDefault.get().forEach { version ->
                 check.dependsOn(allTestTasks[version])
             }
+        }
+    }
+
+    companion object {
+        private fun <T : Task> TaskProvider<T>.dependsOn(vararg task: TaskProvider<*>): TaskProvider<T> = apply {
+            configure { it.dependsOn(task) }
         }
     }
 }
