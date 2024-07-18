@@ -19,5 +19,6 @@ tasks.withType<Test> {
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(11)
+    jvmVersionForCompilation.set(17)
+    maximumSupportedJvmVersion.set(21)
 }
