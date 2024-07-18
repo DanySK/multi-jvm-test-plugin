@@ -21,6 +21,7 @@ jobs:
         uses: DanySK/action-checkout@0.2.19
       - uses: DanySK/build-check-deploy-gradle-action@3.5.0
         with:
+          check-command: ./gradlew build
           deploy-command: >-
             ./gradlew
             uploadKotlin
