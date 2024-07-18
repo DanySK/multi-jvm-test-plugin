@@ -1,3 +1,27 @@
+## [1.1.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.1.0...1.1.1) (2024-07-18)
+
+### Dependency updates
+
+* **deps:** update plugin kotlin-qa to v0.62.4 ([bb2a93e](https://github.com/DanySK/multi-jvm-test-plugin/commit/bb2a93e2f7620b9f937600da37d3f2056eb11a3c))
+* **deps:** update plugin kotlin-qa to v0.63.0 ([c09bded](https://github.com/DanySK/multi-jvm-test-plugin/commit/c09bdeddc1b38652e1fede53a66276e1a386b50d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.8 ([2030234](https://github.com/DanySK/multi-jvm-test-plugin/commit/2030234e6fb030d60fe6fb8abd58f343dfa33d49))
+* **deps:** update plugin publishoncentral to v5.1.4 ([f38dc15](https://github.com/DanySK/multi-jvm-test-plugin/commit/f38dc1569337f7bf275ac440d640c14620ce7328))
+
+### Performance improvements
+
+* migrate from `create` to `register` for configuration avoidance (thanks @Vampire) ([6fd0e83](https://github.com/DanySK/multi-jvm-test-plugin/commit/6fd0e834d86abec808190b5d865ae86e29c5a631))
+
+### Build and continuous integration
+
+* always push the buildScan results ([307ea01](https://github.com/DanySK/multi-jvm-test-plugin/commit/307ea0110045c020eb0b8c59e12e9dfece9039fa))
+* configure the wrapper checksum verification ([8419b37](https://github.com/DanySK/multi-jvm-test-plugin/commit/8419b37411f65d81b5fccf8c53ebce3c6cd6b436))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.3.0 ([bf73753](https://github.com/DanySK/multi-jvm-test-plugin/commit/bf737537bc67da29671130d927bc828927aa5ed5))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.4.0 ([f9e2554](https://github.com/DanySK/multi-jvm-test-plugin/commit/f9e25541314604ac9c1e489f84cb050cc7ccfe89))
+
+### Refactoring
+
+* leave `TestOnSpecificJvmVersion` abstract instead of using horrible kludges (thanks @Vampire for the suggestion) ([d43952b](https://github.com/DanySK/multi-jvm-test-plugin/commit/d43952b2b8a0ee8e3ebd50fef3ec84594c0bbc9a))
+
 ## [1.1.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.0.4...1.1.0) (2024-07-16)
 
 ### Features
