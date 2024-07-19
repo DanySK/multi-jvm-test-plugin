@@ -27,6 +27,7 @@ multiJvm {
 
 tasks.withType<Test>().configureEach {
     enabled = when (this.javaLauncher.get().metadata.languageVersion.asInt()) {
+        11 -> true
         multiJvm.jvmVersionForCompilation.get() -> true
         multiJvm.maximumSupportedJvmVersion.get() -> true
         else -> false
