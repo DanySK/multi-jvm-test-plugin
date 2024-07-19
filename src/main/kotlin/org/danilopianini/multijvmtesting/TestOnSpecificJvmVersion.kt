@@ -19,13 +19,6 @@ abstract class TestOnSpecificJvmVersion @Inject constructor(jvmVersion: Int) : T
             it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
         }
         javaLauncher.set(launcher)
-        val tryResolve = runCatching { launcher.isPresent }
-            .onFailure {
-                project.logger.warn(
-                    "Task $name has been disabled as no $jvmVersion is available for the current system.",
-                )
-            }
-        enabled = tryResolve.getOrDefault(false)
     }
 
     companion object {

@@ -46,19 +46,30 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
          * Generate or map all existing tests
          */
         val allTestTasks: Map<Int, TaskProvider<out Test>> = (extension.oldestSupportedJava..extension.latestJava)
-            .associateWith { version ->
+            .mapNotNull { version ->
+                val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
+                val launcher = javaToolchains.launcherFor {
+                    it.languageVersion.set(JavaLanguageVersion.of(version))
+                }
+                runCatching { launcher.isPresent }
+                    .onFailure {
+                        project.logger.warn(
+                            "Although declared as supported in the multiJvm configuration, " +
+                                "no Java $version distribution is available for the current operating system.",
+                        )
+                    }
+                    .map { version to launcher }
+                    .getOrNull()
+            }
+            .toMap()
+            .mapValues { (version, launcher) ->
                 project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version).apply {
                     configure { testTaskOnSpecificJvmVersion ->
                         if (version == extension.jvmVersionForCompilation.get()) {
                             testTaskOnSpecificJvmVersion.enabled = false
                             testTaskOnSpecificJvmVersion.dependsOn(preExistingTests)
-                            val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
                             preExistingTests.forEach { test ->
-                                test.javaLauncher.set(
-                                    javaToolchains.launcherFor {
-                                        it.languageVersion.set(JavaLanguageVersion.of(version))
-                                    },
-                                )
+                                test.javaLauncher.set(launcher)
                             }
                         }
                     }
@@ -107,15 +118,6 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             extension.jvmVersionsTestedByDefault.get().forEach { version ->
                 checkTask.dependsOn(allTestTasks[version])
             }
-//            preExistingTests.forEach { testTask: Test ->
-//                println("setting ${extension.jvmVersionForCompilation.get()} for ${testTask.name}")
-//                val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
-//                testTask.javaLauncher.set(
-//                    javaToolchains.launcherFor {
-//                        it.languageVersion.set(JavaLanguageVersion.of(extension.jvmVersionForCompilation.get()))
-//                    },
-//                )
-//            }
         }
         /*
          * Consistency check
@@ -130,9 +132,6 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 "The maximum Java version must be equal or higher the compilation version" +
                     "(set: $maxVersion, compilation: $minVersion)"
             }
-            /*
-             * Replace the task with the minimum JVM version with the original task
-             */
         }
     }
 }
