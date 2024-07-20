@@ -18,6 +18,6 @@ tasks.withType<Test> {
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(8)
+    jvmVersionForCompilation.set(latestJavaSupportedByGradle)
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
 }
