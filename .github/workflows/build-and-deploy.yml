@@ -21,6 +21,8 @@ jobs:
         uses: DanySK/action-checkout@0.2.19
       - uses: DanySK/build-check-deploy-gradle-action@3.5.0
         with:
+          pre-build-command: >-
+            ruby -e 'puts "org.gradle.java.installations.fromEnv=" + (8..100).flat_map { | version | [ "#{version}_X64", "#{version}_ARM64" ] }.map { |it| "JAVA_HOME_#{it}" }.join(",")' >> gradle.properties
           check-command: ./gradlew build
           deploy-command: >-
             ./gradlew
