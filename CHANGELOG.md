@@ -1,3 +1,21 @@
+## [1.2.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.1.1...1.2.0) (2024-07-22)
+
+### Features
+
+* improve the configuration avoidance ([#615](https://github.com/DanySK/multi-jvm-test-plugin/issues/615)) ([b6c9b6a](https://github.com/DanySK/multi-jvm-test-plugin/commit/b6c9b6a37c0a9dbdd911a07c4f44f1b5ce52ea76))
+
+### Dependency updates
+
+* **deps:** update plugin com.gradle.develocity to v3.17.6 ([7fa7a6c](https://github.com/DanySK/multi-jvm-test-plugin/commit/7fa7a6cffb277b2e4c1d503af3e2e0f48cf470ba))
+
+### Tests
+
+* reduce the JVMs to test with to save space in CI ([a2c483d](https://github.com/DanySK/multi-jvm-test-plugin/commit/a2c483d1ef69b69801c3f03ef73381823471c413))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.0 ([6715dae](https://github.com/DanySK/multi-jvm-test-plugin/commit/6715dae67e51eaffcd0db81a521da99d92ddf019))
+
 ## [1.1.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.1.0...1.1.1) (2024-07-18)
 
 ### Dependency updates
