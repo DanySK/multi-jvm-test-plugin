@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-#         - windows-2022
+          - windows-2022
           - macos-14
           - ubuntu-22.04
     runs-on: ${{ matrix.os }}
@@ -21,6 +21,10 @@ jobs:
         uses: DanySK/action-checkout@0.2.19
       - uses: DanySK/build-check-deploy-gradle-action@3.5.0
         with:
+          pre-build-command: |
+            ruby -e 'puts "org.gradle.java.installations.fromEnv=" + (8..100).flat_map { | version | [ "#{version}_X64", "#{version}_ARM64" ] }.map { |it| "JAVA_HOME_#{it}" }.join(",")' >> gradle.properties
+            ./gradlew javaToolchains
+          check-command: ./gradlew build --parallel --info
           deploy-command: >-
             ./gradlew
             uploadKotlin

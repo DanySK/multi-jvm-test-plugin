@@ -4,6 +4,7 @@ import com.uchuhimo.konf.Config
 import com.uchuhimo.konf.source.yaml
 import io.github.classgraph.ClassGraph
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.collections.shouldBeIn
 import io.kotest.matchers.file.shouldBeAFile
 import io.kotest.matchers.file.shouldExist
 import io.kotest.matchers.shouldBe
@@ -24,7 +25,7 @@ class Tests : StringSpec(
             .scan()
         scan.getResourcesWithLeafName("test.yaml")
             .flatMap { resource ->
-                log.debug("Found test list in $resource")
+                log.debug("Found test list in {}", resource)
                 val yamlFile = File(resource.classpathElementFile.absolutePath + "/" + resource.path)
                 val testConfiguration = Config {
                     addSpec(Root)
@@ -32,16 +33,17 @@ class Tests : StringSpec(
                 testConfiguration[Root.tests].map { it to yamlFile.parentFile }
             }
             .forEach { (test, location) ->
-                log.debug("Test to be executed: $test from $location")
+                log.debug("Test to be executed: {} from {}", test, location)
                 val testFolder = folder {
                     location.copyRecursively(this.root)
                 }
-                log.debug("Test has been copied into $testFolder and is ready to get executed")
+                log.debug("Test has been copied into {} and is ready to get executed", testFolder)
                 test.description {
                     val result = GradleRunner.create()
                         .withProjectDir(testFolder.root)
                         .withPluginClasspath()
                         .withArguments(test.configuration.tasks + test.configuration.options)
+//                        .withDebug(true)
                         .build()
                     println(result.tasks)
                     println(result.output)
@@ -49,10 +51,13 @@ class Tests : StringSpec(
                         result.output shouldContain it
                     }
                     test.expectation.success.forEach {
-                        result.outcomeOf(it) shouldBe TaskOutcome.SUCCESS
+                        result.outcomeOf(it) shouldBeIn arrayOf(TaskOutcome.SUCCESS, TaskOutcome.UP_TO_DATE)
                     }
                     test.expectation.failure.forEach {
                         result.outcomeOf(it) shouldBe TaskOutcome.FAILED
+                    }
+                    test.expectation.skip.forEach {
+                        result.outcomeOf(it) shouldBe TaskOutcome.SKIPPED
                     }
                     test.expectation.file_exists.forEach {
                         with(File("${testFolder.root.absolutePath}/$it")) {

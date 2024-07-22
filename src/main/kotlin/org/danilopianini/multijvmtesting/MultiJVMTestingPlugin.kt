@@ -4,9 +4,9 @@ import org.danilopianini.multijvmtesting.MultiJVMTestingExtension.Companion.isLT
 import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.Task
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginExtension
+import org.gradle.api.tasks.TaskCollection
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
@@ -31,92 +31,111 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 it.languageVersion.set(versionForCompilation)
             }
         }
-        project.plugins.withType<KotlinPlatformJvmPlugin>() {
+        project.plugins.withType<KotlinPlatformJvmPlugin> {
             with(project.extensions.getByType(KotlinJvmProjectExtension::class)) {
                 jvmToolchain {
                     it.languageVersion.set(versionForCompilation)
                 }
             }
         }
+        /*
+         * Generate all tests with a specific JVM
+         */
+        val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
+        fun javaLauncher(version: Int) = javaToolchains.launcherFor {
+            it.languageVersion.set(JavaLanguageVersion.of(version))
+        }
+        val allTestTasks: Map<Int, TaskProvider<out Test>> = (extension.oldestSupportedJava..extension.latestJava)
+            .mapNotNull { version ->
+                val launcher = javaLauncher(version)
+                runCatching { launcher.isPresent }
+                    .onFailure {
+                        project.logger.warn(
+                            "Although declared as supported in the multiJvm configuration, " +
+                                "no Java $version distribution is available for the current operating system.",
+                        )
+                    }
+                    .map {
+                        version to project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
+                    }
+                    .getOrNull()
+            }.toMap()
+        /*
+         * Find the task using the JVM used to compile, and disable it in
+         * favor of the built-in test task.
+         * Contextually, configure the default task to use the JVM used to compile.
+         */
+        project.tasks.withType<Test>().configureEach { testTask ->
+            val compileJavaVersion = extension.jvmVersionForCompilation.get()
+            when (testTask) {
+                is TestOnSpecificJvmVersion -> {
+                    if (testTask.jvmVersion == compileJavaVersion) {
+                        testTask.enabled = false
+                        testTask.dependsOn(project.tasks.withType<Test>().matching { it !is TestOnSpecificJvmVersion })
+                    }
+                }
+                else -> {
+                    testTask.javaLauncher.set(javaLauncher(compileJavaVersion))
+                }
+            }
+        }
+        fun Project.testTasksWithJvm(predicate: (Int) -> Boolean): TaskCollection<Test> =
+            tasks.withType<Test>().matching {
+                predicate(it.javaLauncher.get().metadata.languageVersion.asInt())
+            }
+        /*
+         * Latest JVM
+         */
+        val testWithLatestJvm = project.tasks.register<DefaultTask>("testWithLatestJvm") {
+            dependsOn(project.testTasksWithJvm { it == extension.latestJava })
+        }
+        /*
+         * LTS JVMs
+         */
+        val testWithLtsJvms = project.tasks.register<DefaultTask>("testWithLtsJvms") {
+            dependsOn(project.testTasksWithJvm { it > extension.jvmVersionForCompilation.get() && it.isLTS })
+        }
+        /*
+         * Latest + LTS
+         */
+        val testWithLtsAndLatestJvms = project.tasks.register<DefaultTask>("testWithLtsAndLatestJvms") {
+            dependsOn(testWithLatestJvm, testWithLtsJvms)
+        }
+        /*
+         * Wire the check task
+         */
+        project.tasks.named("check").configure { checkTask ->
+            val supportedJvmVersions = extension.supportedJvmVersions.get()
+            val latestIsEnabled = extension.latestJava in supportedJvmVersions
+            if (latestIsEnabled) {
+                checkTask.dependsOn(testWithLatestJvm)
+            }
+            val minimumSupportedJava = extension.jvmVersionForCompilation.get()
+            val allTheLTS = (minimumSupportedJava..extension.latestJava).filter { it.isLTS }
+            val ltsAreEnabled = supportedJvmVersions.containsAll(allTheLTS)
+            if (ltsAreEnabled) {
+                checkTask.dependsOn(testWithLtsJvms)
+            }
+            if (ltsAreEnabled && latestIsEnabled) {
+                checkTask.dependsOn(testWithLtsAndLatestJvms)
+            }
+            extension.jvmVersionsTestedByDefault.get().forEach { version ->
+                checkTask.dependsOn(allTestTasks[version])
+            }
+        }
+        /*
+         * Consistency check
+         */
         project.afterEvaluate { _ ->
             val minVersion = extension.jvmVersionForCompilation.get()
+            val maxVersion = extension.maximumSupportedJvmVersion.get()
             require(minVersion > 0) {
                 "The minimum Java version must be positive (set: $minVersion)"
             }
-            val maxVersion = extension.maximumSupportedJvmVersion.get()
             require(maxVersion >= minVersion) {
                 "The maximum Java version must be equal or higher the compilation version" +
                     "(set: $maxVersion, compilation: $minVersion)"
             }
-            val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
-            /*
-             * If there is only a default test, then use it as reference for the JVM used for compiling code.
-             * Otherwise, generate a corresponding task.
-             */
-            val testTasks = project.tasks.withType(Test::class.java).toList()
-            val baseTestTask = if (testTasks.size == 1) testTasks.first() else null
-            baseTestTask?.run {
-                javaLauncher.set(
-                    javaToolchains.launcherFor {
-                        it.languageVersion.set(JavaLanguageVersion.of(extension.jvmVersionForCompilation.get()))
-                    },
-                )
-            }
-            val allTestTasks: Map<Int, TaskProvider<out DefaultTask>> =
-                (extension.jvmVersionForCompilation.get()..extension.latestJava).associateWith { version ->
-                    if (version == extension.jvmVersionForCompilation.get() && baseTestTask != null) {
-                        project.tasks.register<DefaultTask>("testWithJvm$version").apply {
-                            configure {
-                                it.group = TestOnSpecificJvmVersion.TASK_GROUP
-                                it.description = TestOnSpecificJvmVersion.makeTaskDescription(version)
-                                it.dependsOn(baseTestTask)
-                            }
-                        }
-                    } else {
-                        project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
-                    }
-                }
-            val supportedJvmVersions = extension.supportedJvmVersions.get()
-            /*
-             * Latest JVM
-             */
-            val testWithLatestJvm = project.tasks.register<DefaultTask>("testWithLatestJvm")
-            testWithLatestJvm.configure {
-                it.dependsOn(allTestTasks[extension.latestJava])
-            }
-            val check = project.tasks.named("check").get()
-            if (extension.latestJava in supportedJvmVersions) {
-                check.dependsOn(testWithLatestJvm)
-            }
-            /*
-             * LTS JVMs
-             */
-            val testWithLtsJvms = project.tasks.register<DefaultTask>("testWithLtsJvms")
-            val lts = allTestTasks.filterKeys { it.isLTS }
-            lts.forEach { (_, task) -> testWithLtsJvms.dependsOn(task) }
-            if (supportedJvmVersions.containsAll(lts.keys)) {
-                check.dependsOn(testWithLtsJvms)
-            }
-            /*
-             * Latest + LTS
-             */
-            val testWithLtsAndLatestJvms = project.tasks.register<DefaultTask>("testWithLtsAndLatestJvms")
-            testWithLtsAndLatestJvms.dependsOn(testWithLatestJvm, testWithLtsJvms)
-            if (supportedJvmVersions.containsAll(lts.keys + extension.latestJava)) {
-                check.dependsOn(testWithLtsAndLatestJvms)
-            }
-            /*
-             * Remaining JVMs
-             */
-            extension.jvmVersionsTestedByDefault.get().forEach { version ->
-                check.dependsOn(allTestTasks[version])
-            }
-        }
-    }
-
-    companion object {
-        private fun <T : Task> TaskProvider<T>.dependsOn(vararg task: TaskProvider<*>): TaskProvider<T> = apply {
-            configure { it.dependsOn(task) }
         }
     }
 }

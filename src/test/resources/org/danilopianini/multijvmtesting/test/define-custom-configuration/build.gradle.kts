@@ -1,4 +1,6 @@
 import org.apache.tools.ant.taskdefs.condition.Os
+import org.gradle.api.tasks.testing.Test
+import org.gradle.kotlin.dsl.withType
 
 plugins {
     id("org.danilopianini.multi-jvm-test-plugin")
@@ -13,26 +15,13 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
+multiJvm {
+    val previousLts = if (latestLts == latestJava) latestLts - 4 else latestLts
+    jvmVersionForCompilation.set(previousLts)
+    maximumSupportedJvmVersion.set(latestJava)
+    testByDefaultWith(previousLts, latestLts, latestJava)
 }
 
-multiJvm {
-    jvmVersionForCompilation.set(8)
-    maximumSupportedJvmVersion.set(latestJava)
-    println(latestJava)
-    println(allLtsVersions)
-    println(supportedJvmVersions.get())
-    if (System.getenv("GITHUB_ACTIONS") == "true" && Os.isFamily(Os.FAMILY_WINDOWS)) {
-        // There is limited space available on GitHub Actions Windows instances:
-        // only test the most recent version of Java there.
-        logger.warn(
-            "Detected a GitHub Actions Windows runner. Window runners have very limited disk space," +
-                    "and thus all tests will run solely with Java {}.",
-            latestJavaSupportedByGradle,
-        )
-        testByDefaultWith(latestJavaSupportedByGradle)
-    } else {
-        testByDefaultWith(8, *allLtsVersions.toIntArray(), latestJava)
-    }
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }

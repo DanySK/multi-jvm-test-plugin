@@ -19,6 +19,7 @@ data class Configuration(val tasks: List<String>, val options: List<String> = em
 data class Expectation(
     val file_exists: List<ExistingFile> = emptyList(),
     val success: List<String> = emptyList(),
+    val skip: List<String> = emptyList(),
     val failure: List<String> = emptyList(),
     val output_contains: List<String> = emptyList(),
 )

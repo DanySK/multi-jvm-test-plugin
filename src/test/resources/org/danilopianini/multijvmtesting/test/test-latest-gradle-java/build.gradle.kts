@@ -13,11 +13,11 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
+multiJvm {
+    jvmVersionForCompilation.set(latestJavaSupportedByGradle)
+    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
 }
 
-multiJvm {
-    jvmVersionForCompilation.set(8)
-    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }

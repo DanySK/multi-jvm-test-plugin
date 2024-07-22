@@ -6,7 +6,7 @@ tests:
     expectation:
       success:
         - check
-        - testWithJvm11
+        - testWithJvm21
         - testWithLtsJvms
         - testWithLatestJvm
         - testWithLtsAndLatestJvms
