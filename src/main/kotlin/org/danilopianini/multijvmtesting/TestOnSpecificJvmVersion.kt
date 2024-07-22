@@ -1,5 +1,6 @@
 package org.danilopianini.multijvmtesting
 
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
@@ -7,9 +8,9 @@ import org.gradle.kotlin.dsl.getByType
 import javax.inject.Inject
 
 /**
- * A special [Test] task configured to run the tests using a specific JVM Version.
+ * A special [Test] task configured to run the tests using a specific [jvmVersion].
  */
-abstract class TestOnSpecificJvmVersion @Inject constructor(jvmVersion: Int) : Test() {
+abstract class TestOnSpecificJvmVersion @Inject constructor(@Internal val jvmVersion: Int) : Test() {
 
     init {
         group = TASK_GROUP

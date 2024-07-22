@@ -39,18 +39,15 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             }
         }
         /*
-         * Set all pre-existing tests to run with the oldest supported JVM
+         * Generate all tests with a specific JVM
          */
-        val preExistingTests = project.tasks.withType<Test>().toList()
-        /*
-         * Generate or map all existing tests
-         */
+        val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
+        fun javaLauncher(version: Int) = javaToolchains.launcherFor {
+            it.languageVersion.set(JavaLanguageVersion.of(version))
+        }
         val allTestTasks: Map<Int, TaskProvider<out Test>> = (extension.oldestSupportedJava..extension.latestJava)
             .mapNotNull { version ->
-                val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
-                val launcher = javaToolchains.launcherFor {
-                    it.languageVersion.set(JavaLanguageVersion.of(version))
-                }
+                val launcher = javaLauncher(version)
                 runCatching { launcher.isPresent }
                     .onFailure {
                         project.logger.warn(
@@ -58,23 +55,30 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                                 "no Java $version distribution is available for the current operating system.",
                         )
                     }
-                    .map { version to launcher }
+                    .map {
+                        version to project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
+                    }
                     .getOrNull()
-            }
-            .toMap()
-            .mapValues { (version, launcher) ->
-                project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version).apply {
-                    configure { testTaskOnSpecificJvmVersion ->
-                        if (version == extension.jvmVersionForCompilation.get()) {
-                            testTaskOnSpecificJvmVersion.enabled = false
-                            testTaskOnSpecificJvmVersion.dependsOn(preExistingTests)
-                            preExistingTests.forEach { test ->
-                                test.javaLauncher.set(launcher)
-                            }
-                        }
+            }.toMap()
+        /*
+         * Find the task using the JVM used to compile, and disable it in
+         * favor of the built-in test task.
+         * Contextually, configure the default task to use the JVM used to compile.
+         */
+        project.tasks.withType<Test>().configureEach { testTask ->
+            val compileJavaVersion = extension.jvmVersionForCompilation.get()
+            when (testTask) {
+                is TestOnSpecificJvmVersion -> {
+                    if (testTask.jvmVersion == compileJavaVersion) {
+                        testTask.enabled = false
+                        testTask.dependsOn(project.tasks.withType<Test>().matching { it !is TestOnSpecificJvmVersion })
                     }
                 }
+                else -> {
+                    testTask.javaLauncher.set(javaLauncher(compileJavaVersion))
+                }
             }
+        }
         fun Project.testTasksWithJvm(predicate: (Int) -> Boolean): TaskCollection<Test> =
             tasks.withType<Test>().matching {
                 predicate(it.javaLauncher.get().metadata.languageVersion.asInt())
