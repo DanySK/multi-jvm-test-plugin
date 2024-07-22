@@ -56,6 +56,11 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     val latestJava: Int = Companion.latestJava
 
     /**
+     * Shortcut for accessing [Companion.latestJava] in the DSL.
+     */
+    val latestLts: Int = (oldestLTS..Companion.latestJava).reversed().first { it.isLTS }
+
+    /**
      * Shortcut for accessing [Companion.oldestLTS] in the DSL.
      */
     val oldestSupportedJava: Int = oldestLTS

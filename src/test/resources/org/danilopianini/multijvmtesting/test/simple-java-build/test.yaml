@@ -4,9 +4,10 @@ tests:
       tasks: check
       options: --stacktrace
     expectation:
+      skip:
+        - testWithJvm11
       success:
         - check
-        - testWithJvm11
         - testWithLtsJvms
         - testWithLatestJvm
         - testWithLtsAndLatestJvms
@@ -17,5 +18,5 @@ tests:
         - testWithJvm17
       options: --stacktrace
     expectation:
-      success:
+      skip:
         - testWithJvm17

@@ -24,7 +24,7 @@ jobs:
           pre-build-command: |
             ruby -e 'puts "org.gradle.java.installations.fromEnv=" + (8..100).flat_map { | version | [ "#{version}_X64", "#{version}_ARM64" ] }.map { |it| "JAVA_HOME_#{it}" }.join(",")' >> gradle.properties
             ./gradlew javaToolchains
-          check-command: ./gradlew build --parallel --debug
+          check-command: ./gradlew build --parallel --info
           deploy-command: >-
             ./gradlew
             uploadKotlin

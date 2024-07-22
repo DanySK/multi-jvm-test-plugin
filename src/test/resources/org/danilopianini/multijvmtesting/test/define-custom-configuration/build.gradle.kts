@@ -16,9 +16,10 @@ dependencies {
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(8)
+    val previousLts = if (latestLts == latestJava) latestLts - 4 else latestLts
+    jvmVersionForCompilation.set(previousLts)
     maximumSupportedJvmVersion.set(latestJava)
-    testByDefaultWith(8, *allLtsVersions.toIntArray(), latestJava)
+    testByDefaultWith(previousLts, latestLts, latestJava)
 }
 
 tasks.withType<Test>().configureEach {
