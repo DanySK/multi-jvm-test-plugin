@@ -66,6 +66,9 @@ class Tests : StringSpec(
                         }
                     }
                 }
+                if (System.getenv("CI").toBoolean()) {
+                    location.deleteRecursively()
+                }
             }
     },
 ) {
