@@ -42,6 +42,7 @@ class Tests : StringSpec(
                         .withProjectDir(testFolder.root)
                         .withPluginClasspath()
                         .withArguments(test.configuration.tasks + test.configuration.options)
+//                        .withDebug(true)
                         .build()
                     println(result.tasks)
                     println(result.output)

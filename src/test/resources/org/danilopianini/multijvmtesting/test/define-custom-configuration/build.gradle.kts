@@ -15,10 +15,6 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
-
 multiJvm {
     jvmVersionForCompilation.set(8)
     maximumSupportedJvmVersion.set(latestJava)
@@ -26,10 +22,5 @@ multiJvm {
 }
 
 tasks.withType<Test>().configureEach {
-    enabled = when (this.javaLauncher.get().metadata.languageVersion.asInt()) {
-        11 -> true
-        multiJvm.jvmVersionForCompilation.get() -> true
-        multiJvm.maximumSupportedJvmVersion.get() -> true
-        else -> false
-    }
+    useJUnitPlatform()
 }
