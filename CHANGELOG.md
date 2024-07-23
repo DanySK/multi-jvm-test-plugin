@@ -1,3 +1,13 @@
+## [1.2.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.1...1.2.2) (2024-07-23)
+
+### Bug Fixes
+
+* disable test tasks incompatible with the compile JVM ([a1d0b08](https://github.com/DanySK/multi-jvm-test-plugin/commit/a1d0b08176a99d10bacffa5a925f0e60b6ff8766))
+
+### Build and continuous integration
+
+* use the task configuration avoidance API to set the Kotlin compiler options ([2513ad7](https://github.com/DanySK/multi-jvm-test-plugin/commit/2513ad7a09dd4afd3c620730d5b21c8b4153d9ff))
+
 ## [1.2.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.0...1.2.1) (2024-07-23)
 
 ### Bug Fixes
