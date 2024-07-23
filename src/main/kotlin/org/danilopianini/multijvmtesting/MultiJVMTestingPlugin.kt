@@ -121,9 +121,10 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
              */
             val baseTests = project.tasks.withType<Test>().matching { it !is TestOnSpecificJvmVersion }
             baseTests.forEach { it.javaLauncher.set(javaLauncher(minVersion)) }
-            project.tasks.withType<TestOnSpecificJvmVersion>().matching { it.jvmVersion == minVersion }.forEach {
+            project.tasks.withType<TestOnSpecificJvmVersion>().matching { it.jvmVersion <= minVersion }.forEach {
                 it.enabled = false
                 it.dependsOn(baseTests)
+                project.logger.info("Disabling task ${it.name} (incompatible or superseded by the built-in test task)")
             }
         }
     }
