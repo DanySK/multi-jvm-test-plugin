@@ -6,7 +6,6 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginExtension
-import org.gradle.api.tasks.TaskCollection
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
@@ -60,40 +59,19 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                     }
                     .getOrNull()
             }.toMap()
-        /*
-         * Find the task using the JVM used to compile, and disable it in
-         * favor of the built-in test task.
-         * Contextually, configure the default task to use the JVM used to compile.
-         */
-        project.tasks.withType<Test>().configureEach { testTask ->
-            val compileJavaVersion = extension.jvmVersionForCompilation.get()
-            when (testTask) {
-                is TestOnSpecificJvmVersion -> {
-                    if (testTask.jvmVersion == compileJavaVersion) {
-                        testTask.enabled = false
-                        testTask.dependsOn(project.tasks.withType<Test>().matching { it !is TestOnSpecificJvmVersion })
-                    }
-                }
-                else -> {
-                    testTask.javaLauncher.set(javaLauncher(compileJavaVersion))
-                }
-            }
-        }
-        fun Project.testTasksWithJvm(predicate: (Int) -> Boolean): TaskCollection<Test> =
-            tasks.withType<Test>().matching {
-                predicate(it.javaLauncher.get().metadata.languageVersion.asInt())
-            }
+        fun testTasksWithJvm(predicate: (Int) -> Boolean): Collection<TaskProvider<out Test>> =
+            allTestTasks.filterKeys { predicate(it) }.values
         /*
          * Latest JVM
          */
         val testWithLatestJvm = project.tasks.register<DefaultTask>("testWithLatestJvm") {
-            dependsOn(project.testTasksWithJvm { it == extension.latestJava })
+            dependsOn(testTasksWithJvm { it == extension.latestJava })
         }
         /*
          * LTS JVMs
          */
         val testWithLtsJvms = project.tasks.register<DefaultTask>("testWithLtsJvms") {
-            dependsOn(project.testTasksWithJvm { it > extension.jvmVersionForCompilation.get() && it.isLTS })
+            dependsOn(testTasksWithJvm { it > extension.jvmVersionForCompilation.get() && it.isLTS })
         }
         /*
          * Latest + LTS
@@ -110,7 +88,7 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             if (latestIsEnabled) {
                 checkTask.dependsOn(testWithLatestJvm)
             }
-            val minimumSupportedJava = extension.jvmVersionForCompilation.get()
+            val minimumSupportedJava = versionForCompilation.get().asInt()
             val allTheLTS = (minimumSupportedJava..extension.latestJava).filter { it.isLTS }
             val ltsAreEnabled = supportedJvmVersions.containsAll(allTheLTS)
             if (ltsAreEnabled) {
@@ -135,6 +113,17 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             require(maxVersion >= minVersion) {
                 "The maximum Java version must be equal or higher the compilation version" +
                     "(set: $maxVersion, compilation: $minVersion)"
+            }
+            /*
+             * Find the task using the JVM used to compile, and disable it in
+             * favor of the built-in test task.
+             * Contextually, configure the default task to use the JVM used to compile.
+             */
+            val baseTests = project.tasks.withType<Test>().matching { it !is TestOnSpecificJvmVersion }
+            baseTests.forEach { it.javaLauncher.set(javaLauncher(minVersion)) }
+            project.tasks.withType<TestOnSpecificJvmVersion>().matching { it.jvmVersion == minVersion }.forEach {
+                it.enabled = false
+                it.dependsOn(baseTests)
             }
         }
     }
