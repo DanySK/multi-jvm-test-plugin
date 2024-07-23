@@ -1,3 +1,18 @@
+## [1.2.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.0...1.2.1) (2024-07-23)
+
+### Bug Fixes
+
+* set the base toolchain version after evaluation ([9f8c82f](https://github.com/DanySK/multi-jvm-test-plugin/commit/9f8c82f59937c5ba327ce5e9ca9a25d2fbf7e512))
+
+### Tests
+
+* delete the temporary folders in CI ([e55fc2d](https://github.com/DanySK/multi-jvm-test-plugin/commit/e55fc2db1f1a24c1c74481623b40fbd568fad2d7))
+
+### Build and continuous integration
+
+* get a codecov token from the repo secrets ([9322ace](https://github.com/DanySK/multi-jvm-test-plugin/commit/9322ace156315680ebfc908512f8e778aad1051e))
+* remove info logging ([a506e2a](https://github.com/DanySK/multi-jvm-test-plugin/commit/a506e2a88d107bbc1dadf68ef3a3dad0e8be721a))
+
 ## [1.2.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.1.1...1.2.0) (2024-07-22)
 
 ### Features
