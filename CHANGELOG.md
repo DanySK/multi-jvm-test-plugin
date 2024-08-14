@@ -1,3 +1,17 @@
+## [1.2.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.3...1.2.4) (2024-08-14)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.10 ([ff379bc](https://github.com/DanySK/multi-jvm-test-plugin/commit/ff379bc3e5188fb19a2d8d956c4dc1d8663d5c97))
+* **deps:** update plugin kotlin-qa to v0.65.1 ([3e9259b](https://github.com/DanySK/multi-jvm-test-plugin/commit/3e9259b106c034bcbcae94b1857bdb0062853c77))
+* **deps:** update plugin kotlin-qa to v0.65.2 ([fabb4ad](https://github.com/DanySK/multi-jvm-test-plugin/commit/fabb4adc6f230043e90643407e1a9aa1195958f6))
+* **deps:** update plugin multijvmtesting to v1.2.3 ([a88fc6b](https://github.com/DanySK/multi-jvm-test-plugin/commit/a88fc6bcd5ef05f0c0b19afd25c1f00752bc028a))
+* **deps:** update plugin publishoncentral to v5.1.5 ([400d947](https://github.com/DanySK/multi-jvm-test-plugin/commit/400d9473e3698d3ff33a02dcc5b149675f9a78e5))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.3 ([3b706ff](https://github.com/DanySK/multi-jvm-test-plugin/commit/3b706ffbd77275ead3912ea07f19928deff8b6d3))
+
 ## [1.2.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.2...1.2.3) (2024-08-06)
 
 ### Dependency updates
