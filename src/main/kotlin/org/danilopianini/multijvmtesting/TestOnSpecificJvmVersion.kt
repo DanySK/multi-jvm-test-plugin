@@ -22,7 +22,7 @@ abstract class TestOnSpecificJvmVersion @Inject constructor(@Internal val jvmVer
         javaLauncher.set(launcher)
     }
 
-    companion object {
+    internal companion object {
 
         internal const val TASK_GROUP = "Verification"
 
