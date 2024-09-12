@@ -14,7 +14,6 @@ import java.net.URI
 /**
  * Extension for the [MultiJVMTestingPlugin].
  */
-@OptIn(ExperimentalUnsignedTypes::class)
 open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serializable {
 
     private var excluded: Set<Int> = emptySet()
