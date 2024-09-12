@@ -110,6 +110,9 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         excluded = excluded + jvms.toSet()
     }
 
+    /**
+     * Support constants.
+     */
     companion object {
         private const val serialVersionUID = 1L
         private const val gradleTableURL = "https://docs.gradle.org/current/userguide/compatibility.html"
