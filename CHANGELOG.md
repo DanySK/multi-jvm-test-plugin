@@ -1,3 +1,31 @@
+## [1.2.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.6...1.2.7) (2024-09-12)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.103 ([34c87b7](https://github.com/DanySK/multi-jvm-test-plugin/commit/34c87b7550445695d9445ee5db1bef1397acf4be))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.104 ([13d479f](https://github.com/DanySK/multi-jvm-test-plugin/commit/13d479fd0205e3bb4dbce50437a78df47fb7b3e6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.105 ([2c651f8](https://github.com/DanySK/multi-jvm-test-plugin/commit/2c651f87934bf582ad760ac3b680ba1553689173))
+* **deps:** update plugin com.gradle.develocity to v3.18.1 ([3b721a5](https://github.com/DanySK/multi-jvm-test-plugin/commit/3b721a5c7113ee196706196b328acaabaac94edb))
+* **deps:** update plugin gradlepluginpublish to v1.3.0 ([c833813](https://github.com/DanySK/multi-jvm-test-plugin/commit/c8338134aa8db582908d0589a679a951a6b62e5b))
+* **deps:** update plugin multijvmtesting to v1.2.6 ([8ea259f](https://github.com/DanySK/multi-jvm-test-plugin/commit/8ea259fa33ebb65bf572997772913086b6280cdf))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.10 ([3a42875](https://github.com/DanySK/multi-jvm-test-plugin/commit/3a42875e6f9b2cd979f01c9ee8495076496ba08e))
+
+### Bug Fixes
+
+* make `TestOnSpecificJvmVersion.Companion` internal ([37a7054](https://github.com/DanySK/multi-jvm-test-plugin/commit/37a7054c706f90473b24c295542cc6f7c85b3f38))
+
+### Documentation
+
+* document `MultiJVMTestingExtension.Companion` ([a2ae475](https://github.com/DanySK/multi-jvm-test-plugin/commit/a2ae4755937e81bd74f814d93452cc3c19d788ae))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.5 ([796661c](https://github.com/DanySK/multi-jvm-test-plugin/commit/796661c6ff9bf5242a96a434ad1613d7147d7335))
+
+### Style improvements
+
+* remove redundant opt-in ([578fac8](https://github.com/DanySK/multi-jvm-test-plugin/commit/578fac890d3b8084cbe2ad89e3b71fe8d007cf4e))
+
 ## [1.2.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.5...1.2.6) (2024-09-09)
 
 ### Dependency updates
