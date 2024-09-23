@@ -1,3 +1,21 @@
+## [1.2.8](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.7...1.2.8) (2024-09-23)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.10.2 ([f67072e](https://github.com/DanySK/multi-jvm-test-plugin/commit/f67072e737d149c54f5b8fd9c3a213aea39ec651))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.106 ([547a9fd](https://github.com/DanySK/multi-jvm-test-plugin/commit/547a9fdb580fb4c7d85d8be099bd0c5dbd22b0ba))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.107 ([d26682f](https://github.com/DanySK/multi-jvm-test-plugin/commit/d26682fc1fff7b943c645586e53ce28f3e997385))
+* **deps:** update plugin kotlin-qa to v0.67.1 ([0580a98](https://github.com/DanySK/multi-jvm-test-plugin/commit/0580a989c4751c2a52ee777cdc88d06abcacb62a))
+* **deps:** update plugin kotlin-qa to v0.67.2 ([5286730](https://github.com/DanySK/multi-jvm-test-plugin/commit/528673048ba316e5321e04f1d322a4265fd1e67c))
+* **deps:** update plugin multijvmtesting to v1.2.7 ([aa433ba](https://github.com/DanySK/multi-jvm-test-plugin/commit/aa433bac4c726cd0682c21fc380ed2892be0f233))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.12 ([e5f4a4b](https://github.com/DanySK/multi-jvm-test-plugin/commit/e5f4a4bdccc0120ec1e33fb8a05f83c0f240d8a5))
+* **deps:** update plugin publishoncentral to v5.1.7 ([67a1e50](https://github.com/DanySK/multi-jvm-test-plugin/commit/67a1e50fce97030fdcd3d30a1cd72ed3d1b28aa6))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.0.4 ([4d5f35d](https://github.com/DanySK/multi-jvm-test-plugin/commit/4d5f35dec57058f652c88ce9864a2c626cd17954))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.6 ([407d53f](https://github.com/DanySK/multi-jvm-test-plugin/commit/407d53f797138b8e8db0ed65e5a5e10a8fc7be64))
+
 ## [1.2.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.6...1.2.7) (2024-09-12)
 
 ### Dependency updates
