@@ -4,9 +4,12 @@
       "github>DanySK/renovate-config:gradle-plugin",
       "github>DanySK/renovate-config:docker-image"
    ],
-   "ignorePresets": ["workarounds:javaLTSVersions"],
-   "regexManagers": [
+   "ignorePresets": [
+      "workarounds:javaLTSVersions"
+   ],
+   "customManagers": [
       {
+         "customType": "regex",
          "fileMatch": [
             "(^|/).java-version$"
          ],
