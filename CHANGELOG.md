@@ -1,3 +1,50 @@
+## [1.3.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.8...1.3.0) (2024-11-08)
+
+### Dependency updates
+
+* **api-deps:** update dependency java to v23 ([#721](https://github.com/DanySK/multi-jvm-test-plugin/issues/721)) ([75b6f4a](https://github.com/DanySK/multi-jvm-test-plugin/commit/75b6f4a44eb671672f9884102d34045115dab886))
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.0.21 ([ce76a95](https://github.com/DanySK/multi-jvm-test-plugin/commit/ce76a95149fedca4564d8cf6af31dab7fc80060f))
+* **deps:** update dependency org.mockito:mockito-core to v5.14.0 ([40eb02c](https://github.com/DanySK/multi-jvm-test-plugin/commit/40eb02ca64f51dbfed599f8d752735ae4ea09c55))
+* **deps:** update dependency org.mockito:mockito-core to v5.14.1 ([5810f91](https://github.com/DanySK/multi-jvm-test-plugin/commit/5810f915a13660dfe47a84a4534c180d5a2cd03d))
+* **deps:** update dependency org.mockito:mockito-core to v5.14.2 ([1376733](https://github.com/DanySK/multi-jvm-test-plugin/commit/13767336c346ab714aec3e6b317b219c76b89988))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.108 ([5ca21d6](https://github.com/DanySK/multi-jvm-test-plugin/commit/5ca21d6ee22a11f3fad8ba7978df182b783c5ecf))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.109 ([f22afbe](https://github.com/DanySK/multi-jvm-test-plugin/commit/f22afbe0b9d105134931688c567a8f8748e9eb28))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.110 ([5d222c8](https://github.com/DanySK/multi-jvm-test-plugin/commit/5d222c8751cfa2bd3f206432fa56b36160bb9fd8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.111 ([cd11bdc](https://github.com/DanySK/multi-jvm-test-plugin/commit/cd11bdc93cb706c69c7f4b178f568ccbe8ab4d6d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.112 ([fda3dbf](https://github.com/DanySK/multi-jvm-test-plugin/commit/fda3dbf6ceafa24f43bf541b12088b553447512e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.113 ([ec627c8](https://github.com/DanySK/multi-jvm-test-plugin/commit/ec627c8452d6e9e3561f9c9bb8e02a151d4b0279))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.114 ([6418c42](https://github.com/DanySK/multi-jvm-test-plugin/commit/6418c4282aba3610aa4c60c6cf46d450fe34f35d))
+* **deps:** update node.js to 20.18 ([0f5c834](https://github.com/DanySK/multi-jvm-test-plugin/commit/0f5c834564b86fd96a4a6782799668f56d999a9e))
+* **deps:** update node.js to v22 ([de07076](https://github.com/DanySK/multi-jvm-test-plugin/commit/de070767b208658e273094181d1c367f8f49e3bc))
+* **deps:** update plugin kotlin-qa to v0.67.3 ([c0e2500](https://github.com/DanySK/multi-jvm-test-plugin/commit/c0e250087a5e1411bc5ede9153776f216fc636a8))
+* **deps:** update plugin kotlin-qa to v0.68.0 ([eec11d0](https://github.com/DanySK/multi-jvm-test-plugin/commit/eec11d0dd265dd32fd44154ce3c3d215274f6cb8))
+* **deps:** update plugin kotlin-qa to v0.69.0 ([ddf0b9a](https://github.com/DanySK/multi-jvm-test-plugin/commit/ddf0b9ad5f5804d6592b0963e10b9a2f6fa1075b))
+* **deps:** update plugin multijvmtesting to v1.2.8 ([589786f](https://github.com/DanySK/multi-jvm-test-plugin/commit/589786fc1518d47de820d179dcb9e3f5cc548e0d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.13 ([4ddd521](https://github.com/DanySK/multi-jvm-test-plugin/commit/4ddd52170dacfd84c0f555bc4da101b857d3b4ad))
+* **deps:** update plugin publishoncentral to v5.1.8 ([b88cb4f](https://github.com/DanySK/multi-jvm-test-plugin/commit/b88cb4f93581e7dcf1fcaec74040239e62d6c2c5))
+* **deps:** update plugin publishoncentral to v5.1.9 ([2380fcb](https://github.com/DanySK/multi-jvm-test-plugin/commit/2380fcbe58cac04599a55834c7731612505f19a7))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.2.0 ([fb833cb](https://github.com/DanySK/multi-jvm-test-plugin/commit/fb833cbb8249947514dd2acdad6adfc495fe9c12))
+* **deps:** update actions/checkout action to v4.2.1 ([c5994e0](https://github.com/DanySK/multi-jvm-test-plugin/commit/c5994e0fe4ef0bc87cc17ce0fb09af63ac675ec2))
+* **deps:** update actions/checkout action to v4.2.2 ([111fbde](https://github.com/DanySK/multi-jvm-test-plugin/commit/111fbde22846583e222968ef9fee55eb2786bdc0))
+* **deps:** update actions/setup-node action to v4.1.0 ([d48a4fa](https://github.com/DanySK/multi-jvm-test-plugin/commit/d48a4fa699beb2987df94c3735cad35c250bda44))
+* **deps:** update danysk/action-checkout action to v0.2.20 ([177560e](https://github.com/DanySK/multi-jvm-test-plugin/commit/177560eacdedb390a55e9008755f6145d8ab2047))
+* **deps:** update danysk/action-checkout action to v0.2.21 ([5b2abbd](https://github.com/DanySK/multi-jvm-test-plugin/commit/5b2abbdeecfe0f6bfab727a7f5843c695317bac2))
+* **deps:** update danysk/action-checkout action to v0.2.22 ([199ca37](https://github.com/DanySK/multi-jvm-test-plugin/commit/199ca378763d65ccf85d3aa6240d263eaf805198))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.10 ([8812b54](https://github.com/DanySK/multi-jvm-test-plugin/commit/8812b54b37cc350637f4c10e9d14671d5ed3f708))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.11 ([90fddaa](https://github.com/DanySK/multi-jvm-test-plugin/commit/90fddaad41511bfa31c47f083c67860ec0100070))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.12 ([ec6e5ef](https://github.com/DanySK/multi-jvm-test-plugin/commit/ec6e5ef5e3eaea541c9ba72a8e64126dd33d19c4))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.7 ([10fa656](https://github.com/DanySK/multi-jvm-test-plugin/commit/10fa656cf1bb3c61ddead652e9b4b5d381e7d257))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.8 ([09efb1c](https://github.com/DanySK/multi-jvm-test-plugin/commit/09efb1c230fd1fab3b0b1418c3cf444d42c61e4e))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.9 ([aefce5d](https://github.com/DanySK/multi-jvm-test-plugin/commit/aefce5d742440137d7ccf1c6c384954ebf4d8fa6))
+* **deps:** update dependency ubuntu github actions runner to v24 ([4cafb35](https://github.com/DanySK/multi-jvm-test-plugin/commit/4cafb3583880e3cd16a79930461bdd0d1bcaafb9))
+
+### General maintenance
+
+* try a different setup to trigger renovate ([f59c90a](https://github.com/DanySK/multi-jvm-test-plugin/commit/f59c90adcf13298020c9f699aa42d2217b44a8c0))
+
 ## [1.2.8](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.2.7...1.2.8) (2024-09-23)
 
 ### Dependency updates
