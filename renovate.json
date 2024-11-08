@@ -3,5 +3,21 @@
    "extends": [
       "github>DanySK/renovate-config:gradle-plugin",
       "github>DanySK/renovate-config:docker-image"
+   ],
+   "ignorePresets": ["workarounds:javaLTSVersions"],
+   "regexManagers": [
+      {
+         "fileMatch": [
+            "(^|/).java-version$"
+         ],
+         "matchStrings": [
+            "(?<version>\\d+(\\.\\d+)*)"
+         ],
+         "depNameTemplate": "Java",
+         "currentValueTemplate": "{{{version}}}",
+         "packageNameTemplate": "Java",
+         "datasourceTemplate": "java-version",
+         "versioningTemplate": "semver-coerced"
+      }
    ]
 }
