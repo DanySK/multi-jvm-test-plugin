@@ -115,7 +115,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     companion object {
         private const val serialVersionUID = 1L
         private const val gradleTableURL = "https://docs.gradle.org/current/userguide/compatibility.html"
-        private const val DOCKERFILE_PATH = "org/danilopianini/multijvmtesting/Dockerfile"
+        private const val JAVA_VERSION_PATH = "org/danilopianini/multijvmtesting/.java-version"
         private const val oldestLTS = 8
 
         /**
@@ -126,16 +126,10 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * The latest known Java version.
          */
-        val latestJava = checkNotNull(
-            Regex("^FROM\\s+eclipse-temurin:(\\d+)$")
-                .matchEntire(Thread.currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim())
-                ?.groupValues
-                ?.get(1)
-                ?.toInt(),
-        ) {
+        val latestJava = checkNotNull(Thread.currentThread().contextClassLoader.getResource(JAVA_VERSION_PATH)) {
             "There must be a bug in the multi-jvm-test-plugin. Please open an issue at " +
                 "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose"
-        }
+        }.readText().trim().substringBefore('.').toInt()
 
         private enum class State {
             INIT, TABLE, CAPTION, READY, ROW, JAVA, TOOLCHAINS, GRADLE, END
