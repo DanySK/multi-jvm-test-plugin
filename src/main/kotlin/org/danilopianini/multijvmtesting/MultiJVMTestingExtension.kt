@@ -127,7 +127,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * The latest known Java version.
          */
         val latestJava = checkNotNull(
-            Regex("^FROM\\s+eclipse-temurin:(\\d+)$")
+            Regex("^FROM\\s+eclipse-temurin:(\\d+)-jdk")
                 .matchEntire(Thread.currentThread().contextClassLoader.getResource(DOCKERFILE_PATH)!!.readText().trim())
                 ?.groupValues
                 ?.get(1)
