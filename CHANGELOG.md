@@ -1,3 +1,29 @@
+## [2.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.3.2...2.0.0) (2024-12-05)
+
+### ⚠ BREAKING CHANGES
+
+* switch property name to SCREAMING_SNAKE_CASE
+
+### Dependency updates
+
+* **deps:** update node.js to 22.12 ([#754](https://github.com/DanySK/multi-jvm-test-plugin/issues/754)) ([3022e06](https://github.com/DanySK/multi-jvm-test-plugin/commit/3022e062479bd72364e36b84b6af049fd5f13ea0))
+* **deps:** update plugin kotlin-qa to v0.70.2 ([#743](https://github.com/DanySK/multi-jvm-test-plugin/issues/743)) ([8cf995c](https://github.com/DanySK/multi-jvm-test-plugin/commit/8cf995c0a18dc92cf16a8bccf7c85be3b53474c0))
+* **deps:** update plugin multijvmtesting to v1.3.2 ([#740](https://github.com/DanySK/multi-jvm-test-plugin/issues/740)) ([03431a0](https://github.com/DanySK/multi-jvm-test-plugin/commit/03431a0db53725f7fb5fa3399be5cf63e9d73b2d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.15 ([#741](https://github.com/DanySK/multi-jvm-test-plugin/issues/741)) ([c8e4ff3](https://github.com/DanySK/multi-jvm-test-plugin/commit/c8e4ff3323921ae682c12d6f6796b4ce87596940))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v0.9.0 ([#752](https://github.com/DanySK/multi-jvm-test-plugin/issues/752)) ([56804fd](https://github.com/DanySK/multi-jvm-test-plugin/commit/56804fd5ab4388309819077fff81eb273b6465c5))
+* **deps:** update plugin publishoncentral to v5.1.11 ([#742](https://github.com/DanySK/multi-jvm-test-plugin/issues/742)) ([d81bdc3](https://github.com/DanySK/multi-jvm-test-plugin/commit/d81bdc3332350050b5504948d33b43a5890e8089))
+* **deps:** update plugin publishoncentral to v6 ([#753](https://github.com/DanySK/multi-jvm-test-plugin/issues/753)) ([4805e16](https://github.com/DanySK/multi-jvm-test-plugin/commit/4805e161737f52d7d0b18c482e063fd553a16eba))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.23 ([#744](https://github.com/DanySK/multi-jvm-test-plugin/issues/744)) ([81355df](https://github.com/DanySK/multi-jvm-test-plugin/commit/81355df1975baa14aa8f971f020d034746e536a3))
+* drop unreleased staging repos on OSSRH ([6ed5eb0](https://github.com/DanySK/multi-jvm-test-plugin/commit/6ed5eb0bdfe217c8487442151399948c1d1b6cb5))
+* improve the workflow cancelling policies ([a225d48](https://github.com/DanySK/multi-jvm-test-plugin/commit/a225d48a03dc229e8bf3346995d97529f63cafaa))
+
+### Style improvements
+
+* switch property name to SCREAMING_SNAKE_CASE ([9934013](https://github.com/DanySK/multi-jvm-test-plugin/commit/9934013b00528bc3222c673709628829c0a260fa))
+
 ## [1.3.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.3.1...1.3.2) (2024-11-20)
 
 ### Dependency updates
