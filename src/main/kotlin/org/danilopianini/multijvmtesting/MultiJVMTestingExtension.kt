@@ -84,7 +84,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         private set
 
     init {
-        jvmVersionForCompilation.set(defaultComplianceLevel)
+        jvmVersionForCompilation.set(DEFAULT_COMPLIANCE_LEVEL)
         maximumSupportedJvmVersion.set(latestJava)
     }
 
@@ -121,7 +121,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * By default, the compiler targets Java 8.
          */
-        const val defaultComplianceLevel: Int = oldestLTS
+        const val DEFAULT_COMPLIANCE_LEVEL: Int = oldestLTS
 
         /**
          * The latest known Java version.
