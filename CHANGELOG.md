@@ -1,3 +1,30 @@
+## [2.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/2.0.0...2.0.1) (2024-12-06)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v2.1.0 ([#750](https://github.com/DanySK/multi-jvm-test-plugin/issues/750)) ([ca3af66](https://github.com/DanySK/multi-jvm-test-plugin/commit/ca3af66a437592ec8d6b83e23fb50e9d60180426))
+* **deps:** update plugin kotlin-qa to v0.77.0 ([0e4f533](https://github.com/DanySK/multi-jvm-test-plugin/commit/0e4f5331221a19145bf27ca6abf67826b2e309f0))
+* **deps:** update plugin multijvmtesting to v2 ([#755](https://github.com/DanySK/multi-jvm-test-plugin/issues/755)) ([8070d4f](https://github.com/DanySK/multi-jvm-test-plugin/commit/8070d4f5a06f69d06e814bb040ac657637b54825))
+
+### Bug Fixes
+
+* fix the LTS version detection ([be7d53f](https://github.com/DanySK/multi-jvm-test-plugin/commit/be7d53f6d4229bf9cd07a2f5d22d1f4983caa2b6))
+
+### Performance improvements
+
+* compute the latest LTS more efficiently ([8c40e2e](https://github.com/DanySK/multi-jvm-test-plugin/commit/8c40e2ef398b716e0241bff431544c403b1ab695))
+
+### Build and continuous integration
+
+* bind ubuntu to 24.04 ([09118cb](https://github.com/DanySK/multi-jvm-test-plugin/commit/09118cb830ebda90d5be70f6aa7f8e76dc3f380a))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.24 ([#758](https://github.com/DanySK/multi-jvm-test-plugin/issues/758)) ([393621a](https://github.com/DanySK/multi-jvm-test-plugin/commit/393621a035f2cfff10ffcdf8374e0a5b4a922c3a))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.25 ([#759](https://github.com/DanySK/multi-jvm-test-plugin/issues/759)) ([b868f1f](https://github.com/DanySK/multi-jvm-test-plugin/commit/b868f1f8bd773429dc39829af2a9344926bc7234))
+
+### Style improvements
+
+* switch property name to SCREAMING_SNAKE_CASE ([6f526b9](https://github.com/DanySK/multi-jvm-test-plugin/commit/6f526b9e04352bc294df865028fdebc3f8db9abb))
+* switch property name to SCREAMING_SNAKE_CASE ([f60b9e0](https://github.com/DanySK/multi-jvm-test-plugin/commit/f60b9e0cfb4d8b634cc58a4238db7d7dd08bcc55))
+
 ## [2.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/1.3.2...2.0.0) (2024-12-05)
 
 ### ⚠ BREAKING CHANGES
