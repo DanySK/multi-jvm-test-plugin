@@ -57,12 +57,12 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     /**
      * Shortcut for accessing [Companion.latestJava] in the DSL.
      */
-    val latestLts: Int = (oldestLTS..Companion.latestJava).last { it.isLTS }
+    val latestLts: Int = (OLDEST_LTS..Companion.latestJava).last { it.isLTS }
 
     /**
-     * Shortcut for accessing [Companion.oldestLTS] in the DSL.
+     * Shortcut for accessing [Companion.OLDEST_LTS] in the DSL.
      */
-    val oldestSupportedJava: Int = oldestLTS
+    val oldestSupportedJava: Int = OLDEST_LTS
 
     /**
      * Shortcut for accessing [Companion.latestJavaSupportedByGradle] in the DSL.
@@ -72,7 +72,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     /**
      * All known Long Term Support JVM versions.
      */
-    val allLtsVersions: Set<Int> = (oldestLTS..latestJava).filter { it.isLTS }.toSet()
+    val allLtsVersions: Set<Int> = (OLDEST_LTS..latestJava).filter { it.isLTS }.toSet()
 
     /**
      * Allows to set the JVM versions on which tests should run by default (namely, when calling check).
@@ -116,12 +116,12 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         private const val serialVersionUID = 1L
         private const val GRADLE_TABLE_URL = "https://docs.gradle.org/current/userguide/compatibility.html"
         private const val JAVA_VERSION_PATH = "org/danilopianini/multijvmtesting/.java-version"
-        private const val oldestLTS = 8
+        private const val OLDEST_LTS = 8
 
         /**
          * By default, the compiler targets Java 8.
          */
-        const val DEFAULT_COMPLIANCE_LEVEL: Int = oldestLTS
+        const val DEFAULT_COMPLIANCE_LEVEL: Int = OLDEST_LTS
 
         /**
          * The latest known Java version.
@@ -266,6 +266,6 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * Returns true if a JVM version (represented as [Int]) is Long Term Support.
          */
         val Int.isLTS: Boolean get() =
-            this == oldestLTS || this == 11 || this >= 17 && (this - 17) % 4 == 0
+            this == OLDEST_LTS || this == 11 || this >= 17 && (this - 17) % 4 == 0
     }
 }
