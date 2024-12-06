@@ -1,3 +1,21 @@
+## [3.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/2.0.1...3.0.0) (2024-12-06)
+
+### ⚠ BREAKING CHANGES
+
+* do not apply the java plugin forcibly, react to applications of java or kotlin-jvm (#760)
+
+### Features
+
+* do not apply the java plugin forcibly, react to applications of java or kotlin-jvm ([#760](https://github.com/DanySK/multi-jvm-test-plugin/issues/760)) ([887df71](https://github.com/DanySK/multi-jvm-test-plugin/commit/887df718e712d74f8e5331d52e989c2e81c0b66a))
+
+### Dependency updates
+
+* **deps:** update plugin kotlin-qa to v0.77.1 ([#757](https://github.com/DanySK/multi-jvm-test-plugin/issues/757)) ([d860c1d](https://github.com/DanySK/multi-jvm-test-plugin/commit/d860c1d0e46244e8464732b86a99bb3c2f9b62e0))
+
+### Build and continuous integration
+
+* do not retry releases on failure ([8aae897](https://github.com/DanySK/multi-jvm-test-plugin/commit/8aae897a46d2cfd7612b05f7810d83d098c8012c))
+
 ## [2.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/2.0.0...2.0.1) (2024-12-06)
 
 ### Dependency updates
