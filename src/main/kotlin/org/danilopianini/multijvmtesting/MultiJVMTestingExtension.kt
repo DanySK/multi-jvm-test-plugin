@@ -265,6 +265,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * Returns true if a JVM version (represented as [Int]) is Long Term Support.
          */
-        val Int.isLTS: Boolean get() = this == oldestLTS || (this - 11) % 6 == 0
+        val Int.isLTS: Boolean get() =
+            this == oldestLTS || this == 11 || this >= 17 && (this - 17) % 4 == 0
     }
 }
