@@ -1,0 +1,8 @@
+tests:
+  - description: "Running with no supported plugin applied should do nothing"
+    configuration:
+      tasks: tasks
+      options: --stacktrace
+    expectation:
+      success:
+        - tasks

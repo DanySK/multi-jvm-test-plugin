@@ -18,12 +18,22 @@ abstract class TestOnSpecificJvmVersion
         init {
             group = TASK_GROUP
             description = makeTaskDescription(jvmVersion)
-            val javaToolchains = project.extensions.getByType(JavaToolchainService::class)
-            val launcher =
-                javaToolchains.launcherFor {
-                    it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
-                }
-            javaLauncher.set(launcher)
+            javaLauncher.set(
+                project.provider { project.extensions.getByType<JavaToolchainService>() }.flatMap { toolchains ->
+                    val launcher =
+                        toolchains.launcherFor {
+                            it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
+                        }
+                    runCatching { launcher.isPresent }
+                        .map { launcher }
+                        .onFailure {
+                            project.logger.warn(
+                                "Although declared as supported in the multiJvm configuration, " +
+                                    "no Java $jvmVersion distribution is available for the current operating system.",
+                            )
+                        }.getOrNull()
+                },
+            )
         }
 
         internal companion object {

@@ -1,7 +1,7 @@
-import org.apache.tools.ant.taskdefs.condition.Os
 import org.gradle.api.tasks.testing.Test
 
 plugins {
+    java
     id("org.danilopianini.multi-jvm-test-plugin")
 }
 
