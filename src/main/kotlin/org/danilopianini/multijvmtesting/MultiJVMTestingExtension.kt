@@ -114,7 +114,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
      */
     companion object {
         private const val serialVersionUID = 1L
-        private const val gradleTableURL = "https://docs.gradle.org/current/userguide/compatibility.html"
+        private const val GRADLE_TABLE_URL = "https://docs.gradle.org/current/userguide/compatibility.html"
         private const val JAVA_VERSION_PATH = "org/danilopianini/multijvmtesting/.java-version"
         private const val oldestLTS = 8
 
@@ -142,7 +142,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          */
         val latestJavaSupportedByGradle: Int by lazy {
             runCatching {
-                val html = URI(gradleTableURL).toURL().readText()
+                val html = URI(GRADLE_TABLE_URL).toURL().readText()
                 class StateMachine {
                     var state: State = State.INIT
                     var curJava: Int? = null
@@ -195,7 +195,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                             State.GRADLE -> {
                                 val java = curJava
                                 checkNotNull(java) {
-                                    "No value set for Java with Gradle version $text while scraping $gradleTableURL"
+                                    "No value set for Java with Gradle version $text while scraping $GRADLE_TABLE_URL"
                                 }
                                 if (Regex("""\d+(\.\d)*""").matches(text)) {
                                     javaToGradle += java to GradleVersion.version(text)
@@ -247,7 +247,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                     ?.coerceAtMost(latestJava)
                     ?: latestJava.also {
                         println(
-                            "WARNING! $gradleTableURL has unexpected " +
+                            "WARNING! $GRADLE_TABLE_URL has unexpected " +
                                 "format, the scraping failed. Defaulting to $it, please report this issue at: " +
                                 "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose",
                         )
@@ -255,7 +255,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
             }.getOrElse { error ->
                 latestJava.also {
                     println(
-                        "WARNING! No access to: $gradleTableURL " +
+                        "WARNING! No access to: $GRADLE_TABLE_URL " +
                             "guessing Gradle compatibility level to $latestJava, error: $error",
                     )
                 }
