@@ -1,6 +1,5 @@
-import org.apache.tools.ant.taskdefs.condition.Os
-
 plugins {
+    java
     id("org.danilopianini.multi-jvm-test-plugin")
 }
 
