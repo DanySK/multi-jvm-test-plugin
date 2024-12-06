@@ -1,7 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
-@Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
 plugins {
     jacoco
     `java-gradle-plugin`
@@ -21,7 +20,8 @@ plugins {
  */
 group = "org.danilopianini"
 description = "This gradle plugin runs the test suit with multiple versions of the Java Virtual Machine"
-inner class ProjectInfo {
+
+class ProjectInfo {
     val longName = "Multi-JVM test plugin"
     val website = "https://github.com/DanySK/$name"
     val vcsUrl = "$website.git"
@@ -80,7 +80,10 @@ tasks.withType<Test>().configureEach {
         showStandardStreams = true
         showCauses = true
         showStackTraces = true
-        events(*org.gradle.api.tasks.testing.logging.TestLogEvent.values())
+        events(
+            *org.gradle.api.tasks.testing.logging.TestLogEvent
+                .values(),
+        )
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
 }

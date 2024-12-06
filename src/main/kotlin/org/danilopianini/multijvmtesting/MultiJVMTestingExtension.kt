@@ -14,8 +14,9 @@ import java.net.URI
 /**
  * Extension for the [MultiJVMTestingPlugin].
  */
-open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serializable {
-
+open class MultiJVMTestingExtension(
+    private val objects: ObjectFactory,
+) : Serializable {
     private var excluded: Set<Int> = emptySet()
 
     /**
@@ -31,23 +32,26 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     /**
      * All the JVM versions supported by the project.
      */
-    val supportedJvmVersions: Provider<Set<Int>> = objects.setProperty<Int>().map {
-        (jvmVersionForCompilation.get()..maximumSupportedJvmVersion.get()).toSet() - excluded
-    }
+    val supportedJvmVersions: Provider<Set<Int>> =
+        objects.setProperty<Int>().map {
+            (jvmVersionForCompilation.get()..maximumSupportedJvmVersion.get()).toSet() - excluded
+        }
 
     /**
      * The set of all Long-Term Support JVM versions supported by this project.
      */
-    val supportedLtsVersions: Provider<Set<Int>> = supportedJvmVersions.map { versions ->
-        versions.filter { it.isLTS }.toSet()
-    }
+    val supportedLtsVersions: Provider<Set<Int>> =
+        supportedJvmVersions.map { versions ->
+            versions.filter { it.isLTS }.toSet()
+        }
 
     /**
      * Union of [supportedLtsVersions] and [maximumSupportedJvmVersion].
      */
-    val supportedLtsVersionsAndLatest: Provider<Set<Int>> = supportedLtsVersions.map {
-        it + maximumSupportedJvmVersion.get()
-    }
+    val supportedLtsVersionsAndLatest: Provider<Set<Int>> =
+        supportedLtsVersions.map {
+            it + maximumSupportedJvmVersion.get()
+        }
 
     /**
      * Shortcut for accessing [Companion.latestJava] in the DSL.
@@ -126,13 +130,22 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * The latest known Java version.
          */
-        val latestJava = checkNotNull(Thread.currentThread().contextClassLoader.getResource(JAVA_VERSION_PATH)) {
-            "There must be a bug in the multi-jvm-test-plugin. Please open an issue at " +
-                "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose"
-        }.readText().trim().substringBefore('.').toInt()
+        val latestJava =
+            checkNotNull(Thread.currentThread().contextClassLoader.getResource(JAVA_VERSION_PATH)) {
+                "There must be a bug in the multi-jvm-test-plugin. Please open an issue at " +
+                    "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose"
+            }.readText().trim().substringBefore('.').toInt()
 
         private enum class State {
-            INIT, TABLE, CAPTION, READY, ROW, JAVA, TOOLCHAINS, GRADLE, END
+            INIT,
+            TABLE,
+            CAPTION,
+            READY,
+            ROW,
+            JAVA,
+            TOOLCHAINS,
+            GRADLE,
+            END,
         }
 
         /**
@@ -143,6 +156,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         val latestJavaSupportedByGradle: Int by lazy {
             runCatching {
                 val html = URI(GRADLE_TABLE_URL).toURL().readText()
+
                 class StateMachine {
                     var state: State = State.INIT
                     var curJava: Int? = null
@@ -215,28 +229,32 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                     }
                 }
                 val stateMachine = StateMachine()
-                val tableHandler = object : KsoupHtmlHandler {
-                    override fun onOpenTagName(name: String) {
-                        when (name) {
-                            "table" -> stateMachine.table()
-                            "caption" -> stateMachine.caption()
-                            "tr" -> stateMachine.row()
-                            "td" -> stateMachine.cell()
+                val tableHandler =
+                    object : KsoupHtmlHandler {
+                        override fun onOpenTagName(name: String) {
+                            when (name) {
+                                "table" -> stateMachine.table()
+                                "caption" -> stateMachine.caption()
+                                "tr" -> stateMachine.row()
+                                "td" -> stateMachine.cell()
+                            }
                         }
-                    }
 
-                    override fun onCloseTag(name: String, isImplied: Boolean) {
-                        when (name) {
-                            "table" -> stateMachine.endTable()
+                        override fun onCloseTag(
+                            name: String,
+                            isImplied: Boolean,
+                        ) {
+                            when (name) {
+                                "table" -> stateMachine.endTable()
+                            }
                         }
-                    }
 
-                    override fun onText(text: String) {
-                        if (text.isNotBlank() && text.length < 100) {
-                            stateMachine.text(text)
+                        override fun onText(text: String) {
+                            if (text.isNotBlank() && text.length < 100) {
+                                stateMachine.text(text)
+                            }
                         }
                     }
-                }
                 val ksoupHtmlParser = KsoupHtmlParser(handler = tableHandler)
                 ksoupHtmlParser.write(html)
                 ksoupHtmlParser.end()
