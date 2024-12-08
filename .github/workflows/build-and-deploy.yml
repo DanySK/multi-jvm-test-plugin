@@ -32,7 +32,7 @@ jobs:
             uploadPluginMavenToMavenCentralNexus
             uploadPluginMarkerMavenToMavenCentralNexus
             close
-            drop
+            dropStagingRepositoryOnMavenCentral
             --parallel
           codecov-token: ${{ secrets.CODECOV_TOKEN }}
           should-run-codecov: ${{ runner.os == 'Linux' }}
