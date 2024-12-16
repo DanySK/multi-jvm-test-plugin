@@ -1,3 +1,25 @@
+## [3.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.0...3.0.1) (2024-12-16)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.116 ([#764](https://github.com/DanySK/multi-jvm-test-plugin/issues/764)) ([f5a1323](https://github.com/DanySK/multi-jvm-test-plugin/commit/f5a1323146af35d286c308d354136a456f2697c1))
+* **deps:** update plugin com.gradle.develocity to v3.19 ([#769](https://github.com/DanySK/multi-jvm-test-plugin/issues/769)) ([af91734](https://github.com/DanySK/multi-jvm-test-plugin/commit/af917345af83db4d6e6f5e14110f83eae2d3dcbf))
+* **deps:** update plugin kotlin-qa to v0.78.0 ([#767](https://github.com/DanySK/multi-jvm-test-plugin/issues/767)) ([43cd8b0](https://github.com/DanySK/multi-jvm-test-plugin/commit/43cd8b030c7824d9ce5f5399ae4f2294bceaf5c4))
+* **deps:** update plugin multijvmtesting to v2.0.1 ([#761](https://github.com/DanySK/multi-jvm-test-plugin/issues/761)) ([e6b5549](https://github.com/DanySK/multi-jvm-test-plugin/commit/e6b5549d003836c56f22d5590663230f02cdc1e2))
+* **deps:** update plugin multijvmtesting to v3 ([#762](https://github.com/DanySK/multi-jvm-test-plugin/issues/762)) ([ffe52e8](https://github.com/DanySK/multi-jvm-test-plugin/commit/ffe52e8796695b557f78c7373a1a26648856b891))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.16 ([#768](https://github.com/DanySK/multi-jvm-test-plugin/issues/768)) ([c6e03d6](https://github.com/DanySK/multi-jvm-test-plugin/commit/c6e03d64a20c32dfa0ca3c5f706718c6d07d1684))
+* **deps:** update plugin publishoncentral to v6.0.1 ([#763](https://github.com/DanySK/multi-jvm-test-plugin/issues/763)) ([6f3ade1](https://github.com/DanySK/multi-jvm-test-plugin/commit/6f3ade1bbe02ebbcedf45e62edc1ffbfe002cf77))
+* **deps:** update plugin publishoncentral to v7 ([#765](https://github.com/DanySK/multi-jvm-test-plugin/issues/765)) ([8f9619d](https://github.com/DanySK/multi-jvm-test-plugin/commit/8f9619d910737f18d78edbd167788199b6f0b775))
+
+### Documentation
+
+* **deps:** update dependency org.jetbrains.dokka to v2 ([#770](https://github.com/DanySK/multi-jvm-test-plugin/issues/770)) ([7479646](https://github.com/DanySK/multi-jvm-test-plugin/commit/747964670b92bd8f99442a03f5ebf6fc3b37b294))
+
+### Build and continuous integration
+
+* disambiguate the drop task name ([#766](https://github.com/DanySK/multi-jvm-test-plugin/issues/766)) ([4322b1b](https://github.com/DanySK/multi-jvm-test-plugin/commit/4322b1b3450aa41770637bb49481e331aaea303f))
+* **release:** disambiguate the release task name ([645d8e0](https://github.com/DanySK/multi-jvm-test-plugin/commit/645d8e00ad0fdac90753b4f7dfbd9fafb3d58cc9))
+
 ## [3.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/2.0.1...3.0.0) (2024-12-06)
 
 ### ⚠ BREAKING CHANGES
