@@ -1,3 +1,20 @@
+## [3.0.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.1...3.0.2) (2024-12-20)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.12 ([#779](https://github.com/DanySK/multi-jvm-test-plugin/issues/779)) ([aa1a4e1](https://github.com/DanySK/multi-jvm-test-plugin/commit/aa1a4e15cb3f5f6b0915fdf542c02df1716de5f9))
+* **deps:** update plugin multijvmtesting to v3.0.1 ([#771](https://github.com/DanySK/multi-jvm-test-plugin/issues/771)) ([129b932](https://github.com/DanySK/multi-jvm-test-plugin/commit/129b93204385c56b290558dbbdce5c17a98fb61d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.17 ([#772](https://github.com/DanySK/multi-jvm-test-plugin/issues/772)) ([eb484e7](https://github.com/DanySK/multi-jvm-test-plugin/commit/eb484e7dfdccf193a4ce38fe959897851f35b2bd))
+* **deps:** update plugin publishoncentral to v7.0.1 ([#773](https://github.com/DanySK/multi-jvm-test-plugin/issues/773)) ([e6e8ce4](https://github.com/DanySK/multi-jvm-test-plugin/commit/e6e8ce4a7cfae3f9e875ac7159af0219f327cc5b))
+* **deps:** update plugin publishoncentral to v7.0.2 ([#777](https://github.com/DanySK/multi-jvm-test-plugin/issues/777)) ([8f98ef6](https://github.com/DanySK/multi-jvm-test-plugin/commit/8f98ef6d8ded0b7ca794ede8d2a58ad61a8d21c9))
+* **deps:** update plugin publishoncentral to v7.0.3 ([#778](https://github.com/DanySK/multi-jvm-test-plugin/issues/778)) ([808a152](https://github.com/DanySK/multi-jvm-test-plugin/commit/808a152a15f530b183b83e1500abab0b4fb17ad8))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.26 ([#774](https://github.com/DanySK/multi-jvm-test-plugin/issues/774)) ([f462433](https://github.com/DanySK/multi-jvm-test-plugin/commit/f4624332fb1cfc2355b8a33f0270446adb385135))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.27 ([#775](https://github.com/DanySK/multi-jvm-test-plugin/issues/775)) ([3d87000](https://github.com/DanySK/multi-jvm-test-plugin/commit/3d870001656e48de3a69659214a22db055d215e7))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.28 ([#776](https://github.com/DanySK/multi-jvm-test-plugin/issues/776)) ([deaf385](https://github.com/DanySK/multi-jvm-test-plugin/commit/deaf38554afd9d1bc4cdc45bc78dab3d95e3efc0))
+
 ## [3.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.0...3.0.1) (2024-12-16)
 
 ### Dependency updates
