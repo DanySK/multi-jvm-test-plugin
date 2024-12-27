@@ -1,5 +1,6 @@
 package org.danilopianini.multijvmtesting
 
+import org.gradle.api.file.FileCollection
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
@@ -18,23 +19,36 @@ abstract class TestOnSpecificJvmVersion
         init {
             group = TASK_GROUP
             description = makeTaskDescription(jvmVersion)
-            javaLauncher.set(
-                project.provider { project.extensions.getByType<JavaToolchainService>() }.flatMap { toolchains ->
-                    val launcher =
-                        toolchains.launcherFor {
-                            it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
-                        }
-                    runCatching { launcher.isPresent }
-                        .map { launcher }
-                        .onFailure {
-                            project.logger.warn(
-                                "Although declared as supported in the multiJvm configuration, " +
-                                    "no Java $jvmVersion distribution is available for the current operating system.",
-                            )
-                        }.getOrNull()
-                },
-            )
+            val launcher =
+                project
+                    .provider { project.extensions.getByType<JavaToolchainService>() }
+                    .flatMap { toolchains ->
+                        val launcher =
+                            toolchains.launcherFor {
+                                it.languageVersion.set(JavaLanguageVersion.of(jvmVersion))
+                            }
+                        runCatching { launcher.isPresent }
+                            .onFailure {
+                                enabled = false
+                                project.logger.warn(
+                                    "Although declared as supported in the multiJvm configuration, " +
+                                        "no Java {} distribution is available for the current operating system. " +
+                                        "task {} will be disabled.",
+                                    jvmVersion,
+                                    name,
+                                )
+                            }
+                        launcher
+                    }
+            javaLauncher.set(launcher)
         }
+
+        override fun getTestClassesDirs(): FileCollection =
+            super.getTestClassesDirs()
+                ?: project.layout.buildDirectory
+                    .dir("classes/kotlin/jvm/test")
+                    .get()
+                    .asFileTree
 
         internal companion object {
             internal const val TASK_GROUP = "Verification"
