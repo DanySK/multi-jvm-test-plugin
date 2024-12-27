@@ -1,3 +1,9 @@
+## [3.1.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.3...3.1.0) (2024-12-27)
+
+### Features
+
+* add experimental support for kotlin multiplatform ([#784](https://github.com/DanySK/multi-jvm-test-plugin/issues/784)) ([9ad6521](https://github.com/DanySK/multi-jvm-test-plugin/commit/9ad652147eb352c11265b9eab5920fed64dd5f0f))
+
 ## [3.0.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.2...3.0.3) (2024-12-27)
 
 ### Dependency updates
