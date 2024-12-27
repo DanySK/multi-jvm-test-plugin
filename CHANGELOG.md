@@ -1,3 +1,16 @@
+## [3.0.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.2...3.0.3) (2024-12-27)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.117 ([#783](https://github.com/DanySK/multi-jvm-test-plugin/issues/783)) ([07c64c6](https://github.com/DanySK/multi-jvm-test-plugin/commit/07c64c6e1990d26eb53645c85373c634c4a69641))
+* **deps:** update plugin multijvmtesting to v3.0.2 ([#780](https://github.com/DanySK/multi-jvm-test-plugin/issues/780)) ([be27630](https://github.com/DanySK/multi-jvm-test-plugin/commit/be27630e8bbc09bb4d29483919adf3d50add18ef))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.18 ([#782](https://github.com/DanySK/multi-jvm-test-plugin/issues/782)) ([13c21f5](https://github.com/DanySK/multi-jvm-test-plugin/commit/13c21f5725f9fc73f4171307e11bb55ce2410f83))
+* **deps:** update plugin publishoncentral to v7.0.4 ([#781](https://github.com/DanySK/multi-jvm-test-plugin/issues/781)) ([2e56883](https://github.com/DanySK/multi-jvm-test-plugin/commit/2e56883d43918c19a548392ff06dc646e68fc8e2))
+
+### Bug Fixes
+
+* remove println ([dcfa6bb](https://github.com/DanySK/multi-jvm-test-plugin/commit/dcfa6bb5a5267d55da537633732be8c46ae3b196))
+
 ## [3.0.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.1...3.0.2) (2024-12-20)
 
 ### Dependency updates
