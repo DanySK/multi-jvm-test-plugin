@@ -15,6 +15,7 @@ import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 /**
  * A [Plugin] that configures the build with the ability to test using multiple JVMs.
@@ -94,6 +95,14 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
         }
         project.pluginManager.withPlugin("org.jetbrains.kotlin.jvm") {
             project.extensions.configure<KotlinJvmProjectExtension> {
+                jvmToolchain {
+                    it.languageVersion.set(versionForCompilation)
+                }
+            }
+            wireTheCheckTask()
+        }
+        project.pluginManager.withPlugin("org.jetbrains.kotlin.multiplatform") {
+            project.extensions.configure<KotlinMultiplatformExtension> {
                 jvmToolchain {
                     it.languageVersion.set(versionForCompilation)
                 }
