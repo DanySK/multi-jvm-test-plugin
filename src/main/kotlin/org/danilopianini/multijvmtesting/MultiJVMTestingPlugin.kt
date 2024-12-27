@@ -29,8 +29,8 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
         val javaToolchains by lazy { project.extensions.getByType<JavaToolchainService>() }
 
         val allTestTasks: Map<Int, TaskProvider<out Test>> =
-            (extension.oldestSupportedJava..extension.latestJava).associate { version ->
-                version to project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
+            (extension.oldestSupportedJava..extension.latestJava).associateWith { version ->
+                project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
             }
 
         fun testTasksWithJvm(predicate: (Int) -> Boolean): Collection<TaskProvider<out Test>> =
