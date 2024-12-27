@@ -1,3 +1,13 @@
+## [3.1.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.1.1...3.1.2) (2024-12-27)
+
+### Dependency updates
+
+* **deps:** update plugin multijvmtesting to v3.1.1 ([#786](https://github.com/DanySK/multi-jvm-test-plugin/issues/786)) ([7626182](https://github.com/DanySK/multi-jvm-test-plugin/commit/762618242c4b076295aa8bdba4b74cb1ceaa9078))
+
+### Bug Fixes
+
+* disable KMP testing on multiple JVMs by default ([1c22848](https://github.com/DanySK/multi-jvm-test-plugin/commit/1c22848d56ac482ca2ec6b0ead400feefce25738))
+
 ## [3.1.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.1.0...3.1.1) (2024-12-27)
 
 ### Bug Fixes
