@@ -1,3 +1,13 @@
+## [3.1.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.1.0...3.1.1) (2024-12-27)
+
+### Bug Fixes
+
+* assume kotlin multiplatform if there are no test classes directories ([e087bb9](https://github.com/DanySK/multi-jvm-test-plugin/commit/e087bb954432b6450b9a67d91190905c6c720536))
+
+### Style improvements
+
+* prefer `associateWith` to `associate` ([ecb1211](https://github.com/DanySK/multi-jvm-test-plugin/commit/ecb1211281abedeb1e5a6d3350a3312eae3ef54e))
+
 ## [3.1.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.0.3...3.1.0) (2024-12-27)
 
 ### Features
