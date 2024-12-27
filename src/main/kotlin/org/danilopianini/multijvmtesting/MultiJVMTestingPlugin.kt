@@ -93,7 +93,6 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             wireTheCheckTask()
         }
         project.pluginManager.withPlugin("org.jetbrains.kotlin.jvm") {
-            println("Configuring Kotlin JVM toolchain")
             project.extensions.configure<KotlinJvmProjectExtension> {
                 jvmToolchain {
                     it.languageVersion.set(versionForCompilation)
