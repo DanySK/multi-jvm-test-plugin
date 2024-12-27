@@ -88,12 +88,9 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             project.extensions.getByType<JavaPluginExtension>().toolchain {
                 it.languageVersion.set(versionForCompilation)
             }
-            /*
-             * Wire the check task
-             */
             wireTheCheckTask()
         }
-        project.pluginManager.withPlugin("org.jetbrains.kotlin.jvm") {
+        project.pluginManager.withPlugin("org.jetbrains.kotlin.jvm") { _ ->
             project.extensions.configure<KotlinJvmProjectExtension> {
                 jvmToolchain {
                     it.languageVersion.set(versionForCompilation)
@@ -101,13 +98,22 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             }
             wireTheCheckTask()
         }
-        project.pluginManager.withPlugin("org.jetbrains.kotlin.multiplatform") {
+        project.pluginManager.withPlugin("org.jetbrains.kotlin.multiplatform") { _ ->
             project.extensions.configure<KotlinMultiplatformExtension> {
                 jvmToolchain {
                     it.languageVersion.set(versionForCompilation)
                 }
             }
-            wireTheCheckTask()
+            project.tasks.withType<TestOnSpecificJvmVersion>().configureEach { testTask ->
+                if (testTask.jvmVersion >= extension.jvmVersionForCompilation.get()) {
+                    project.logger.lifecycle(
+                        "Although task {}:{} could be attempted, execution on KMP projects is currently disabled",
+                        project.name,
+                        testTask.name,
+                    )
+                }
+                testTask.enabled = false
+            }
         }
         /*
          * Consistency check
