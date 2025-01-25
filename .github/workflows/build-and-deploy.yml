@@ -28,9 +28,7 @@ jobs:
           check-command: ./gradlew build --parallel
           deploy-command: >-
             ./gradlew
-            uploadKotlin
-            uploadPluginMavenToMavenCentralNexus
-            uploadPluginMarkerMavenToMavenCentralNexus
+            uploadAllToMavenCentralNexus
             close
             dropStagingRepositoryOnMavenCentral
             --parallel
