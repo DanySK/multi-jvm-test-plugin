@@ -1,3 +1,11 @@
+## [3.3.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.2.4...3.3.0) (2025-03-23)
+
+### Dependency updates
+
+* **api-deps:** update dependency java to v24 ([#842](https://github.com/DanySK/multi-jvm-test-plugin/issues/842)) ([f8e609d](https://github.com/DanySK/multi-jvm-test-plugin/commit/f8e609d87d09f82cd0b995a79eadeef0d408ff4d))
+* **deps:** update plugin multijvmtesting to v3.2.4 ([#841](https://github.com/DanySK/multi-jvm-test-plugin/issues/841)) ([c2ea4c8](https://github.com/DanySK/multi-jvm-test-plugin/commit/c2ea4c8d4cdfc1cfc1d4e42ee99f6ef5f6f0a02c))
+* **deps:** update plugin publishoncentral to v8.0.5 ([#843](https://github.com/DanySK/multi-jvm-test-plugin/issues/843)) ([57feb7e](https://github.com/DanySK/multi-jvm-test-plugin/commit/57feb7e1dc499340599220adec71610893c26d4e))
+
 ## [3.2.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.2.3...3.2.4) (2025-03-20)
 
 ### Dependency updates
