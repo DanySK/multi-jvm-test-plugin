@@ -1,3 +1,24 @@
+## [3.5.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.4.3...3.5.0) (2025-05-29)
+
+### Features
+
+* configure `AbstractCodeQualityTask`s to use the same Jvm used for compilation by default ([60cc873](https://github.com/DanySK/multi-jvm-test-plugin/commit/60cc87306d2398c858949fac5986a527ba294aa6))
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.129 ([#892](https://github.com/DanySK/multi-jvm-test-plugin/issues/892)) ([7777023](https://github.com/DanySK/multi-jvm-test-plugin/commit/77770234d9e8ad92ebc79620d80c3c7985974d24))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.131 ([#895](https://github.com/DanySK/multi-jvm-test-plugin/issues/895)) ([c36d351](https://github.com/DanySK/multi-jvm-test-plugin/commit/c36d3519a9cfb65b7d819a8f0b2dd63c75952907))
+* **deps:** update node.js to 22.16 ([#893](https://github.com/DanySK/multi-jvm-test-plugin/issues/893)) ([254b1e1](https://github.com/DanySK/multi-jvm-test-plugin/commit/254b1e13bbe489fc24a6b120068da610d9012dcb))
+* **deps:** update plugin com.gradle.develocity to v4.0.2 ([#896](https://github.com/DanySK/multi-jvm-test-plugin/issues/896)) ([9309810](https://github.com/DanySK/multi-jvm-test-plugin/commit/9309810e9b5e62387c1c5baa78d2dafe941361ab))
+* **deps:** update plugin kotlin-qa to v0.87.1 ([#889](https://github.com/DanySK/multi-jvm-test-plugin/issues/889)) ([652cda0](https://github.com/DanySK/multi-jvm-test-plugin/commit/652cda039f4233fe63fa96b031108fd765b20c7e))
+* **deps:** update plugin kotlin-qa to v0.88.0 ([#894](https://github.com/DanySK/multi-jvm-test-plugin/issues/894)) ([364589b](https://github.com/DanySK/multi-jvm-test-plugin/commit/364589b6b322de0b1fb9baa9090daf89895cc6a3))
+* **deps:** update plugin multijvmtesting to v3.4.3 ([#890](https://github.com/DanySK/multi-jvm-test-plugin/issues/890)) ([91b481a](https://github.com/DanySK/multi-jvm-test-plugin/commit/91b481af3b598bbfc9297044f65351fcfc8db8cc))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.25 ([#891](https://github.com/DanySK/multi-jvm-test-plugin/issues/891)) ([82aa1c0](https://github.com/DanySK/multi-jvm-test-plugin/commit/82aa1c0ae8bc2ce357097cb7f4520f4a98d1ee03))
+
+### Style improvements
+
+* use Idea's Ktlint style ([000a1e6](https://github.com/DanySK/multi-jvm-test-plugin/commit/000a1e60c6c20bab1fffc61528af3a3e64ff5348))
+
 ## [3.4.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.4.2...3.4.3) (2025-05-22)
 
 ### Dependency updates
