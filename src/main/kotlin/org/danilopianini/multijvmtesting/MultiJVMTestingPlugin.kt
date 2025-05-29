@@ -116,6 +116,17 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             }
         }
         /*
+         * Code quality checks
+         */
+        @Suppress("UnstableApiUsage")
+        project.tasks.withType<AbstractCodeQualityTask>().configureEach { qaTask ->
+            qaTask.javaLauncher.set(
+                javaToolchains.launcherFor {
+                    it.languageVersion.set(JavaLanguageVersion.of(extension.jvmVersionForCompilation.get()))
+                },
+            )
+        }
+        /*
          * Consistency check
          */
         project.afterEvaluate { _ ->
