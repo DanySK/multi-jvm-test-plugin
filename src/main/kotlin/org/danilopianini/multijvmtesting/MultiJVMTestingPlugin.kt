@@ -5,6 +5,7 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
+import org.gradle.api.plugins.quality.AbstractCodeQualityTask
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
@@ -61,26 +62,25 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
         /*
          * Check task wiring
          */
-        fun wireTheCheckTask() =
-            project.tasks.named("check").configure { checkTask ->
-                val supportedJvmVersions = extension.supportedJvmVersions.get()
-                val latestIsEnabled = extension.latestJava in supportedJvmVersions
-                if (latestIsEnabled) {
-                    checkTask.dependsOn(testWithLatestJvm)
-                }
-                val minimumSupportedJava = versionForCompilation.get().asInt()
-                val allTheLTS = (minimumSupportedJava..extension.latestJava).filter { it.isLTS }
-                val ltsAreEnabled = supportedJvmVersions.containsAll(allTheLTS)
-                if (ltsAreEnabled) {
-                    checkTask.dependsOn(testWithLtsJvms)
-                }
-                if (ltsAreEnabled && latestIsEnabled) {
-                    checkTask.dependsOn(testWithLtsAndLatestJvms)
-                }
-                extension.jvmVersionsTestedByDefault.get().forEach { version ->
-                    checkTask.dependsOn(allTestTasks[version])
-                }
+        fun wireTheCheckTask() = project.tasks.named("check").configure { checkTask ->
+            val supportedJvmVersions = extension.supportedJvmVersions.get()
+            val latestIsEnabled = extension.latestJava in supportedJvmVersions
+            if (latestIsEnabled) {
+                checkTask.dependsOn(testWithLatestJvm)
             }
+            val minimumSupportedJava = versionForCompilation.get().asInt()
+            val allTheLTS = (minimumSupportedJava..extension.latestJava).filter { it.isLTS }
+            val ltsAreEnabled = supportedJvmVersions.containsAll(allTheLTS)
+            if (ltsAreEnabled) {
+                checkTask.dependsOn(testWithLtsJvms)
+            }
+            if (ltsAreEnabled && latestIsEnabled) {
+                checkTask.dependsOn(testWithLtsAndLatestJvms)
+            }
+            extension.jvmVersionsTestedByDefault.get().forEach { version ->
+                checkTask.dependsOn(allTestTasks[version])
+            }
+        }
         /*
          * Configure the JVM version for compilation
          */

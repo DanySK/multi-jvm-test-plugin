@@ -14,9 +14,7 @@ import java.net.URI
 /**
  * Extension for the [MultiJVMTestingPlugin].
  */
-open class MultiJVMTestingExtension(
-    private val objects: ObjectFactory,
-) : Serializable {
+open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serializable {
     private var excluded: Set<Int> = emptySet()
 
     /**
@@ -240,10 +238,7 @@ open class MultiJVMTestingExtension(
                             }
                         }
 
-                        override fun onCloseTag(
-                            name: String,
-                            isImplied: Boolean,
-                        ) {
+                        override fun onCloseTag(name: String, isImplied: Boolean) {
                             when (name) {
                                 "table" -> stateMachine.endTable()
                             }

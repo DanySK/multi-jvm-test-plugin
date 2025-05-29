@@ -20,76 +20,70 @@ import java.io.File
 class Tests :
     StringSpec(
         {
-            val scan =
-                ClassGraph()
-                    .enableAllInfo()
-                    .acceptPackages(Tests::class.java.`package`.name)
-                    .scan()
-            scan
-                .getResourcesWithLeafName("test.yaml")
-                .flatMap { resource ->
-                    log.debug("Found test list in {}", resource)
-                    val yamlFile = File(resource.classpathElementFile.absolutePath + "/" + resource.path)
-                    val testConfiguration =
-                        Config {
-                            addSpec(Root)
-                        }.from.yaml.inputStream(resource.open())
-                    testConfiguration[Root.tests].map { it to yamlFile.parentFile }
-                }.forEach { (test, location) ->
-                    log.debug("Test to be executed: {} from {}", test, location)
-                    val testFolder =
-                        folder {
-                            location.copyRecursively(this.root)
-                        }
-                    log.debug("Test has been copied into {} and is ready to get executed", testFolder)
-                    test.description {
-                        val result =
-                            GradleRunner
-                                .create()
-                                .withProjectDir(testFolder.root)
-                                .withPluginClasspath()
-                                .withArguments(test.configuration.tasks + test.configuration.options)
-//                        .withDebug(true)
-                                .build()
-                        println(result.tasks)
-                        println(result.output)
-                        test.expectation.output_contains.forEach {
-                            result.output shouldContain it
-                        }
-                        test.expectation.success.forEach {
-                            result.outcomeOf(it) shouldBeIn arrayOf(TaskOutcome.SUCCESS, TaskOutcome.UP_TO_DATE)
-                        }
-                        test.expectation.failure.forEach {
-                            result.outcomeOf(it) shouldBe TaskOutcome.FAILED
-                        }
-                        test.expectation.skip.forEach {
-                            result.outcomeOf(it) shouldBe TaskOutcome.SKIPPED
-                        }
-                        test.expectation.file_exists.forEach {
-                            with(File("${testFolder.root.absolutePath}/$it")) {
-                                shouldExist()
-                                shouldBeAFile()
-                            }
-                        }
+            val scan = ClassGraph().enableAllInfo()
+                .acceptPackages(Tests::class.java.`package`.name)
+                .scan()
+            scan.getResourcesWithLeafName("test.yaml").flatMap { resource ->
+                log.debug("Found test list in {}", resource)
+                val yamlFile = File(resource.classpathElementFile.absolutePath + "/" + resource.path)
+                val testConfiguration =
+                    Config {
+                        addSpec(Root)
+                    }.from.yaml.inputStream(resource.open())
+                testConfiguration[Root.tests].map { it to yamlFile.parentFile }
+            }.forEach { (test, location) ->
+                log.debug("Test to be executed: {} from {}", test, location)
+                val testFolder =
+                    folder {
+                        location.copyRecursively(this.root)
                     }
-                    if (System.getenv("CI").toBoolean()) {
-                        location.deleteRecursively()
+                log.debug("Test has been copied into {} and is ready to get executed", testFolder)
+                test.description {
+                    val result =
+                        GradleRunner
+                            .create()
+                            .withProjectDir(testFolder.root)
+                            .withPluginClasspath()
+                            .withArguments(test.configuration.tasks + test.configuration.options)
+//                        .withDebug(true)
+                            .build()
+                    println(result.tasks)
+                    println(result.output)
+                    test.expectation.output_contains.forEach {
+                        result.output shouldContain it
+                    }
+                    test.expectation.success.forEach {
+                        result.outcomeOf(it) shouldBeIn arrayOf(TaskOutcome.SUCCESS, TaskOutcome.UP_TO_DATE)
+                    }
+                    test.expectation.failure.forEach {
+                        result.outcomeOf(it) shouldBe TaskOutcome.FAILED
+                    }
+                    test.expectation.skip.forEach {
+                        result.outcomeOf(it) shouldBe TaskOutcome.SKIPPED
+                    }
+                    test.expectation.file_exists.forEach {
+                        with(File("${testFolder.root.absolutePath}/$it")) {
+                            shouldExist()
+                            shouldBeAFile()
+                        }
                     }
                 }
+                if (System.getenv("CI").toBoolean()) {
+                    location.deleteRecursively()
+                }
+            }
         },
     ) {
     companion object {
         val log: Logger = LoggerFactory.getLogger(Tests::class.java)
 
-        private fun BuildResult.outcomeOf(name: String) =
-            checkNotNull(task(":$name")?.outcome) {
-                "Task $name was not present among the executed tasks"
-            }
+        private fun BuildResult.outcomeOf(name: String) = checkNotNull(task(":$name")?.outcome) {
+            "Task $name was not present among the executed tasks"
+        }
 
-        private fun folder(closure: TemporaryFolder.() -> Unit) =
-            TemporaryFolder().apply {
-                create()
-                closure()
-            }
+        private fun folder(closure: TemporaryFolder.() -> Unit) = TemporaryFolder().apply {
+            create()
+            closure()
+        }
     }
 }
