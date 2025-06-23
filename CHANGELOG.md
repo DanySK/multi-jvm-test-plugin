@@ -1,3 +1,18 @@
+## [3.5.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.5.1...3.5.2) (2025-06-23)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.2.0 ([#911](https://github.com/DanySK/multi-jvm-test-plugin/issues/911)) ([7fb1edb](https://github.com/DanySK/multi-jvm-test-plugin/commit/7fb1edb1dee63aaf75b04617019098282f7a7ec3))
+* **deps:** update dependency com.mohamedrejeb.ksoup:ksoup-html to v0.6.0 ([#906](https://github.com/DanySK/multi-jvm-test-plugin/issues/906)) ([b140224](https://github.com/DanySK/multi-jvm-test-plugin/commit/b140224614f799f1531d884aa87772bf5ad48cdf))
+* **deps:** update plugin kotlin-qa to v0.89.1 ([#903](https://github.com/DanySK/multi-jvm-test-plugin/issues/903)) ([1528752](https://github.com/DanySK/multi-jvm-test-plugin/commit/152875210a1f160d668ae28ba9a6cdffbf946fed))
+* **deps:** update plugin multijvmtesting to v3.5.1 ([#904](https://github.com/DanySK/multi-jvm-test-plugin/issues/904)) ([3229cbc](https://github.com/DanySK/multi-jvm-test-plugin/commit/3229cbcb92004ac3928c855837794faab09960bc))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.26 ([#905](https://github.com/DanySK/multi-jvm-test-plugin/issues/905)) ([d53fb8f](https://github.com/DanySK/multi-jvm-test-plugin/commit/d53fb8f26cccbcb3fdbf500e6aebc1cebf84f7e6))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4 ([#908](https://github.com/DanySK/multi-jvm-test-plugin/issues/908)) ([d73cc14](https://github.com/DanySK/multi-jvm-test-plugin/commit/d73cc14f099ee65d94d51b17284298da13fad3f0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.1 ([#909](https://github.com/DanySK/multi-jvm-test-plugin/issues/909)) ([011a05c](https://github.com/DanySK/multi-jvm-test-plugin/commit/011a05c99e74a20f4bdde31b29deb6ba8f258439))
+
 ## [3.5.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.5.0...3.5.1) (2025-06-06)
 
 ### Dependency updates
