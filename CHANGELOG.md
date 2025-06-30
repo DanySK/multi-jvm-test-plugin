@@ -1,3 +1,20 @@
+## [3.5.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.5.2...3.5.3) (2025-06-30)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.134 ([#919](https://github.com/DanySK/multi-jvm-test-plugin/issues/919)) ([e0e13cb](https://github.com/DanySK/multi-jvm-test-plugin/commit/e0e13cb24ce48c40fe4ed407fe4e2c0f75dc9b87))
+* **deps:** update node.js to 22.17 ([#915](https://github.com/DanySK/multi-jvm-test-plugin/issues/915)) ([e9236b2](https://github.com/DanySK/multi-jvm-test-plugin/commit/e9236b214a89f547b19df9e10387f447ab49f4fe))
+* **deps:** update plugin gitsemver to v5.1.5 ([#917](https://github.com/DanySK/multi-jvm-test-plugin/issues/917)) ([ea4c90c](https://github.com/DanySK/multi-jvm-test-plugin/commit/ea4c90c86902a0647051e49eddfeb2f4243a8519))
+* **deps:** update plugin kotlin-qa to v0.89.2 ([#912](https://github.com/DanySK/multi-jvm-test-plugin/issues/912)) ([9f6ad4d](https://github.com/DanySK/multi-jvm-test-plugin/commit/9f6ad4d653f1fccfb1b682bab81686adbd321774))
+* **deps:** update plugin kotlin-qa to v0.90.0 ([#916](https://github.com/DanySK/multi-jvm-test-plugin/issues/916)) ([344dbfa](https://github.com/DanySK/multi-jvm-test-plugin/commit/344dbfacec5be4ceffe65106f9aa9e241c7e8ca7))
+* **deps:** update plugin kotlin-qa to v0.90.1 ([#918](https://github.com/DanySK/multi-jvm-test-plugin/issues/918)) ([305158a](https://github.com/DanySK/multi-jvm-test-plugin/commit/305158a72275424252635524ad953ed592210675))
+* **deps:** update plugin multijvmtesting to v3.5.2 ([#913](https://github.com/DanySK/multi-jvm-test-plugin/issues/913)) ([c7e5544](https://github.com/DanySK/multi-jvm-test-plugin/commit/c7e55444f89753fa8a23ebbdd0c38821e773ab7d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.27 ([#914](https://github.com/DanySK/multi-jvm-test-plugin/issues/914)) ([ed4885e](https://github.com/DanySK/multi-jvm-test-plugin/commit/ed4885e43d47a00d413bcd08dab8d98045c876e7))
+
+### Bug Fixes
+
+* **release:** migrate to Maven Central Portal ([f9091bd](https://github.com/DanySK/multi-jvm-test-plugin/commit/f9091bd228fcdb2275fee673dadddb3cf874cc0b))
+
 ## [3.5.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.5.1...3.5.2) (2025-06-23)
 
 ### Dependency updates
