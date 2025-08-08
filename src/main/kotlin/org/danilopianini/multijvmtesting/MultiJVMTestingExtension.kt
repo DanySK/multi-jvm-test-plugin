@@ -233,29 +233,28 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                     }
                 }
                 val stateMachine = StateMachine()
-                val tableHandler =
-                    object : KsoupHtmlHandler {
-                        override fun onOpenTagName(name: String) {
-                            when (name) {
-                                "table" -> stateMachine.table()
-                                "caption" -> stateMachine.caption()
-                                "tr" -> stateMachine.row()
-                                "td" -> stateMachine.cell()
-                            }
-                        }
-
-                        override fun onCloseTag(name: String, isImplied: Boolean) {
-                            when (name) {
-                                "table" -> stateMachine.endTable()
-                            }
-                        }
-
-                        override fun onText(text: String) {
-                            if (text.isNotBlank() && text.length < 100) {
-                                stateMachine.text(text)
-                            }
+                val tableHandler = object : KsoupHtmlHandler {
+                    override fun onOpenTagName(name: String) {
+                        when (name) {
+                            "table" -> stateMachine.table()
+                            "caption" -> stateMachine.caption()
+                            "tr" -> stateMachine.row()
+                            "td" -> stateMachine.cell()
                         }
                     }
+
+                    override fun onCloseTag(name: String, isImplied: Boolean) {
+                        when (name) {
+                            "table" -> stateMachine.endTable()
+                        }
+                    }
+
+                    override fun onText(text: String) {
+                        if (text.isNotBlank() && text.length < 100) {
+                            stateMachine.text(text)
+                        }
+                    }
+                }
                 val ksoupHtmlParser = KsoupHtmlParser(handler = tableHandler)
                 ksoupHtmlParser.write(html)
                 ksoupHtmlParser.end()
@@ -267,7 +266,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                     ?: latestJava.also {
                         println(
                             "WARNING! $GRADLE_TABLE_URL has unexpected " +
-                                "format, the scraping failed. Defaulting to $it, please report this issue at: " +
+                                "format, the scraping failed. Defaulting to Java $it, please report this issue at: " +
                                 "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose",
                         )
                     }
@@ -284,7 +283,6 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
         /**
          * Returns true if a JVM version (represented as [Int]) is Long Term Support.
          */
-        val Int.isLTS: Boolean get() =
-            this == OLDEST_LTS || this == 11 || this >= 17 && (this - 17) % 4 == 0
+        val Int.isLTS: Boolean get() = this == OLDEST_LTS || this == 11 || this >= 17 && (this - 17) % 4 == 0
     }
 }

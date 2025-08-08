@@ -6,7 +6,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.plugins.quality.AbstractCodeQualityTask
-import org.gradle.api.tasks.TaskProvider
+import org.gradle.api.tasks.TaskCollection
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
@@ -24,44 +24,47 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 open class MultiJVMTestingPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         val extension = project.extensions.create<MultiJVMTestingExtension>("multiJvm")
-        /*
-         * Generate all tests with a specific JVM
-         */
         val javaToolchains by lazy { project.extensions.getByType<JavaToolchainService>() }
-
-        val allTestTasks: Map<Int, TaskProvider<out Test>> =
+        /*
+         * Meta-tasks
+         */
+        val testWithLatestJvm = project.tasks.register<DefaultTask>("testWithLatestJvm")
+        val testWithLtsJvms = project.tasks.register<DefaultTask>("testWithLtsJvms")
+        val testWithLtsAndLatestJvms = project.tasks.register<DefaultTask>("testWithLtsAndLatestJvms") {
+            dependsOn(testWithLatestJvm, testWithLtsJvms)
+        }
+        /*
+         * One special task per task
+         */
+        project.tasks.withType<Test>().matching { it !is TestOnSpecificJvmVersion }.all { test ->
             (extension.oldestSupportedJava..extension.latestJava).associateWith { version ->
-                project.tasks.register<TestOnSpecificJvmVersion>("testWithJvm$version", version)
+                val jvmTest = project.tasks.register<TestOnSpecificJvmVersion>(
+                    "${test.name}WithJvm$version",
+                    version,
+                    test,
+                )
+                if (version == extension.latestJava) {
+                    testWithLatestJvm.configure {
+                        it.dependsOn(jvmTest)
+                    }
+                }
             }
+        }
 
-        fun testTasksWithJvm(predicate: (Int) -> Boolean): Collection<TaskProvider<out Test>> =
-            allTestTasks.filterKeys { predicate(it) }.values
-        /*
-         * Latest JVM
-         */
-        val testWithLatestJvm =
-            project.tasks.register<DefaultTask>("testWithLatestJvm") {
-                dependsOn(testTasksWithJvm { it == extension.latestJava })
-            }
-        /*
-         * LTS JVMs
-         */
-        val testWithLtsJvms =
-            project.tasks.register<DefaultTask>("testWithLtsJvms") {
-                dependsOn(testTasksWithJvm { it > extension.jvmVersionForCompilation.get() && it.isLTS })
-            }
-        /*
-         * Latest + LTS
-         */
-        val testWithLtsAndLatestJvms =
-            project.tasks.register<DefaultTask>("testWithLtsAndLatestJvms") {
-                dependsOn(testWithLatestJvm, testWithLtsJvms)
-            }
-        val versionForCompilation = extension.jvmVersionForCompilation.map(JavaLanguageVersion::of)
+        fun testTasksWithJvm(predicate: (Int) -> Boolean): TaskCollection<TestOnSpecificJvmVersion> =
+            project.tasks.withType<TestOnSpecificJvmVersion>().matching { predicate(it.jvmVersion) }
+        fun testTasksWithJvm(version: Int): TaskCollection<TestOnSpecificJvmVersion> =
+            testTasksWithJvm { it == version }
 
+        testWithLtsJvms.configure { task ->
+            task.dependsOn(
+                testTasksWithJvm { version -> version >= extension.jvmVersionForCompilation.get() && version.isLTS },
+            )
+        }
         /*
          * Check task wiring
          */
+        val versionForCompilation = extension.jvmVersionForCompilation.map(JavaLanguageVersion::of)
         fun wireTheCheckTask() = project.tasks.named("check").configure { checkTask ->
             val supportedJvmVersions = extension.supportedJvmVersions.get()
             val latestIsEnabled = extension.latestJava in supportedJvmVersions
@@ -78,7 +81,7 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 checkTask.dependsOn(testWithLtsAndLatestJvms)
             }
             extension.jvmVersionsTestedByDefault.get().forEach { version ->
-                checkTask.dependsOn(allTestTasks[version])
+                checkTask.dependsOn(testTasksWithJvm(version))
             }
         }
         /*
@@ -104,16 +107,7 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                     it.languageVersion.set(versionForCompilation)
                 }
             }
-            project.tasks.withType<TestOnSpecificJvmVersion>().configureEach { testTask ->
-                if (testTask.jvmVersion >= extension.jvmVersionForCompilation.get()) {
-                    project.logger.lifecycle(
-                        "Although task {}:{} could be attempted, execution on KMP projects is currently disabled",
-                        project.name,
-                        testTask.name,
-                    )
-                }
-                testTask.enabled = false
-            }
+            wireTheCheckTask()
         }
         /*
          * Code quality checks
@@ -155,7 +149,12 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
             project.tasks.withType<TestOnSpecificJvmVersion>().matching { it.jvmVersion <= minVersion }.forEach {
                 it.enabled = false
                 it.dependsOn(baseTests)
-                project.logger.info("Disabling task ${it.name} (incompatible or superseded by the built-in test task)")
+                project.logger.info(
+                    "Disabling task {} (incompatible with minimum version {}, or superseded by the {} task)",
+                    it.name,
+                    minVersion,
+                    it.referenceTest.name,
+                )
             }
         }
     }
