@@ -2,14 +2,14 @@ package org.danilopianini.multijvmtesting
 
 import com.mohamedrejeb.ksoup.html.parser.KsoupHtmlHandler
 import com.mohamedrejeb.ksoup.html.parser.KsoupHtmlParser
+import java.io.Serializable
+import java.net.URI
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.property
 import org.gradle.kotlin.dsl.setProperty
 import org.gradle.util.GradleVersion
-import java.io.Serializable
-import java.net.URI
 
 /**
  * Extension for the [MultiJVMTestingPlugin].

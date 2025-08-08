@@ -1,12 +1,12 @@
 package org.danilopianini.multijvmtesting
 
+import javax.inject.Inject
 import org.gradle.api.file.FileCollection
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.getByType
-import javax.inject.Inject
 
 /**
  * A special [Test] task configured to run the tests using a specific [jvmVersion].
