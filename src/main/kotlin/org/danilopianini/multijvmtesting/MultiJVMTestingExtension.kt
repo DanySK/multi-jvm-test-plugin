@@ -124,6 +124,8 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * By default, the compiler targets Java 8.
          */
         const val DEFAULT_COMPLIANCE_LEVEL: Int = OLDEST_LTS
+        private val GRADLE_VERSION_RANGE =
+            """(\d+(?:\.\d+)+)*(?:\s+to\s+(\d+(?:\.\d+)+)*|\s+and\s+after)""".toRegex()
 
         /**
          * The latest known Java version.
@@ -158,7 +160,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                 class StateMachine {
                     var state: State = State.INIT
                     var curJava: Int? = null
-                    var javaToGradle: Map<Int, GradleVersion> = emptyMap()
+                    var javaToGradle: Map<Int, GradleRange> = emptyMap()
                         private set
 
                     fun table() {
@@ -209,8 +211,12 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                                 checkNotNull(java) {
                                     "No value set for Java with Gradle version $text while scraping $GRADLE_TABLE_URL"
                                 }
-                                if (Regex("""\d+(\.\d)*""").matches(text)) {
-                                    javaToGradle += java to GradleVersion.version(text)
+                                val match = GRADLE_VERSION_RANGE.find(text)
+                                if (match != null) {
+                                    val (start, end) = match.destructured
+                                    val gradleStart = GradleVersion.version(start)
+                                    val gradleEnd = end.takeUnless { it.isBlank() }?.let { GradleVersion.version(it) }
+                                    javaToGradle += java to (gradleStart..gradleEnd)
                                 }
                                 state = State.ROW
                             }
@@ -254,7 +260,7 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                 ksoupHtmlParser.write(html)
                 ksoupHtmlParser.end()
                 stateMachine.javaToGradle
-                    .filterValues { gradleVersion -> GradleVersion.current() >= gradleVersion }
+                    .filterValues { gradleVersionRange -> GradleVersion.current() in gradleVersionRange }
                     .maxByOrNull { (_, gradleVersion) -> gradleVersion }
                     ?.key
                     ?.coerceAtMost(latestJava)
