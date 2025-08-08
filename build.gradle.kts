@@ -39,9 +39,9 @@ repositories {
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(11)
+    jvmVersionForCompilation = 17
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
-    testByDefaultWith(11, latestJavaSupportedByGradle)
+    testByDefaultWith(jvmVersionForCompilation.get(), latestJavaSupportedByGradle)
 }
 
 dependencies {
