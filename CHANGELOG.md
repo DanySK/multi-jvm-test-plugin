@@ -1,3 +1,29 @@
+## [4.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.6.1...4.0.0) (2025-08-09)
+
+### ⚠ BREAKING CHANGES
+
+* require Java 17 minimum, it will be required by Gradle 9 (#953)
+
+### Features
+
+* add full support for kotlin multiplatform projects ([#954](https://github.com/DanySK/multi-jvm-test-plugin/issues/954)) ([5a7a1ad](https://github.com/DanySK/multi-jvm-test-plugin/commit/5a7a1ad69fc2b0e10acfdaa7ba2c1b2d7292e9fb))
+* require Java 17 minimum, it will be required by Gradle 9 ([#953](https://github.com/DanySK/multi-jvm-test-plugin/issues/953)) ([80341f0](https://github.com/DanySK/multi-jvm-test-plugin/commit/80341f01b94863826d8abc692e5784d298be723a))
+
+### Dependency updates
+
+* **deps:** update plugin multijvmtesting to v3.6.1 ([#946](https://github.com/DanySK/multi-jvm-test-plugin/issues/946)) ([6b25f45](https://github.com/DanySK/multi-jvm-test-plugin/commit/6b25f4566b230ca72cd0ea2c41d7d02b15c69365))
+
+### Tests
+
+* correctly import Junit via platform in tests ([#947](https://github.com/DanySK/multi-jvm-test-plugin/issues/947)) ([75ce0f4](https://github.com/DanySK/multi-jvm-test-plugin/commit/75ce0f4034d54dcbd5a2dbb4ee3939d23a21d32c))
+* drop internal Gradle API usage ([#952](https://github.com/DanySK/multi-jvm-test-plugin/issues/952)) ([5d9373b](https://github.com/DanySK/multi-jvm-test-plugin/commit/5d9373b06b41bb8d14a6963d600c23eb96c60446))
+* fix weird package in test source ([#949](https://github.com/DanySK/multi-jvm-test-plugin/issues/949)) ([85a67cb](https://github.com/DanySK/multi-jvm-test-plugin/commit/85a67cb0bc120d3dd56c73156c9117904329d6c9))
+
+### Build and continuous integration
+
+* drop reference to deprecated KOTLIN_VERSION ([#950](https://github.com/DanySK/multi-jvm-test-plugin/issues/950)) ([4998e44](https://github.com/DanySK/multi-jvm-test-plugin/commit/4998e44a5a071346efb09eeb5b673673c7b37fe1))
+* import the editorconfig from AlchemistSimulator/alchemist ([#948](https://github.com/DanySK/multi-jvm-test-plugin/issues/948)) ([904452e](https://github.com/DanySK/multi-jvm-test-plugin/commit/904452ea2d96a12dece638fc2c4f01b295d892db))
+
 ## [3.6.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.6.0...3.6.1) (2025-08-08)
 
 ### Dependency updates
