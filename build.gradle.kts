@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
-import org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION as KOTLIN_VERSION
 
 plugins {
     jacoco
@@ -54,16 +53,6 @@ dependencies {
     testImplementation(gradleTestKit())
     testImplementation(libs.konf.yaml)
     testImplementation(libs.bundles.kotlin.testing)
-}
-
-// Enforce Kotlin version coherence
-configurations.matching { it.name != "detekt" }.all {
-    resolutionStrategy.eachDependency {
-        if (requested.group == "org.jetbrains.kotlin" && requested.name.startsWith("kotlin")) {
-            useVersion(KOTLIN_VERSION)
-            because("All Kotlin modules should use the same version, and compiler uses $KOTLIN_VERSION")
-        }
-    }
 }
 
 tasks.withType<KotlinCompilationTask<*>>().configureEach {
