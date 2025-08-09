@@ -1,3 +1,14 @@
+## [4.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.0.0...4.0.1) (2025-08-09)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v9 ([#940](https://github.com/DanySK/multi-jvm-test-plugin/issues/940)) ([a81eeae](https://github.com/DanySK/multi-jvm-test-plugin/commit/a81eeae8a48331f00949cc48c059357a064ae963))
+* **deps:** update plugin multijvmtesting to v4 ([#955](https://github.com/DanySK/multi-jvm-test-plugin/issues/955)) ([ff7c2ab](https://github.com/DanySK/multi-jvm-test-plugin/commit/ff7c2ab6cf0f777ed0d6d8695d15c358cb408b90))
+
+### Build and continuous integration
+
+* replace `.values()` with `entries` for `TestLogEvent` ([#951](https://github.com/DanySK/multi-jvm-test-plugin/issues/951)) ([c151349](https://github.com/DanySK/multi-jvm-test-plugin/commit/c15134927aab737e49596ae386d47e1b742bad01))
+
 ## [4.0.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/3.6.1...4.0.0) (2025-08-09)
 
 ### ⚠ BREAKING CHANGES
