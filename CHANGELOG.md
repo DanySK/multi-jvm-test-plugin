@@ -1,3 +1,23 @@
+## [4.0.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.0.1...4.0.2) (2025-08-13)
+
+### Dependency updates
+
+* **deps:** update plugin gitsemver to v5.1.8 ([#960](https://github.com/DanySK/multi-jvm-test-plugin/issues/960)) ([36e40cf](https://github.com/DanySK/multi-jvm-test-plugin/commit/36e40cfdf2061da44b3afbc1a3e72327ab4e7ec5))
+* **deps:** update plugin gitsemver to v6 ([#962](https://github.com/DanySK/multi-jvm-test-plugin/issues/962)) ([485364e](https://github.com/DanySK/multi-jvm-test-plugin/commit/485364ed97a1feab9955dab84b136e89af052044))
+* **deps:** update plugin multijvmtesting to v4.0.1 ([#956](https://github.com/DanySK/multi-jvm-test-plugin/issues/956)) ([b2f1702](https://github.com/DanySK/multi-jvm-test-plugin/commit/b2f17020c403016d0f79bd0f9e60eef62edf2b94))
+* **deps:** update plugin publishoncentral to v9.1.2 ([#963](https://github.com/DanySK/multi-jvm-test-plugin/issues/963)) ([0ba4df0](https://github.com/DanySK/multi-jvm-test-plugin/commit/0ba4df01d9fbc478df8e1e1b9643eddbba39a327))
+
+### Bug Fixes
+
+* work around missing explicit dependencies among tasks in the Kotlin Gradle Plugin ([#964](https://github.com/DanySK/multi-jvm-test-plugin/issues/964)) ([627d76a](https://github.com/DanySK/multi-jvm-test-plugin/commit/627d76a4caf87bd9cb083a6422dbdea8077860a9))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.3.0 ([#957](https://github.com/DanySK/multi-jvm-test-plugin/issues/957)) ([81bd253](https://github.com/DanySK/multi-jvm-test-plugin/commit/81bd2538f8bd5645efd26049f2dc2429ff21439f))
+* **deps:** update actions/checkout action to v5 ([#958](https://github.com/DanySK/multi-jvm-test-plugin/issues/958)) ([131de94](https://github.com/DanySK/multi-jvm-test-plugin/commit/131de94a80fe12fc28dffd909b68cb9c1c14ef68))
+* **deps:** update danysk/action-checkout action to v0.2.23 ([#959](https://github.com/DanySK/multi-jvm-test-plugin/issues/959)) ([2a6d790](https://github.com/DanySK/multi-jvm-test-plugin/commit/2a6d7902a6ef29633f1c8d7194008b10307b0fbe))
+* **deps:** update danysk/action-checkout action to v0.2.24 ([#961](https://github.com/DanySK/multi-jvm-test-plugin/issues/961)) ([11760d9](https://github.com/DanySK/multi-jvm-test-plugin/commit/11760d98a191f10182f6ccd342adc0d66f3a85a7))
+
 ## [4.0.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.0.0...4.0.1) (2025-08-09)
 
 ### Dependency updates
