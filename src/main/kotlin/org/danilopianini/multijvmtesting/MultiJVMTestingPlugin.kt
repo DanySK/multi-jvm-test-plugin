@@ -6,6 +6,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.plugins.quality.AbstractCodeQualityTask
+import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.TaskCollection
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
@@ -17,6 +18,9 @@ import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
+import org.jetbrains.kotlin.gradle.tasks.IncrementalSyncTask
 
 /**
  * A [Plugin] that configures the build with the ability to test using multiple JVMs.
@@ -108,6 +112,26 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 }
             }
             wireTheCheckTask()
+            /*
+             * For unclear reasons, some kotlin js tasks are disrupted by the application of this plugin.
+             * Errors look like:
+             *
+             *  Task ':wasmJsNodeTest' uses this output of task ':wasmJsTestTestProductionExecutableCompileSync'
+             * without declaring an explicit or implicit dependency.
+             *
+             * This looks more like a bug in the Kotlin plugin, and this hack should be removed in the future.
+             */
+            val allSyncs = project.tasks.withType<IncrementalSyncTask>()
+            project.tasks.withType<KotlinJsTest>().configureEach {
+                it.dependsOn(allSyncs)
+            }
+            project.tasks.withType<KotlinWebpack>().configureEach {
+                it.dependsOn(allSyncs)
+            }
+            project.tasks.withType<Copy>()
+                .matching { it.name.endsWith("LibraryDistribution") }
+                .matching { it.name.startsWith("js") || it.name.startsWith("wasmJs") }
+                .configureEach { libraryDistribution -> libraryDistribution.dependsOn(allSyncs) }
         }
         /*
          * Code quality checks

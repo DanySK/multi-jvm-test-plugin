@@ -1,0 +1,10 @@
+tests:
+  - description: "multiplatform builds run jvmTests with multiple JDKs"
+    configuration:
+      tasks: build
+      options: --stacktrace
+    expectation:
+      success:
+        - build
+        - jvmTestWithJvm21
+
