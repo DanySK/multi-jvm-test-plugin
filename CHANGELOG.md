@@ -1,3 +1,14 @@
+## [4.1.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.0.3...4.1.0) (2025-08-14)
+
+### Features
+
+* add `oldestJavaSupportedByGradle`, and improve the Java/Gradle version detection reliability ([#966](https://github.com/DanySK/multi-jvm-test-plugin/issues/966)) ([e16e77b](https://github.com/DanySK/multi-jvm-test-plugin/commit/e16e77bc181cedbd186324797634f7007b62bebd))
+
+### Dependency updates
+
+* **deps:** update plugin multijvmtesting to v4.0.3 ([#972](https://github.com/DanySK/multi-jvm-test-plugin/issues/972)) ([ee81cfd](https://github.com/DanySK/multi-jvm-test-plugin/commit/ee81cfd2b54e6d6a26b280040f90f0527c8144e0))
+* **deps:** update plugin publishoncentral to v9.1.3 ([#971](https://github.com/DanySK/multi-jvm-test-plugin/issues/971)) ([464cc69](https://github.com/DanySK/multi-jvm-test-plugin/commit/464cc69dcd4b0629f9980204676c38e6f1324923))
+
 ## [4.0.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.0.2...4.0.3) (2025-08-14)
 
 ### Dependency updates
