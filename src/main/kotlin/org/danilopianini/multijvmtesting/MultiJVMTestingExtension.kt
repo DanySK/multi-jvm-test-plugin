@@ -1,15 +1,15 @@
 package org.danilopianini.multijvmtesting
 
-import com.mohamedrejeb.ksoup.html.parser.KsoupHtmlHandler
-import com.mohamedrejeb.ksoup.html.parser.KsoupHtmlParser
 import java.io.Serializable
-import java.net.URI
+import org.danilopianini.multijvmtesting.scraper.GRADLE_TABLE_URL
+import org.danilopianini.multijvmtesting.scraper.javaRangeForGradle
+import org.danilopianini.multijvmtesting.scraper.javaToGradleStatically
+import org.danilopianini.multijvmtesting.scraper.scrapeGradleJavaCompatibilityTable
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.property
 import org.gradle.kotlin.dsl.setProperty
-import org.gradle.util.GradleVersion
 
 /**
  * Extension for the [MultiJVMTestingPlugin].
@@ -69,7 +69,12 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
     /**
      * Shortcut for accessing [Companion.latestJavaSupportedByGradle] in the DSL.
      */
-    val latestJavaSupportedByGradle: Int = Companion.latestJavaSupportedByGradle
+    val oldestJavaSupportedByGradle: Int = Companion.javaVersionsSupportedByGradle.first
+
+    /**
+     * Shortcut for accessing [Companion.latestJavaSupportedByGradle] in the DSL.
+     */
+    val latestJavaSupportedByGradle: Int = Companion.javaVersionsSupportedByGradle.last
 
     /**
      * All known Long Term Support JVM versions.
@@ -116,7 +121,6 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
      */
     companion object {
         private const val serialVersionUID = 1L
-        private const val GRADLE_TABLE_URL = "https://docs.gradle.org/current/userguide/compatibility.html"
         private const val JAVA_VERSION_PATH = "org/danilopianini/multijvmtesting/.java-version"
         private const val OLDEST_LTS = 8
 
@@ -124,8 +128,6 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
          * By default, the compiler targets Java 8.
          */
         const val DEFAULT_COMPLIANCE_LEVEL: Int = OLDEST_LTS
-        private val GRADLE_VERSION_RANGE =
-            """(\d+(?:\.\d+)+)*(?:\s+to\s+(\d+(?:\.\d+)+)*|\s+and\s+after)""".toRegex()
 
         /**
          * The latest known Java version.
@@ -136,145 +138,20 @@ open class MultiJVMTestingExtension(private val objects: ObjectFactory) : Serial
                     "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose"
             }.readText().trim().substringBefore('.').toInt()
 
-        private enum class State {
-            INIT,
-            TABLE,
-            CAPTION,
-            READY,
-            ROW,
-            JAVA,
-            TOOLCHAINS,
-            GRADLE,
-            END,
-        }
-
         /**
          * Tries to fetch the newest version of the JVM supported by the current version of gradle.
          * Refers to https://docs.gradle.org/current/userguide/compatibility.html,
          * issues to accessing the website make the value potentially wrong.
          */
-        val latestJavaSupportedByGradle: Int by lazy {
-            runCatching {
-                val html = URI(GRADLE_TABLE_URL).toURL().readText()
-
-                class StateMachine {
-                    var state: State = State.INIT
-                    var curJava: Int? = null
-                    var javaToGradle: Map<Int, GradleRange> = emptyMap()
-                        private set
-
-                    fun table() {
-                        when (state) {
-                            State.INIT -> state = State.TABLE
-                            else -> Unit
-                        }
-                    }
-
-                    fun caption() {
-                        when (state) {
-                            State.TABLE -> state = State.CAPTION
-                            else -> Unit
-                        }
-                    }
-
-                    fun row() {
-                        when (state) {
-                            State.READY -> state = State.ROW
-                            else -> Unit
-                        }
-                    }
-
-                    fun cell() {
-                        when (state) {
-                            State.ROW -> state = State.JAVA
-                            State.JAVA -> state = State.TOOLCHAINS
-                            State.TOOLCHAINS -> state = State.GRADLE
-                            State.GRADLE -> state = State.ROW
-                            else -> Unit
-                        }
-                    }
-
-                    fun text(text: String) {
-                        when (state) {
-                            State.CAPTION -> {
-                                if ("Java Compatibility" in text) {
-                                    state = State.READY
-                                } else {
-                                    state = State.INIT
-                                }
-                            }
-                            State.JAVA -> {
-                                curJava = text.toInt()
-                            }
-                            State.GRADLE -> {
-                                val java = curJava
-                                checkNotNull(java) {
-                                    "No value set for Java with Gradle version $text while scraping $GRADLE_TABLE_URL"
-                                }
-                                val match = GRADLE_VERSION_RANGE.find(text)
-                                if (match != null) {
-                                    val (start, end) = match.destructured
-                                    val gradleStart = GradleVersion.version(start)
-                                    val gradleEnd = end.takeUnless { it.isBlank() }?.let { GradleVersion.version(it) }
-                                    javaToGradle += java to (gradleStart..gradleEnd)
-                                }
-                                state = State.ROW
-                            }
-                            else -> Unit
-                        }
-                    }
-
-                    fun endTable() {
-                        when (state) {
-                            State.INIT, State.END -> Unit
-                            State.ROW -> state = State.END
-                            else -> error("Unexpected state $state at the end of the table.")
-                        }
-                    }
-                }
-                val stateMachine = StateMachine()
-                val tableHandler = object : KsoupHtmlHandler {
-                    override fun onOpenTagName(name: String) {
-                        when (name) {
-                            "table" -> stateMachine.table()
-                            "caption" -> stateMachine.caption()
-                            "tr" -> stateMachine.row()
-                            "td" -> stateMachine.cell()
-                        }
-                    }
-
-                    override fun onCloseTag(name: String, isImplied: Boolean) {
-                        when (name) {
-                            "table" -> stateMachine.endTable()
-                        }
-                    }
-
-                    override fun onText(text: String) {
-                        if (text.isNotBlank() && text.length < 100) {
-                            stateMachine.text(text)
-                        }
-                    }
-                }
-                val ksoupHtmlParser = KsoupHtmlParser(handler = tableHandler)
-                ksoupHtmlParser.write(html)
-                ksoupHtmlParser.end()
-                stateMachine.javaToGradle
-                    .filterValues { gradleVersionRange -> GradleVersion.current() in gradleVersionRange }
-                    .maxByOrNull { (_, gradleVersion) -> gradleVersion }
-                    ?.key
-                    ?.coerceAtMost(latestJava)
-                    ?: latestJava.also {
-                        println(
-                            "WARNING! $GRADLE_TABLE_URL has unexpected " +
-                                "format, the scraping failed. Defaulting to Java $it, please report this issue at: " +
-                                "https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose",
-                        )
-                    }
-            }.getOrElse { error ->
-                latestJava.also {
+        val javaVersionsSupportedByGradle: IntRange by lazy {
+            scrapeGradleJavaCompatibilityTable().map { it.javaRangeForGradle() }.getOrElse { error ->
+                javaToGradleStatically.javaRangeForGradle().apply {
                     println(
-                        "WARNING! No access to: $GRADLE_TABLE_URL " +
-                            "guessing Gradle compatibility level to $latestJava, error: $error",
+                        """
+                        WARNING! No access to: ${GRADLE_TABLE_URL}. The system is offline, or the page format has changed.
+                        If you are online, please report this issue at: https://github.com/DanySK/multi-jvm-test-plugin/issues/new/choose
+                        Guessing Gradle compatibility level to be between Java $first and $last, error: $error
+                        """.trimIndent(),
                     )
                 }
             }
