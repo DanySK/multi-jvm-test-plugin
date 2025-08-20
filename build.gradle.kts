@@ -51,6 +51,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(libs.kotlin.gradle.plugin.api)
     implementation(libs.ksoup)
+    testImplementation(libs.classgraph)
     testImplementation(gradleTestKit())
     testImplementation(libs.konf.yaml)
     testImplementation(libs.bundles.kotlin.testing)

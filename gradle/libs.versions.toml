@@ -3,9 +3,10 @@ dokka = "2.0.0"
 jacoco = "0.8.13"
 konf = "1.1.2"
 kotlin = "2.2.10"
-kotest = "5.9.1"
+kotest = "6.0.0"
 
 [libraries]
+classgraph = "io.github.classgraph:classgraph:4.8.181"
 jacoco = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
 konf-yaml = { module = "com.uchuhimo:konf-yaml", version.ref = "konf" }
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
