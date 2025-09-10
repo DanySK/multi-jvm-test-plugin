@@ -1,3 +1,36 @@
+## [4.1.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.1.0...4.1.1) (2025-09-10)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.2.20 ([#998](https://github.com/DanySK/multi-jvm-test-plugin/issues/998)) ([f27f535](https://github.com/DanySK/multi-jvm-test-plugin/commit/f27f5356ad92aea01a14428da3c3b15b305e826d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.140 ([#977](https://github.com/DanySK/multi-jvm-test-plugin/issues/977)) ([9ef6e36](https://github.com/DanySK/multi-jvm-test-plugin/commit/9ef6e36ea5253eab622bb352eacbaf84188b2b05))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.141 ([#989](https://github.com/DanySK/multi-jvm-test-plugin/issues/989)) ([63e55cf](https://github.com/DanySK/multi-jvm-test-plugin/commit/63e55cfab532adaf7007bd8a2288046c5ffb7b53))
+* **deps:** update kotest to v6 (major) ([aff0414](https://github.com/DanySK/multi-jvm-test-plugin/commit/aff0414e8bcf731bbba6098ac18f6d4dc39b795f))
+* **deps:** update kotest to v6.0.1 ([#987](https://github.com/DanySK/multi-jvm-test-plugin/issues/987)) ([f01910f](https://github.com/DanySK/multi-jvm-test-plugin/commit/f01910f403f97c40dcd5f3e9e18d0863aa93e491))
+* **deps:** update kotest to v6.0.2 ([#990](https://github.com/DanySK/multi-jvm-test-plugin/issues/990)) ([e2c5869](https://github.com/DanySK/multi-jvm-test-plugin/commit/e2c5869fd7a3fd0e4a29c60ede411f16cdfe927d))
+* **deps:** update kotest to v6.0.3 ([#995](https://github.com/DanySK/multi-jvm-test-plugin/issues/995)) ([5bf4c12](https://github.com/DanySK/multi-jvm-test-plugin/commit/5bf4c1283bff4e0c0fcf929e6a28c4965aa3e2cf))
+* **deps:** update node.js to 22.19 ([#988](https://github.com/DanySK/multi-jvm-test-plugin/issues/988)) ([d997480](https://github.com/DanySK/multi-jvm-test-plugin/commit/d997480ac52775a4dd529cc010bbc30c99f4f139))
+* **deps:** update plugin com.gradle.develocity to v4.1.1 ([#980](https://github.com/DanySK/multi-jvm-test-plugin/issues/980)) ([0080b07](https://github.com/DanySK/multi-jvm-test-plugin/commit/0080b0757acedfccfb7f76a3a432611ab6be6b67))
+* **deps:** update plugin gitsemver to v6.0.1 ([#974](https://github.com/DanySK/multi-jvm-test-plugin/issues/974)) ([98d54c0](https://github.com/DanySK/multi-jvm-test-plugin/commit/98d54c04a825562ba09601761e9cf0c28247b682))
+* **deps:** update plugin gitsemver to v6.0.2 ([#981](https://github.com/DanySK/multi-jvm-test-plugin/issues/981)) ([4dfe0cb](https://github.com/DanySK/multi-jvm-test-plugin/commit/4dfe0cbe701fc78371c02e4367e56f72964121a7))
+* **deps:** update plugin gitsemver to v7 ([#982](https://github.com/DanySK/multi-jvm-test-plugin/issues/982)) ([2764f2a](https://github.com/DanySK/multi-jvm-test-plugin/commit/2764f2abcc4c151be1dd9224705266e8773fa2a5))
+* **deps:** update plugin gitsemver to v7.0.2 ([#984](https://github.com/DanySK/multi-jvm-test-plugin/issues/984)) ([adb67e8](https://github.com/DanySK/multi-jvm-test-plugin/commit/adb67e82672532cf2b7d588189a43f55b7d02b2b))
+* **deps:** update plugin gradlepluginpublish to v2 ([#993](https://github.com/DanySK/multi-jvm-test-plugin/issues/993)) ([9d6a2f8](https://github.com/DanySK/multi-jvm-test-plugin/commit/9d6a2f820a123a6e7f58fbfec85d1b0ce65a4c7d))
+* **deps:** update plugin kotlin-qa to v0.93.2 ([#975](https://github.com/DanySK/multi-jvm-test-plugin/issues/975)) ([887a4c9](https://github.com/DanySK/multi-jvm-test-plugin/commit/887a4c9d1867193c0f518321c634672b48be7415))
+* **deps:** update plugin kotlin-qa to v0.93.3 ([#978](https://github.com/DanySK/multi-jvm-test-plugin/issues/978)) ([330f060](https://github.com/DanySK/multi-jvm-test-plugin/commit/330f0606de510bff70dc967ebff5bc7ecdf55992))
+* **deps:** update plugin kotlin-qa to v0.94.0 ([#986](https://github.com/DanySK/multi-jvm-test-plugin/issues/986)) ([0cef5f8](https://github.com/DanySK/multi-jvm-test-plugin/commit/0cef5f8f77c9632d958b0dd14300481a4422a2e1))
+* **deps:** update plugin multijvmtesting to v4.1.0 ([#973](https://github.com/DanySK/multi-jvm-test-plugin/issues/973)) ([d2ac962](https://github.com/DanySK/multi-jvm-test-plugin/commit/d2ac962ff706d5829fa94e47ca3b3e82c8b9d54e))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.30 ([#976](https://github.com/DanySK/multi-jvm-test-plugin/issues/976)) ([a0aca63](https://github.com/DanySK/multi-jvm-test-plugin/commit/a0aca63398f79c84429ba496d143362996c68e5a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.0 ([#992](https://github.com/DanySK/multi-jvm-test-plugin/issues/992)) ([c49b37b](https://github.com/DanySK/multi-jvm-test-plugin/commit/c49b37b080fc122c6c88c5300dac3441a2262fa0))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v5 ([#994](https://github.com/DanySK/multi-jvm-test-plugin/issues/994)) ([90b34df](https://github.com/DanySK/multi-jvm-test-plugin/commit/90b34df8e182c9047608eb2055e119e11793d0c0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.4 ([#983](https://github.com/DanySK/multi-jvm-test-plugin/issues/983)) ([4d7d377](https://github.com/DanySK/multi-jvm-test-plugin/commit/4d7d37700c1a12708f29ee322c03ab18cd8e17ca))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.5 ([#985](https://github.com/DanySK/multi-jvm-test-plugin/issues/985)) ([be4cc4f](https://github.com/DanySK/multi-jvm-test-plugin/commit/be4cc4f20182d4bd88954d52a814d2bc7eb65f40))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.6 ([#991](https://github.com/DanySK/multi-jvm-test-plugin/issues/991)) ([8740d72](https://github.com/DanySK/multi-jvm-test-plugin/commit/8740d726d3637dc77658140a286450344ea62588))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.7 ([#996](https://github.com/DanySK/multi-jvm-test-plugin/issues/996)) ([d390592](https://github.com/DanySK/multi-jvm-test-plugin/commit/d390592dd651878429df0df213a18c2da90e80c7))
+
 ## [4.1.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.0.3...4.1.0) (2025-08-14)
 
 ### Features
