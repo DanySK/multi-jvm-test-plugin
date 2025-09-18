@@ -1,3 +1,22 @@
+## [4.1.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.1.1...4.1.2) (2025-09-18)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.1.0 ([#1012](https://github.com/DanySK/multi-jvm-test-plugin/issues/1012)) ([cfb2684](https://github.com/DanySK/multi-jvm-test-plugin/commit/cfb2684f111a6fd1b000d1e91c697f2910443676))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.142 ([#1004](https://github.com/DanySK/multi-jvm-test-plugin/issues/1004)) ([11a5d40](https://github.com/DanySK/multi-jvm-test-plugin/commit/11a5d40f95f6bc220e5c7fdb99f38c1fa65211dd))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.143 ([#1005](https://github.com/DanySK/multi-jvm-test-plugin/issues/1005)) ([091652d](https://github.com/DanySK/multi-jvm-test-plugin/commit/091652dc48cdc45212de0486cd05908e4af483fc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.144 ([#1008](https://github.com/DanySK/multi-jvm-test-plugin/issues/1008)) ([61802f6](https://github.com/DanySK/multi-jvm-test-plugin/commit/61802f64ee068ea5c813155b966eebb8132d4e1c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.145 ([#1009](https://github.com/DanySK/multi-jvm-test-plugin/issues/1009)) ([50c4879](https://github.com/DanySK/multi-jvm-test-plugin/commit/50c48790902d7058e5263aa8193686aa8cb8a558))
+* **deps:** update plugin com.gradle.develocity to v4.2 ([#1007](https://github.com/DanySK/multi-jvm-test-plugin/issues/1007)) ([fe507d4](https://github.com/DanySK/multi-jvm-test-plugin/commit/fe507d435bb7cf443fe8ed1068a67c6079da20ad))
+* **deps:** update plugin gitsemver to v7.0.3 ([#999](https://github.com/DanySK/multi-jvm-test-plugin/issues/999)) ([9e679da](https://github.com/DanySK/multi-jvm-test-plugin/commit/9e679da2c7ae5382814f9fa70ad1258829231831))
+* **deps:** update plugin gitsemver to v7.0.4 ([#1010](https://github.com/DanySK/multi-jvm-test-plugin/issues/1010)) ([8312d71](https://github.com/DanySK/multi-jvm-test-plugin/commit/8312d71e3009ddcd135eb7dd840d835c0d09a6a2))
+* **deps:** update plugin kotlin-qa to v0.94.1 ([#1000](https://github.com/DanySK/multi-jvm-test-plugin/issues/1000)) ([dcbb75e](https://github.com/DanySK/multi-jvm-test-plugin/commit/dcbb75e3aa55bc04778ab8732d743709909bada5))
+* **deps:** update plugin kotlin-qa to v0.95.0 ([#1006](https://github.com/DanySK/multi-jvm-test-plugin/issues/1006)) ([e792891](https://github.com/DanySK/multi-jvm-test-plugin/commit/e792891627d9d3427a9e904ae092f3e4f47217c9))
+* **deps:** update plugin multijvmtesting to v4.1.1 ([#1001](https://github.com/DanySK/multi-jvm-test-plugin/issues/1001)) ([f0bb053](https://github.com/DanySK/multi-jvm-test-plugin/commit/f0bb053d32c7fc1de866d4fe6b0d3d669bd56a5a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.1 ([#1002](https://github.com/DanySK/multi-jvm-test-plugin/issues/1002)) ([f330e5c](https://github.com/DanySK/multi-jvm-test-plugin/commit/f330e5c0e89c285ff33b7f2d8ecdb31f5d161597))
+* **deps:** update plugin publishoncentral to v9.1.4 ([#1003](https://github.com/DanySK/multi-jvm-test-plugin/issues/1003)) ([6233aa8](https://github.com/DanySK/multi-jvm-test-plugin/commit/6233aa80d62737c420dd8fc0c976c7131880ccad))
+* **deps:** update plugin publishoncentral to v9.1.5 ([#1011](https://github.com/DanySK/multi-jvm-test-plugin/issues/1011)) ([722ea36](https://github.com/DanySK/multi-jvm-test-plugin/commit/722ea368163a16cddcdb457bc01eac0230a65795))
+
 ## [4.1.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.1.0...4.1.1) (2025-09-10)
 
 ### Dependency updates
