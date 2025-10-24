@@ -1,3 +1,17 @@
+## [4.3.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.0...4.3.1) (2025-10-24)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.2.21 ([#1039](https://github.com/DanySK/multi-jvm-test-plugin/issues/1039)) ([3857e7c](https://github.com/DanySK/multi-jvm-test-plugin/commit/3857e7c4fc08159adf71c660c65c6ad5e20eb15d))
+* **deps:** update dependency org.jacoco:org.jacoco.core to v0.8.14 ([#1028](https://github.com/DanySK/multi-jvm-test-plugin/issues/1028)) ([567081d](https://github.com/DanySK/multi-jvm-test-plugin/commit/567081db63198b5c0959e405edaabb5ed8f18c7d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.149 ([#1033](https://github.com/DanySK/multi-jvm-test-plugin/issues/1033)) ([7a7652b](https://github.com/DanySK/multi-jvm-test-plugin/commit/7a7652bb5920e0b09ea1af8968775eb71e2c3e4c))
+* **deps:** update kotest to v6.0.4 ([#1031](https://github.com/DanySK/multi-jvm-test-plugin/issues/1031)) ([7129e55](https://github.com/DanySK/multi-jvm-test-plugin/commit/7129e55924a802804cae257c9d03badd344b80e1))
+* **deps:** update node.js to 22.21 ([#1034](https://github.com/DanySK/multi-jvm-test-plugin/issues/1034)) ([62558da](https://github.com/DanySK/multi-jvm-test-plugin/commit/62558da1a539c233fad218cdd902134145aa89f8))
+* **deps:** update plugin com.gradle.develocity to v4.2.2 ([#1029](https://github.com/DanySK/multi-jvm-test-plugin/issues/1029)) ([6614736](https://github.com/DanySK/multi-jvm-test-plugin/commit/6614736eb0d48011c75e7d5ef31580fe6d612fc0))
+* **deps:** update plugin gitsemver to v7.0.5 ([#1036](https://github.com/DanySK/multi-jvm-test-plugin/issues/1036)) ([8402299](https://github.com/DanySK/multi-jvm-test-plugin/commit/840229986845fbee0492859e1e9bdc4f87fa36e0))
+* **deps:** update plugin kotlin-qa to v0.95.2 ([#1040](https://github.com/DanySK/multi-jvm-test-plugin/issues/1040)) ([edab49a](https://github.com/DanySK/multi-jvm-test-plugin/commit/edab49a7aa7159cef15120e16803c647c7282b06))
+* **deps:** update plugin multijvmtesting to v4.3.0 ([#1042](https://github.com/DanySK/multi-jvm-test-plugin/issues/1042)) ([ba041a7](https://github.com/DanySK/multi-jvm-test-plugin/commit/ba041a73033c2201a69cfafd47d003da07dc277d))
+
 ## [4.3.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.2.0...4.3.0) (2025-10-24)
 
 ### Dependency updates
