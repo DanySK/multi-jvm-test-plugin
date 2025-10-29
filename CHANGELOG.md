@@ -1,3 +1,12 @@
+## [4.3.2](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.1...4.3.2) (2025-10-29)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.2.0 ([#1046](https://github.com/DanySK/multi-jvm-test-plugin/issues/1046)) ([98cf5ed](https://github.com/DanySK/multi-jvm-test-plugin/commit/98cf5ed4903ca6ff8122e951628197d6b630359b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.151 ([#1044](https://github.com/DanySK/multi-jvm-test-plugin/issues/1044)) ([5b7398c](https://github.com/DanySK/multi-jvm-test-plugin/commit/5b7398c8a5faa3f3333c915eca71c62e93159447))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.152 ([#1045](https://github.com/DanySK/multi-jvm-test-plugin/issues/1045)) ([b1151af](https://github.com/DanySK/multi-jvm-test-plugin/commit/b1151af7fc3a9e989e7981be15b60a3616ed0ac0))
+* **deps:** update plugin multijvmtesting to v4.3.1 ([#1043](https://github.com/DanySK/multi-jvm-test-plugin/issues/1043)) ([98cb436](https://github.com/DanySK/multi-jvm-test-plugin/commit/98cb4366dc4471923dd5596988ab2f95d22956e2))
+
 ## [4.3.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.0...4.3.1) (2025-10-24)
 
 ### Dependency updates
