@@ -1,6 +1,5 @@
 package org.danilopianini.multijvmtesting
 
-import kotlin.getValue
 import org.danilopianini.multijvmtesting.MultiJVMTestingExtension.Companion.isLTS
 import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
