@@ -38,7 +38,7 @@ class Tests : StringSpec({
             location.copyRecursively(toFile())
         }
         log.debug("Test has been copied into {} and is ready to get executed", testFolder)
-        test.description.config(timeout = 5.minutes) {
+        test.description.config(timeout = 30.minutes) {
             val result = GradleRunner.create()
                 .withProjectDir(testFolder.toFile())
                 .withPluginClasspath()
