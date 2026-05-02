@@ -11,11 +11,13 @@ import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.withType
+import org.gradle.work.DisableCachingByDefault
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 /**
  * A special [Test] task configured to run the [referenceTest] using a specific [jvmVersion].
  */
+@DisableCachingByDefault(because = "This task delegates to another Test task and varies by selected JVM toolchain.")
 abstract class TestOnSpecificJvmVersion
 @Inject
 constructor(
