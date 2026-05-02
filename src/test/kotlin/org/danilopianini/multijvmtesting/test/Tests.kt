@@ -13,6 +13,7 @@ import java.io.File
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.createTempDirectory
+import kotlin.time.Duration.Companion.minutes
 import org.gradle.testkit.runner.BuildResult
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
@@ -37,7 +38,7 @@ class Tests : StringSpec({
             location.copyRecursively(toFile())
         }
         log.debug("Test has been copied into {} and is ready to get executed", testFolder)
-        test.description {
+        test.description.config(timeout = 5.minutes) {
             val result = GradleRunner.create()
                 .withProjectDir(testFolder.toFile())
                 .withPluginClasspath()
