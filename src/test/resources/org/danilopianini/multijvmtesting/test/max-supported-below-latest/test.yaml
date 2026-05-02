@@ -1,0 +1,9 @@
+tests:
+  - description: "When maximumSupportedJvmVersion is lower than latestJava, check should still wire testWithLtsJvms"
+    configuration:
+      tasks: check
+      options: --stacktrace
+    expectation:
+      success:
+        - check
+        - testWithLtsJvms

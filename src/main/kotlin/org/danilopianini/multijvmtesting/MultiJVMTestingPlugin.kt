@@ -76,8 +76,10 @@ open class MultiJVMTestingPlugin : Plugin<Project> {
                 checkTask.dependsOn(testWithLatestJvm)
             }
             val minimumSupportedJava = versionForCompilation.get().asInt()
-            val allTheLTS = (minimumSupportedJava..extension.latestJava).filter { it.isLTS }
-            val ltsAreEnabled = supportedJvmVersions.containsAll(allTheLTS)
+            val allTheSupportedLTSs = (minimumSupportedJava..extension.maximumSupportedJvmVersion.get()).filter {
+                it.isLTS
+            }
+            val ltsAreEnabled = supportedJvmVersions.containsAll(allTheSupportedLTSs)
             if (ltsAreEnabled) {
                 checkTask.dependsOn(testWithLtsJvms)
             }
