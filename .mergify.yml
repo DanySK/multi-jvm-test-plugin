@@ -1,1 +1,1 @@
-extends: mergify-queue-config
+extends: mergify-config
