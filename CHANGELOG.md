@@ -1,3 +1,18 @@
+## [4.3.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.3...4.3.4) (2026-05-02)
+
+### Dependency updates
+
+* **deps:** update kotest to v6.1.11 ([#1094](https://github.com/DanySK/multi-jvm-test-plugin/issues/1094)) ([8ed26e9](https://github.com/DanySK/multi-jvm-test-plugin/commit/8ed26e9cab77db46837877ec04e6a6081682f541))
+* **deps:** update plugin multijvmtesting to v4.3.3 ([#1107](https://github.com/DanySK/multi-jvm-test-plugin/issues/1107)) ([528f7ad](https://github.com/DanySK/multi-jvm-test-plugin/commit/528f7ad042d7e0a3adfcebcf53fa0af9de4ceedc))
+
+### Bug Fixes
+
+* annotate custom test task for Gradle caching validation ([#1106](https://github.com/DanySK/multi-jvm-test-plugin/issues/1106)) ([c65c937](https://github.com/DanySK/multi-jvm-test-plugin/commit/c65c937bd55bd3a88fc46275062b3f3db9be9ef3))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.32 ([#1083](https://github.com/DanySK/multi-jvm-test-plugin/issues/1083)) ([1843cbb](https://github.com/DanySK/multi-jvm-test-plugin/commit/1843cbb1ea8b8705eb55ada7b931ec9082296e8c))
+
 ## [4.3.3](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.2...4.3.3) (2026-05-02)
 
 ### Dependency updates
