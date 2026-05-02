@@ -1,83 +1,160 @@
-# Multi-JVM testing for Gradle
+# Multi-JVM Testing For Gradle
 
-This plugin automatically configures a Java (or Kotlin, or other plugins applying Java) build to run tests under multiple versions of the JVM.
-It exposes support to decide on which JVM to compile code,
-pre-configures the `test` task to run on the same JVM,
-and creates the following additional tasks:
-* `testWithJvmXXX`, where `XXX` is the version of a supported JVM, e.g., 16, one such task is created for each version of the JVM that the project supports;
-* `testWithLatestJvm`, that runs tests with the latest known JVM;
-* `testWithLtsJvms`, that runs tests with all the known LTS versions of the JVM;
-* `testWithLtsAndLatestJvms`, that runs both `testWithLatestJvm` and `testWithLtsJvms`
+This plugin configures a Gradle build to compile with one JVM version and run tests with multiple JVM versions.
+It works with Java projects, Kotlin/JVM projects, and Kotlin Multiplatform projects with JVM tests.
 
-A set of all tasks can be selected in configuration,
-and will be associated to the `check` task for being run by default.
-If there is only one task of type `test`, it will be preconfigured to use the same JVM used for compiling code.
+## What It Adds
 
-## Configuration
+For each `Test` task in your build, the plugin creates:
 
-To provision the missing JVMs automatically, you should enable `org.gradle.toolchains.foojay-resolver-convention`
-in your `settings.gradle.kts`:
+* `testWithJvmXX` tasks, one per known Java version
+* `testWithLatestJvm`
+* `testWithLtsJvms`
+* `testWithLtsAndLatestJvms`
+
+It also configures:
+
+* the main `test` task to run with `jvmVersionForCompilation`
+* Java, Kotlin/JVM, and Kotlin Multiplatform JVM toolchains to use `jvmVersionForCompilation`
+* `check` to run the JVMs selected by `testByDefaultWith(...)`
+
+## Requirements
+
+Gradle 9 requires running the build itself on Java 17 or newer.
+This plugin can still compile and test your project against older Java versions by using toolchains.
+
+The plugin does not install JDKs by itself.
+If you want Gradle to provision missing toolchains automatically, enable the Foojay resolver in `settings.gradle.kts`:
 
 ```kotlin
 plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "<LATEST VERSION IS RECOMMENDED>"
+    id("org.gradle.toolchains.foojay-resolver-convention") version "<latest version>"
 }
 ```
 
-By default, the plugin compiles with Java 8,
-and tests with all the LTS versions from Java 8 onwards,
-plus with the most recent Java version.
-
-This behaviour can be changed as follows in your `build.gradle.kts`:
+## Basic Setup
 
 ```kotlin
 plugins {
-    id("org.danilopianini.multi-jvm-test-plugin") version "<VERSION_YOU_WANT>" 
+    java
+    id("org.danilopianini.multi-jvm-test-plugin") version "<plugin version>"
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(8) // Select the version you want to compile with
-    maximumSupportedJvmVersion.set(latestJava) // Select the latest version of the JVM you intend to support
-    excludeSupportFor(10) // It is possible to exclude one or more versions from the set of supported JVMs
-    println(latestJava) // latestJava returns the newest known version of Java
-    println(allLtsVersions) // allLtsVersions returns all the known LTS versions of Java
-    println(latestJavaSupportedByGradle) // latestJavaSupportedByGradle is the latest Java version supported by the running version of Gradle
-    testByDefaultWith(supportedLtsVersionsAndLatest) // this method can be called with other parameters to change wich JVMs should be used by default for tests
+    jvmVersionForCompilation.set(17)
+    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
 ```
 
-## Beware of configuration avoidance
+## Default Behavior
 
-This plugin uses Gradle's [configuration avoidance API](https://docs.gradle.org/current/userguide/task_configuration_avoidance.html)
-to improve performance.
-A con of this approach is that the plugin expects the task configuration to be done using the same api.
-In particular, configurations like this one *will* fail:
+By default:
+
+* code is compiled for Java 8
+* `maximumSupportedJvmVersion` is set to `latestJava`
+* `check` runs tests on `supportedLtsVersionsAndLatest`
+
+In practice, that means `check` runs:
+
+* all supported LTS JVMs from `jvmVersionForCompilation` up to `maximumSupportedJvmVersion`
+* `maximumSupportedJvmVersion` as well, even if it is not an LTS release
+
+If `jvmVersionForCompilation` itself is one of those versions, the dedicated `testWithJvmXX` task for that version is disabled and the regular `test` task is used instead.
+
+## Configuration Reference
 
 ```kotlin
-// THIS IS BROKEN, DO NOT DO THIS
+multiJvm {
+    jvmVersionForCompilation.set(17)
+    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+    excludeSupportFor(18, 19)
+    testByDefaultWith(17, 21)
+    // or:
+    testByDefaultWith(supportedLtsVersionsAndLatest)
+    println(latestJava)
+    println(latestLts)
+    println(allLtsVersions)
+    println(oldestJavaSupportedByGradle)
+    println(latestJavaSupportedByGradle)
+    println(supportedJvmVersions.get())
+    println(supportedLtsVersions.get())
+    println(supportedLtsVersionsAndLatest.get())
+}
+```
+
+Meaning of the main properties:
+
+* `jvmVersionForCompilation`: JVM used for compilation and for the base `test` task
+* `maximumSupportedJvmVersion`: highest JVM version your project claims to support
+* `supportedJvmVersions`: all supported JVMs in the inclusive range `jvmVersionForCompilation..maximumSupportedJvmVersion`, minus excluded versions
+* `supportedLtsVersions`: supported JVMs that are LTS releases
+* `supportedLtsVersionsAndLatest`: `supportedLtsVersions` plus `maximumSupportedJvmVersion`
+* `testByDefaultWith(...)`: selects which JVM-specific test tasks `check` should run by default
+* `excludeSupportFor(...)`: removes versions from the supported set
+
+## Task Behavior
+
+Some details matter in practice:
+
+* `testWithJvmXX` tasks are created for all known Java versions, not only for the ones you support
+* `check` only depends on the versions selected by `testByDefaultWith(...)`
+* `check` also depends on `testWithLtsJvms` when all supported LTS versions between `jvmVersionForCompilation` and `maximumSupportedJvmVersion` are enabled
+* `check` also depends on `testWithLatestJvm` and `testWithLtsAndLatestJvms` when `latestJava` is part of the supported set
+* if a toolchain is unavailable for the current operating system, the corresponding `testWithJvmXX` task is disabled
+
+## Example Policies
+
+Test only the compilation JVM and the latest JVM supported by Gradle:
+
+```kotlin
+multiJvm {
+    jvmVersionForCompilation.set(17)
+    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+    testByDefaultWith(jvmVersionForCompilation.get(), latestJavaSupportedByGradle)
+}
+```
+
+Test only LTS releases up to Java 21:
+
+```kotlin
+multiJvm {
+    jvmVersionForCompilation.set(8)
+    maximumSupportedJvmVersion.set(21)
+    testByDefaultWith(supportedLtsVersionsAndLatest)
+}
+```
+
+## Configuration Avoidance
+
+This plugin uses Gradle's [configuration avoidance API](https://docs.gradle.org/current/userguide/task_configuration_avoidance.html).
+Your build should do the same when configuring `Test` tasks.
+
+This is unsafe:
+
+```kotlin
+// Broken: this eagerly configures Test tasks before multiJvm is configured.
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-// IT IS BROKEN, DON'T COPY AND PASTE THIS CODE WITHOUT READING THE COMMENT ABOVE
+
 multiJvm {
     jvmVersionForCompilation.set(latestJavaSupportedByGradle)
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
 }
 ```
 
-As gradle will run the task configuration for `Test` tasks before the plugin's extension has been configured.
-To solve, there are two options:
-1. configure the extension **before** any other task configuration;
-2. use the configuration avoidance API to configure the tasks.
-
-The two things are not mutually exclusive, rather,
-it is recommended to do *both*:
+This is correct:
 
 ```kotlin
 multiJvm {
     jvmVersionForCompilation.set(latestJavaSupportedByGradle)
     maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
 }
+
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
