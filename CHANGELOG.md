@@ -1,3 +1,34 @@
+## [4.3.5](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.4...4.3.5) (2026-05-03)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.3.21 ([#1092](https://github.com/DanySK/multi-jvm-test-plugin/issues/1092)) ([4666fcf](https://github.com/DanySK/multi-jvm-test-plugin/commit/4666fcf3798ec9a7fe4dca439b57bba312f41223))
+* **core-deps:** update gradle to v9.4.1 ([#1088](https://github.com/DanySK/multi-jvm-test-plugin/issues/1088)) ([15aeeb3](https://github.com/DanySK/multi-jvm-test-plugin/commit/15aeeb34de29d0607663dfe7c19dbc47a42bcf05))
+* **core-deps:** update gradle to v9.5.0 ([#1101](https://github.com/DanySK/multi-jvm-test-plugin/issues/1101)) ([990b99c](https://github.com/DanySK/multi-jvm-test-plugin/commit/990b99c3ca03bbfa0f906a096133546add284ddd))
+* **deps:** update node.js to 24.15 ([#1097](https://github.com/DanySK/multi-jvm-test-plugin/issues/1097)) ([afdc5ba](https://github.com/DanySK/multi-jvm-test-plugin/commit/afdc5ba92deba21b96af43cd9bc1af093b264e49))
+* **deps:** update plugin com.gradle.develocity to v4.4.1 ([#1095](https://github.com/DanySK/multi-jvm-test-plugin/issues/1095)) ([ff1e4aa](https://github.com/DanySK/multi-jvm-test-plugin/commit/ff1e4aac5e0f1e12055e57ca8b3e02564bd28b0c))
+* **deps:** update plugin gitsemver to v7.0.18 ([#1089](https://github.com/DanySK/multi-jvm-test-plugin/issues/1089)) ([9640dcb](https://github.com/DanySK/multi-jvm-test-plugin/commit/9640dcbfa6c4108f7bb57108fce60eb305fd159c))
+* **deps:** update plugin gradlepluginpublish to v2.1.1 ([#1087](https://github.com/DanySK/multi-jvm-test-plugin/issues/1087)) ([60198de](https://github.com/DanySK/multi-jvm-test-plugin/commit/60198dec1dada71820a9f4582a6a255ddc6ca8c9))
+* **deps:** update plugin kotlin-qa to v0.100.3 ([#1076](https://github.com/DanySK/multi-jvm-test-plugin/issues/1076)) ([bebc84d](https://github.com/DanySK/multi-jvm-test-plugin/commit/bebc84dd9b67cc364c6f9d58036f8920e9ec7858))
+* **deps:** update plugin kotlin-qa to v0.101.1 ([#1081](https://github.com/DanySK/multi-jvm-test-plugin/issues/1081)) ([f6e9883](https://github.com/DanySK/multi-jvm-test-plugin/commit/f6e9883b76ab0f1021affc71d32e6e0e9587d943))
+* **deps:** update plugin kotlin-qa to v1 ([#1082](https://github.com/DanySK/multi-jvm-test-plugin/issues/1082)) ([71f8fdf](https://github.com/DanySK/multi-jvm-test-plugin/commit/71f8fdf7a03d2a880dd5e4d4cc92760920fc8410))
+* **deps:** update plugin multijvmtesting to v4.3.4 ([#1108](https://github.com/DanySK/multi-jvm-test-plugin/issues/1108)) ([f37edac](https://github.com/DanySK/multi-jvm-test-plugin/commit/f37edacd441fa5baa33034d7a357bbd786f218b8))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.16 ([#1090](https://github.com/DanySK/multi-jvm-test-plugin/issues/1090)) ([d10f880](https://github.com/DanySK/multi-jvm-test-plugin/commit/d10f88035ffc85454ac8aa2c0d5957aefb6b20e4))
+* **deps:** update plugin publishoncentral to v9.2.2 ([#1100](https://github.com/DanySK/multi-jvm-test-plugin/issues/1100)) ([1fff580](https://github.com/DanySK/multi-jvm-test-plugin/commit/1fff580a834c15a77a42fbe7bd3441ca43065b41))
+
+### Documentation
+
+* **deps:** update dependency org.jetbrains.dokka to v2.1.0 ([#1032](https://github.com/DanySK/multi-jvm-test-plugin/issues/1032)) ([c371486](https://github.com/DanySK/multi-jvm-test-plugin/commit/c371486de6a44a22dabff4b82de818de3c63df2c))
+* **deps:** update dependency org.jetbrains.dokka to v2.2.0 ([#1096](https://github.com/DanySK/multi-jvm-test-plugin/issues/1096)) ([e535cdc](https://github.com/DanySK/multi-jvm-test-plugin/commit/e535cdc135afff590d07ed8d3ee696febf5275e1))
+
+### Build and continuous integration
+
+* **mergify:** disable queues, back to plain rebase ([4dfe7c7](https://github.com/DanySK/multi-jvm-test-plugin/commit/4dfe7c77a8b4d1a5b092f2622885f0a0dd5a0ac5))
+
+### Style improvements
+
+* import style rules from AlchemistSimulator/Alchemist ([#1105](https://github.com/DanySK/multi-jvm-test-plugin/issues/1105)) ([7cde2b8](https://github.com/DanySK/multi-jvm-test-plugin/commit/7cde2b84fb45e95f77bcf62de111492e89b305bc))
+
 ## [4.3.4](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.3...4.3.4) (2026-05-02)
 
 ### Dependency updates
