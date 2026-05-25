@@ -1,3 +1,9 @@
+## [4.5.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.4.0...4.5.0) (2026-05-25)
+
+### Dependency updates
+
+* **api-deps:** update dependency java to v26 ([#1122](https://github.com/DanySK/multi-jvm-test-plugin/issues/1122)) ([07a0ea3](https://github.com/DanySK/multi-jvm-test-plugin/commit/07a0ea35531bf06ee84163f922e54f84f450fb03))
+
 ## [4.4.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.6...4.4.0) (2026-05-25)
 
 ### Dependency updates
