@@ -1,3 +1,23 @@
+## [4.4.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.6...4.4.0) (2026-05-25)
+
+### Dependency updates
+
+* **api-deps:** update dependency java to v25.0.3+9.0.lts ([#1121](https://github.com/DanySK/multi-jvm-test-plugin/issues/1121)) ([c2beb34](https://github.com/DanySK/multi-jvm-test-plugin/commit/c2beb3488d868a84ab77138c1564d8a072cd6391))
+* **deps:** update node.js to 24.16 ([#1120](https://github.com/DanySK/multi-jvm-test-plugin/issues/1120)) ([1b91f24](https://github.com/DanySK/multi-jvm-test-plugin/commit/1b91f2432061686fc6ec260b96791e20960e2a6b))
+* **deps:** update plugin gitsemver to v7.0.20 ([#1119](https://github.com/DanySK/multi-jvm-test-plugin/issues/1119)) ([a80685f](https://github.com/DanySK/multi-jvm-test-plugin/commit/a80685f1729e06107368d80fa22322c12c21c94d))
+* **deps:** update plugin kotlin-qa to v1.6.2 ([#1115](https://github.com/DanySK/multi-jvm-test-plugin/issues/1115)) ([754ea3d](https://github.com/DanySK/multi-jvm-test-plugin/commit/754ea3d8a489f9e5a3211e420c67ecbbc935fe70))
+* **deps:** update plugin multijvmtesting to v4.3.6 ([#1116](https://github.com/DanySK/multi-jvm-test-plugin/issues/1116)) ([a674c98](https://github.com/DanySK/multi-jvm-test-plugin/commit/a674c9862a5701e880c6bedf434c238b41f48d44))
+* **deps:** update plugin publishoncentral to v9.2.4 ([#1117](https://github.com/DanySK/multi-jvm-test-plugin/issues/1117)) ([00c8779](https://github.com/DanySK/multi-jvm-test-plugin/commit/00c8779e1541e981075d6fc9c3fe62a94dec9224))
+
+### Tests
+
+* add missing expected tasks in the mixed Java/Kotlin build test ([#1104](https://github.com/DanySK/multi-jvm-test-plugin/issues/1104)) ([1b1d3be](https://github.com/DanySK/multi-jvm-test-plugin/commit/1b1d3bef5913358418fdddd2a8feead29a4fc0ba))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.33 ([#1118](https://github.com/DanySK/multi-jvm-test-plugin/issues/1118)) ([ff93b2a](https://github.com/DanySK/multi-jvm-test-plugin/commit/ff93b2a1ad0f72962bb7eacbbf5bf5dffe954373))
+* **deps:** update dependency macos github actions runner to v26 ([#1123](https://github.com/DanySK/multi-jvm-test-plugin/issues/1123)) ([fb3ef65](https://github.com/DanySK/multi-jvm-test-plugin/commit/fb3ef65eb46952345b2412ad9f5fa83f6b394d5d))
+
 ## [4.3.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.3.5...4.3.6) (2026-05-12)
 
 ### Dependency updates
