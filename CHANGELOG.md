@@ -1,3 +1,17 @@
+## [4.5.1](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.0...4.5.1) (2026-06-03)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.4.0 ([#1130](https://github.com/DanySK/multi-jvm-test-plugin/issues/1130)) ([f264595](https://github.com/DanySK/multi-jvm-test-plugin/commit/f264595423395e6e2f766fced0bf6268636b421e))
+* **deps:** update plugin com.gradle.develocity to v4.4.2 ([#1126](https://github.com/DanySK/multi-jvm-test-plugin/issues/1126)) ([c879b78](https://github.com/DanySK/multi-jvm-test-plugin/commit/c879b78ed1bfa458c8cc8022912f2b4209bde8e3))
+* **deps:** update plugin kotlin-qa to v1.7.0 ([#1127](https://github.com/DanySK/multi-jvm-test-plugin/issues/1127)) ([d3902ba](https://github.com/DanySK/multi-jvm-test-plugin/commit/d3902ba80e2894ca875ffe552baa56e0928e6567))
+* **deps:** update plugin multijvmtesting to v4.5.0 ([#1125](https://github.com/DanySK/multi-jvm-test-plugin/issues/1125)) ([6769c2d](https://github.com/DanySK/multi-jvm-test-plugin/commit/6769c2d2f74ec91e335cadeff985004d91a8114b))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v6.0.3 ([#1128](https://github.com/DanySK/multi-jvm-test-plugin/issues/1128)) ([d72908e](https://github.com/DanySK/multi-jvm-test-plugin/commit/d72908ef4933ce49371f88e6421986e2197c069f))
+* **deps:** update danysk/action-checkout action to v0.2.29 ([#1129](https://github.com/DanySK/multi-jvm-test-plugin/issues/1129)) ([afdd41a](https://github.com/DanySK/multi-jvm-test-plugin/commit/afdd41a3fd9a96fb625cfd99fc69029afb622959))
+
 ## [4.5.0](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.4.0...4.5.0) (2026-05-25)
 
 ### Dependency updates
