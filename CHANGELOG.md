@@ -1,3 +1,27 @@
+## [4.5.7](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.6...4.5.7) (2026-09-13)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.4.20 ([#1200](https://github.com/DanySK/multi-jvm-test-plugin/issues/1200)) ([9632394](https://github.com/DanySK/multi-jvm-test-plugin/commit/963239435f3e74fe0ab1a99a3342cc0493b0e907))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.193 ([#1195](https://github.com/DanySK/multi-jvm-test-plugin/issues/1195)) ([d99e30e](https://github.com/DanySK/multi-jvm-test-plugin/commit/d99e30e5e7ac2d550f1ccb625ccb766eee564f59))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.194 ([#1196](https://github.com/DanySK/multi-jvm-test-plugin/issues/1196)) ([17bbce9](https://github.com/DanySK/multi-jvm-test-plugin/commit/17bbce996a93c93ad9284f6ccfcda4ef380dd836))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.195 ([#1201](https://github.com/DanySK/multi-jvm-test-plugin/issues/1201)) ([df9d123](https://github.com/DanySK/multi-jvm-test-plugin/commit/df9d123c39df3dc391ff68d4db507710ad7dcca6))
+* **deps:** update node.js to 24.20 ([#1199](https://github.com/DanySK/multi-jvm-test-plugin/issues/1199)) ([753a795](https://github.com/DanySK/multi-jvm-test-plugin/commit/753a7959a93069877f4e646833a457580cab2394))
+* **deps:** update node.js to 24.21 ([#1209](https://github.com/DanySK/multi-jvm-test-plugin/issues/1209)) ([00bb129](https://github.com/DanySK/multi-jvm-test-plugin/commit/00bb12942717c1b70927a4fbcf19e6dcf044ed3f))
+* **deps:** update plugin com.gradle.develocity to v4.5.1 ([#1203](https://github.com/DanySK/multi-jvm-test-plugin/issues/1203)) ([0902de4](https://github.com/DanySK/multi-jvm-test-plugin/commit/0902de4d0d9ebbd17173caee531f43a476b2aac2))
+* **deps:** update plugin gradlepluginpublish to v2.2.1 ([#1210](https://github.com/DanySK/multi-jvm-test-plugin/issues/1210)) ([77a7806](https://github.com/DanySK/multi-jvm-test-plugin/commit/77a7806a09f17d32f75d953ddcea2142c852fc29))
+* **deps:** update plugin kotlin-qa to v1.9.0 ([#1198](https://github.com/DanySK/multi-jvm-test-plugin/issues/1198)) ([b31b147](https://github.com/DanySK/multi-jvm-test-plugin/commit/b31b14772b9ecd71a38bf09d12b78196faf3df73))
+* **deps:** update plugin multijvmtesting to v4.5.6 ([#1192](https://github.com/DanySK/multi-jvm-test-plugin/issues/1192)) ([ea5df5d](https://github.com/DanySK/multi-jvm-test-plugin/commit/ea5df5d4f41a18eec94f9c6ef26fc3d93a9ddf9a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.23 ([#1193](https://github.com/DanySK/multi-jvm-test-plugin/issues/1193)) ([ea366e5](https://github.com/DanySK/multi-jvm-test-plugin/commit/ea366e54023c9398cdaf2238a0b5f6dbf98ea7cd))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.24 ([#1206](https://github.com/DanySK/multi-jvm-test-plugin/issues/1206)) ([fb81269](https://github.com/DanySK/multi-jvm-test-plugin/commit/fb812691b7dfba2a243fe3cefb641f94d8bdcb30))
+* **deps:** update plugin publishoncentral to v9.2.10 ([#1194](https://github.com/DanySK/multi-jvm-test-plugin/issues/1194)) ([ac487de](https://github.com/DanySK/multi-jvm-test-plugin/commit/ac487de9305b1934d34ead432b524a29cb9a0887))
+* **deps:** update plugin publishoncentral to v9.2.11 ([#1207](https://github.com/DanySK/multi-jvm-test-plugin/issues/1207)) ([fb37f02](https://github.com/DanySK/multi-jvm-test-plugin/commit/fb37f02a5a9115fd27f52c4c7890807ac8c2d69c))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.44 ([eb257f3](https://github.com/DanySK/multi-jvm-test-plugin/commit/eb257f3db53abbbab5b443b3612cd1bbf940abf3))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.45 ([#1208](https://github.com/DanySK/multi-jvm-test-plugin/issues/1208)) ([b21326c](https://github.com/DanySK/multi-jvm-test-plugin/commit/b21326c32a1a81209f7c4c59a9cee2ad0a1bbf71))
+
 ## [4.5.6](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.5...4.5.6) (2026-08-19)
 
 ### Dependency updates
