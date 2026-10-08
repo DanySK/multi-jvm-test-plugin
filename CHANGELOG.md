@@ -1,3 +1,12 @@
+## [4.5.9](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.8...4.5.9) (2026-10-08)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.8.1 ([#1223](https://github.com/DanySK/multi-jvm-test-plugin/issues/1223)) ([46e8095](https://github.com/DanySK/multi-jvm-test-plugin/commit/46e8095b833e23a89445ac916a23ce538ba7abc9))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.197 ([#1224](https://github.com/DanySK/multi-jvm-test-plugin/issues/1224)) ([10ce889](https://github.com/DanySK/multi-jvm-test-plugin/commit/10ce889ecdb01815d39a7a4938b9182537b4d260))
+* **deps:** update plugin kotlin-qa to v1.10.0 ([#1221](https://github.com/DanySK/multi-jvm-test-plugin/issues/1221)) ([8947b34](https://github.com/DanySK/multi-jvm-test-plugin/commit/8947b342712c571f4fd745e33f155f2089b69146))
+* **deps:** update plugin multijvmtesting to v4.5.8 ([#1222](https://github.com/DanySK/multi-jvm-test-plugin/issues/1222)) ([03fb295](https://github.com/DanySK/multi-jvm-test-plugin/commit/03fb295d54bf7a96089ce54010801281f370d571))
+
 ## [4.5.8](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.7...4.5.8) (2026-10-03)
 
 ### Dependency updates
