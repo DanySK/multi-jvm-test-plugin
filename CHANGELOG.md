@@ -1,3 +1,15 @@
+## [4.5.10](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.9...4.5.10) (2026-10-08)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin:kotlin-gradle-plugin to v2.4.21 ([22bbdf9](https://github.com/DanySK/multi-jvm-test-plugin/commit/22bbdf9ff8c93edd47b634b8e309306ab0a974f6))
+* **deps:** update plugin multijvmtesting to v4.5.9 ([19726ef](https://github.com/DanySK/multi-jvm-test-plugin/commit/19726efe54a87c8a873bf3403a398c32bae4f9af))
+* **deps:** update plugin publishoncentral to v9.2.13 ([93f68fc](https://github.com/DanySK/multi-jvm-test-plugin/commit/93f68fcfa09a19f5a8ceeb1917f2f3e760590fba))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v7.1.0 ([#1228](https://github.com/DanySK/multi-jvm-test-plugin/issues/1228)) ([d8a252e](https://github.com/DanySK/multi-jvm-test-plugin/commit/d8a252edb63ed8045828adb03af5d9cf0fdbab76))
+
 ## [4.5.9](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.8...4.5.9) (2026-10-08)
 
 ### Dependency updates
