@@ -1,3 +1,9 @@
+## [4.5.13](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.12...4.5.13) (2026-11-22)
+
+### Documentation
+
+* **deps:** update dependency org.jetbrains.dokka to v2.3.0 ([#1258](https://github.com/DanySK/multi-jvm-test-plugin/issues/1258)) ([e3b73ec](https://github.com/DanySK/multi-jvm-test-plugin/commit/e3b73ecf6b3dfa826e8abf6f266fe39f47489d38))
+
 ## [4.5.12](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.11...4.5.12) (2026-11-22)
 
 ### Dependency updates
