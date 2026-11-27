@@ -1,3 +1,11 @@
+## [4.5.14](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.13...4.5.14) (2026-11-27)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v9.9.3 ([#1259](https://github.com/DanySK/multi-jvm-test-plugin/issues/1259)) ([208ed05](https://github.com/DanySK/multi-jvm-test-plugin/commit/208ed05f59a776bbb4b4af631c5965260a9c1b37))
+* **deps:** update dependency io.github.classgraph:classgraph to v4.8.200 ([#1253](https://github.com/DanySK/multi-jvm-test-plugin/issues/1253)) ([93fb758](https://github.com/DanySK/multi-jvm-test-plugin/commit/93fb758dffc86a8d1bfa4099c5a6967d5aaf4e41))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.159 ([#1254](https://github.com/DanySK/multi-jvm-test-plugin/issues/1254)) ([5f0a9b2](https://github.com/DanySK/multi-jvm-test-plugin/commit/5f0a9b2afa7e3a2d499a8642b77c9df8f7e0d1c3))
+
 ## [4.5.13](https://github.com/DanySK/multi-jvm-test-plugin/compare/4.5.12...4.5.13) (2026-11-22)
 
 ### Documentation
